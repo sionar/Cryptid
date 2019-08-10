@@ -1,0 +1,64 @@
+<Text
+    id="redClue"
+    color="#DA1917"
+    fontSize="80"
+    position="0 -2750 -5"
+    rotation="0 0 0"
+    visibility = "Red|Black"
+    active = "false"
+    >Test
+</Text>
+
+<Text
+    id="tealClue"
+    color="#20B09A"
+    fontSize="80"
+    position="-2615 -850 -5"
+    rotation="0 0 -72"
+    visibility = "Teal|Black"
+    active = "false"
+    >Test
+</Text>
+
+<Text
+    id="purpleClue"
+    color="#9F1FEF"
+    fontSize="80"
+    position="-1616 2225 -5"
+    rotation="0 0 -144"
+    visibility = "Purple|Black"
+    active = "false"
+    >Test
+</Text>
+
+<Text
+    id="brownClue"
+    color="#703A16"
+    fontSize="80"
+    position="1616 2225 -5"
+    rotation="0 0 -216"
+    visibility = "Brown|Black"
+    active = "false"
+    >Test
+</Text>
+
+<Text
+    id="pinkClue"
+    color="#F46FCD"
+    fontSize="80"
+    position="2615 -850 -5"
+    rotation="0 0 -288"
+    visibility = "Pink|Black"
+    active = "false"
+    >Test
+</Text>
+
+<Text
+    id="hint"
+    color="#FFFFFF"
+    fontSize="80"
+    position="0 -1400 -5"
+    rotation="0 0 0"
+    active = "false"
+    >Hint
+</Text>

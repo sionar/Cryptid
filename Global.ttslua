@@ -1,0 +1,267 @@
+--[[
+Cryptid
+Scripted by Sionar
+--]]
+
+
+------------------Constants
+MOD_NAME = 'Cryptid'
+VERSION = '1.0.0'
+DEBUG = true
+COLORS = {'Red', 'Teal', 'Purple', 'Brown', 'Pink',}
+SYMBOLS = {'alpha', 'beta', 'gamma', 'delta', 'epsil'}
+MAP_POS =
+    {
+        {-6.89, 1.11, 7.89},
+        {6.89, 1.11, 7.89},
+        {-6.89, 1.11, 0.00},
+        {6.89, 1.11, 0.00},
+        {-6.89, 1.11, -7.89},
+        {6.89, 1.11, -7.89},
+    }
+GRID_X_START = -12.68
+GRID_Z_START = 11.32
+GRID_X_SPACING = 2.3
+GRID_Z_SPACING = -2.65
+GRID_X = {}
+GRID_Z = {}
+for i = 1,12 do
+    GRID_X[i] = GRID_X_START + (i-1) * GRID_X_SPACING
+end
+for i = 1,9 do
+    GRID_Z[i] = GRID_Z_START + (i-1) * GRID_Z_SPACING
+end
+
+TABLE_GUID = 'e1c8f6'
+MAP_GUIDS = {'a70047', '0137df', '38ad67', '7b30ec', '31e825', '81e81d',}
+STRUCTURE_GUIDS = {WT = '127a87', WH = 'ba505c', BT = '0df954', BH = 'a1a56c', GT = '096c34', GH = '0add33', DT = '6019a2', DH = '62ecde',}
+BAG_GUIDS = {Red = {'db017c','a46d6a'}, Teal = {'699c89','eef40a'}, Purple = {'2c47b4','9b5f69'}, Brown = {'ce8508','1f954d'}, Pink = {'37c717','ad678d'}}
+
+------------------Variables
+gameNum = 1
+players = {}
+started = false
+hintGiven = false
+
+------------------Functions
+function onLoad(saveString)
+    if not (saveString == '') then
+        local save = JSON.decode(saveString)
+        gameNum = save['g']
+        players = save['p']
+        started = save['s']
+        hintGiven = save['h']
+    end
+    math.randomseed(os.time())
+    local obj
+
+    obj = getObjectFromGUID(TABLE_GUID)
+    if obj then
+        obj.interactable = false
+    end
+
+    for k,v in pairs(MAP_GUIDS) do
+        obj = getObjectFromGUID(v)
+        if obj then
+            obj.interactable = false
+        end
+    end
+    for k,v in pairs(STRUCTURE_GUIDS) do
+        obj = getObjectFromGUID(v)
+        if obj then
+            if not started then
+                obj.interactable = false
+            else
+                obj.interactable = true
+            end
+        end
+    end
+    if not started then
+        obj = getObjectFromGUID(TABLE_GUID)
+        if obj then
+            obj.createButton({
+                label = 'Start\nNormal Game',
+                click_function = 'startNormalGame',
+                function_owner = Global,
+                position = {0,0.1,3},
+                rotation = {0,180,0},
+                width = 2500,
+                height = 1000,
+                font_size = 300,
+                color = {0,0,0,1},
+                font_color = 'White',
+                tooltip = 'Start a normal game.',
+            })
+            obj.createButton({
+                label = 'Start\nAdvanced Game',
+                click_function = 'startAdvancedGame',
+                function_owner = Global,
+                position = {0,0.1,-3},
+                rotation = {0,180,0},
+                width = 2500,
+                height = 1000,
+                font_size = 300,
+                color = {0,0,0,1},
+                font_color = 'White',
+                tooltip = 'Start an advanced game.',
+            })
+        end
+    else
+        setClues()
+    end
+    if hintGiven then
+        showHint()
+    end
+end
+
+function onSave()
+    local save = {}
+    save['g'] = gameNum
+    save['p'] = players
+    save['s'] = started
+    save['h'] = hintGiven
+    local saveString = JSON.encode(save)
+    return saveString
+end
+
+function onPlayerChangeColor(playerColor)
+    if started then
+        setClues()
+    end
+end
+
+function startNormalGame(clickedObject, playerColor)
+    gameNum = math.random(1,19)
+    startGame(clickedObject, playerColor)
+end
+
+function startAdvancedGame(clickedObject, playerColor)
+    gameNum = math.random(20,54)
+    startGame(clickedObject, playerColor)
+end
+
+function startGame(clickedObject, playerColor)
+    local obj, xPos, zPos, seatedPlayers, clues, index, found
+
+    if not Player[playerColor].admin then
+        return
+    end
+
+    seatedPlayers = getSeatedPlayers()
+    if #seatedPlayers < 3 then
+        printToColor('You need 3 players seated to start the game.', playerColor, {1,1,1})
+        return
+    end
+
+    if DEBUG then
+        print(gameNum)
+    end
+
+    started = true
+    for i = 1,6 do
+        obj = getObjectFromGUID(MAP_GUIDS[DATA[gameNum].mapOrder[i]])
+        obj.setPositionSmooth(MAP_POS[i])
+        if DATA[gameNum].mapFlip[i] then
+            obj.setRotationSmooth({0,0,0})
+        else
+            obj.setRotationSmooth({0,180,0})
+        end
+    end
+
+    for k,v in pairs(STRUCTURE_GUIDS) do
+        obj = getObjectFromGUID(v)
+        if DATA[gameNum].coord[k] ~= nil then
+            xPos = GRID_X[DATA[gameNum].coord[k][1]]
+            zPos = GRID_Z[DATA[gameNum].coord[k][2]]
+            if DATA[gameNum].coord[k][1] % 2 == 0 then
+                zPos = zPos + GRID_Z_SPACING * 0.5
+            end
+            obj.setPositionSmooth({xPos, 1.81, zPos})
+            obj.interactable = true
+        else
+            obj.destruct()
+        end
+    end
+    obj = getObjectFromGUID(TABLE_GUID)
+    obj.clearButtons()
+    obj.createButton({
+        label = 'Show Hint',
+        click_function = 'showHint',
+        function_owner = Global,
+        position = {0,0.1,20},
+        rotation = {0,180,0},
+        width = 2500,
+        height = 1000,
+        font_size = 300,
+        color = {0,0,0,1},
+        font_color = 'White',
+        tooltip = 'Give a hint.',
+    })
+    obj.createButton({
+        label = 'Reveal\nAll Clues',
+        click_function = 'revealClues',
+        function_owner = Global,
+        position = {0,0.1,17},
+        rotation = {0,180,0},
+        width = 2500,
+        height = 1000,
+        font_size = 300,
+        color = {0,0,0,1},
+        font_color = 'White',
+        tooltip = 'Reveal all of the clues.',
+    })
+
+    if #seatedPlayers == 3 then
+        clues = DATA[gameNum].clues3
+        obj.UI.setValue('hint', HINTS[DATA[gameNum].hints[1]])
+    elseif #seatedPlayers == 4 then
+        clues = DATA[gameNum].clues4
+        obj.UI.setValue('hint', HINTS[DATA[gameNum].hints[2]])
+    elseif #seatedPlayers == 5 then
+        clues = DATA[gameNum].clues5
+        obj.UI.setValue('hint', HINTS[DATA[gameNum].hints[3]])
+    end
+    index = 1
+    players = {}
+    for k,v in pairs(COLORS) do
+        if Player[v].seated then
+            found = false
+            while found == false do
+                if clues[SYMBOLS[index]] ~= nil then
+                    found = true
+                    table.insert(players, {color = v, symbol = SYMBOLS[index], clue = clues[SYMBOLS[index]]})
+                end
+                index = index + 1
+            end
+        else
+            obj = getObjectFromGUID(BAG_GUIDS[v][1])
+            obj.destruct()
+            obj = getObjectFromGUID(BAG_GUIDS[v][2])
+            obj.destruct()
+        end
+    end
+    setClues()
+end
+
+function setClues()
+    local obj = getObjectFromGUID(TABLE_GUID)
+    for k,v in pairs(players) do
+        obj.UI.setAttribute(v.color..'Clue', 'active', true )
+        obj.UI.setValue(v.color..'Clue', CLUES[v.symbol][v.clue])
+    end
+end
+
+function revealClues(clickedObject, playerColor)
+    if Player[playerColor].admin then
+        local obj = getObjectFromGUID(TABLE_GUID)
+        for k,v in pairs(players) do
+            obj.UI.setAttribute(v.color..'Clue', 'visibility', '' )
+        end
+    end
+end
+
+function showHint()
+    local obj = getObjectFromGUID(TABLE_GUID)
+    obj.UI.setAttribute('hint', 'active', true)
+    hintGiven = true
+end
