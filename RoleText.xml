@@ -6,6 +6,8 @@
     rotation="0 0 0"
     visibility = "Red|Black"
     active = "false"
+    outline="#000000"
+    outlineSize="1 1"
     >Test
 </Text>
 
@@ -17,6 +19,8 @@
     rotation="0 0 -72"
     visibility = "Teal|Black"
     active = "false"
+    outline="#000000"
+    outlineSize="1 1"
     >Test
 </Text>
 
@@ -28,6 +32,8 @@
     rotation="0 0 -144"
     visibility = "Purple|Black"
     active = "false"
+    outline="#000000"
+    outlineSize="1 1"
     >Test
 </Text>
 
@@ -39,6 +45,8 @@
     rotation="0 0 -216"
     visibility = "Brown|Black"
     active = "false"
+    outline="#000000"
+    outlineSize="1 1"
     >Test
 </Text>
 
@@ -50,6 +58,8 @@
     rotation="0 0 -288"
     visibility = "Pink|Black"
     active = "false"
+    outline="#000000"
+    outlineSize="1 1"
     >Test
 </Text>
 
@@ -60,5 +70,7 @@
     position="0 -1400 -5"
     rotation="0 0 0"
     active = "false"
+    outline="#000000"
+    outlineSize="1 1"
     >Hint
 </Text>
