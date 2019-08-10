@@ -7,7 +7,8 @@ Scripted by Sionar
 ------------------Constants
 MOD_NAME = 'Cryptid'
 VERSION = '1.0.0'
-DEBUG = true
+DEBUG = false
+START_MESSAGE = '[FF4040]Cryptid[-]\nA game by Hal Duncan and Ruth Veevers\n\nVersion [00FF00]' .. VERSION..'[-]\nScripted by [967BB6]Sionar[-]\n'
 COLORS = {'Red', 'Teal', 'Purple', 'Brown', 'Pink',}
 SYMBOLS = {'alpha', 'beta', 'gamma', 'delta', 'epsil'}
 MAP_POS =
@@ -45,6 +46,7 @@ hintGiven = false
 
 ------------------Functions
 function onLoad(saveString)
+    setNotes(START_MESSAGE)
     if not (saveString == '') then
         local save = JSON.decode(saveString)
         gameNum = save['g']
