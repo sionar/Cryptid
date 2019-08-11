@@ -74,7 +74,7 @@ function onLoad(saveString)
 
     obj = getObjectFromGUID(TABLE_GUID)
     if obj then
-        obj.interactable = false
+        obj.interactable = true
     end
 
     for k,v in pairs(MAP_GUIDS) do
