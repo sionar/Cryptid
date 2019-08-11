@@ -1,0 +1,243 @@
+--[[
+Cryptid Helper
+Scripted by Sionar
+--]]
+
+
+------------------Constants
+VERSION = '1.0.0'
+CLUES =
+{
+    normal =
+    {
+        'On forest or desert',
+        'On forest or water',
+        'On forest or swamp',
+        'On forest or mountain',
+        'On desert or water',
+        'On desert or swamp',
+        'On desert or mountain',
+        'On water or swamp',
+        'On water or mountain',
+        'On swamp or mountain',
+        'Within one space of forest',
+        'Within one space of desert',
+        'Within one space of swamp',
+        'Within one space of mountain',
+        'Within one space of water',
+        'Within one space of either animal territory',
+        'Within two spaces of a standing stone',
+        'Within two spaces of an abandoned shack',
+        'Within two spaces of bear territory',
+        'Within two spaces of cougar territory',
+        'Within three spaces of a white structure',
+        'Within three spaces of a blue structure',
+        'Within three spaces of a green structure',
+        'Within three spaces of a black structure',
+    },
+    advanced =
+    {
+        'Not on forest or desert',
+        'Not on forest or water',
+        'Not on forest or swamp',
+        'Not on forest or mountain',
+        'Not on desert or water',
+        'Not on desert or swamp',
+        'Not on desert or mountain',
+        'Not on water or swamp',
+        'Not on water or mountain',
+        'Not on swamp or mountain',
+        'Not within one space of forest',
+        'Not within one space of desert',
+        'Not within one space of swamp',
+        'Not within one space of mountain',
+        'Not within one space of water',
+        'Not within one space of either animal territory',
+        'Not within two spaces of a standing stone',
+        'Not within two spaces of an abandoned shack',
+        'Not within two spaces of bear territory',
+        'Not within two spaces of cougar territory',
+        'Not within three spaces of a white structure',
+        'Not within three spaces of a blue structure',
+        'Not within three spaces of a green structure',
+        'Not within three spaces of a black structure',
+    },
+}
+
+
+------------------Variables
+mode = 'normal'
+stateNorm =
+{
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+}
+
+stateAdv =
+{
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+    {r = 1, t = 1, p = 1, b = 1, k = 1},
+}
+
+
+------------------Functions
+function onLoad(saveString)
+    if not (saveString == '') then
+        local save = JSON.decode(saveString)
+        mode = save['m']
+        stateNorm = save['sn']
+        stateAdv = save['sa']
+    end
+    setUI()
+end
+
+function onSave()
+    local save = {}
+    save['m'] = mode
+    save['sn'] = stateNorm
+    save['sa'] = stateAdv
+    local saveString = JSON.encode(save)
+    return saveString
+end
+
+function buttonState(player, value, id)
+    local stateTable
+    if mode == 'normal' then
+        stateTable = stateNorm
+    elseif mode == 'advanced' then
+        stateTable = stateAdv
+    end
+    local color = string.sub(id,1,1)
+    local clue = tonumber(string.sub(id,2,string.len(id)))
+    local currentState = stateTable[clue][color]
+    local buttonColor, text
+
+    currentState = currentState + 1
+    if currentState == 4 then
+        currentState = 1
+    end
+    if currentState == 1 then
+        buttonColor = "#E6E42B"
+        text = "Maybe"
+    elseif currentState == 2 then
+        buttonColor = "#DA1917"
+        text = "No"
+    elseif currentState == 3 then
+        buttonColor = "#30B22A"
+        text = "Yes"
+    end
+    stateTable[clue][color] = currentState
+
+    self.UI.setAttribute(id, 'color', buttonColor)
+    self.UI.setAttribute(id, 'text', text)
+end
+
+function setUI()
+    local id, buttonColor, text, stateTable
+    if mode == 'normal' then
+        self.UI.setValue('Title', 'Normal Clues')
+        self.UI.setAttribute('modeButton', 'text', 'Advanced Clues')
+        stateTable = stateNorm
+    elseif mode == 'advanced' then
+        self.UI.setValue('Title', 'Advanced Clues')
+        self.UI.setAttribute('modeButton', 'text', 'Normal Clues')
+        stateTable = stateAdv
+    end
+
+    for k,v in pairs(stateTable) do
+        for k1,v1 in pairs(v) do
+            id = k1 .. k
+            if v1 == 1 then
+                buttonColor = "#E6E42B"
+                text = "Maybe"
+            elseif v1 == 2 then
+                buttonColor = "#DA1917"
+                text = "No"
+            elseif v1 == 3 then
+                buttonColor = "#30B22A"
+                text = "Yes"
+            end
+            self.UI.setAttribute(id, 'color', buttonColor)
+            self.UI.setAttribute(id, 'text', text)
+        end
+    end
+
+    for i = 1,24 do
+        self.UI.setValue('c'..i, CLUES[mode][i])
+    end
+end
+
+function setMode(player, value, id)
+    if mode == 'normal' then
+        mode = 'advanced'
+    elseif mode == 'advanced' then
+        mode = 'normal'
+    end
+    setUI()
+end
+
+function hideColumn(params)
+    local color = params.color
+    local tag
+
+    if color == 'Red' then
+        tag = 'r'
+    elseif color == 'Teal' then
+        tag = 't'
+    elseif color == 'Purple' then
+        tag = 'p'
+    elseif color == 'Brown' then
+        tag = 'b'
+    elseif color == 'Pink' then
+        tag = 'k'
+    end
+
+    self.UI.setAttribute('h' .. tag, 'active', false)
+    for i = 1,24 do
+        self.UI.setAttribute(tag .. i, 'active', false)
+    end
+end

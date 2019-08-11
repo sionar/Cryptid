@@ -1,7 +1,6 @@
---Key: W - white, B - blue, G - green, D - black, T - stone, H - shack
-
 DATA =
 {
+    --Key: W - white, B - blue, G - green, D - black, T - stone, H - shack
     {--1
         clues3 = {alpha = 91, beta = nil, gamma = 12, delta = 59, epsil = nil,},
         clues4 = {alpha = 27, beta = 25, gamma = 73, delta = nil, epsil = 92,},
@@ -196,7 +195,7 @@ DATA =
     {--22
         clues3 = {alpha = nil, beta = 40, gamma = 20, delta = nil, epsil = 59,},
         clues4 = {alpha = 21, beta = nil, gamma = 45, delta = 33, epsil = 14,},
-        clues5 = {alpha = 49, beta =12 , gamma = 71, delta = 8, epsil = 94,},
+        clues5 = {alpha = 49, beta = 12 , gamma = 71, delta = 8, epsil = 94,},
         hints = {41,58,43},
         mapOrder = {4,3,6,2,1,5,},
         mapFlip = {true,false,false,false,true,false,},
@@ -344,7 +343,7 @@ DATA =
         hints = {32,22,71},
         mapOrder = {4,2,1,3,5,6,},
         mapFlip = {false,false,false,false,false,true,},
-        coord = {WT = {12,5}, WH = {10,5}, BT = {11,8}, BH = {1,7}, GT = {3,1}, GH = {7,3}, DT = {7,4}, DH = {1,2},},
+        coord = {WT = {12,5}, WH = {10,5}, BT = {11,8}, BH = {1,7}, GT = {3,1}, GH = {8,3}, DT = {7,4}, DH = {1,2},},
     },
     {--39
         clues3 = {alpha = 54, beta = 67, gamma = nil, delta = nil, epsil = 35,},

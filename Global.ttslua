@@ -6,20 +6,30 @@ Scripted by Sionar
 
 ------------------Constants
 MOD_NAME = 'Cryptid'
-VERSION = '1.0.0'
+VERSION = '1.2.1'
 DEBUG = false
+DEBUG_GAMENUM = 54
 START_MESSAGE = '[FF4040]Cryptid[-]\nA game by Hal Duncan and Ruth Veevers\n\nVersion [00FF00]' .. VERSION..'[-]\nScripted by [967BB6]Sionar[-]\n'
 COLORS = {'Red', 'Teal', 'Purple', 'Brown', 'Pink',}
 SYMBOLS = {'alpha', 'beta', 'gamma', 'delta', 'epsil'}
 MAP_POS =
-    {
-        {-6.89, 1.11, 7.89},
-        {6.89, 1.11, 7.89},
-        {-6.89, 1.11, 0.00},
-        {6.89, 1.11, 0.00},
-        {-6.89, 1.11, -7.89},
-        {6.89, 1.11, -7.89},
-    }
+{
+    {-6.89, 1.11, 7.89},
+    {6.89, 1.11, 7.89},
+    {-6.89, 1.11, 0.00},
+    {6.89, 1.11, 0.00},
+    {-6.89, 1.11, -7.89},
+    {6.89, 1.11, -7.89},
+}
+MARKER_POS =
+{
+    Red = {0,1,-20},
+    Teal = {-19.02,1,-6.18},
+    Purple = {-11.76,1,16.18},
+    Brown = {11.76,1,16.18},
+    Pink = {19.02,1,-6.18},
+}
+
 GRID_X_START = -12.68
 GRID_Z_START = 11.32
 GRID_X_SPACING = 2.3
@@ -37,6 +47,8 @@ TABLE_GUID = 'e1c8f6'
 MAP_GUIDS = {'a70047', '0137df', '38ad67', '7b30ec', '31e825', '81e81d',}
 STRUCTURE_GUIDS = {WT = '127a87', WH = 'ba505c', BT = '0df954', BH = 'a1a56c', GT = '096c34', GH = '0add33', DT = '6019a2', DH = '62ecde',}
 BAG_GUIDS = {Red = {'db017c','a46d6a'}, Teal = {'699c89','eef40a'}, Purple = {'2c47b4','9b5f69'}, Brown = {'ce8508','1f954d'}, Pink = {'37c717','ad678d'}}
+MARKER_GUID = 'a17c99'
+HELPER_GUIDS = {Red = '94f3ee', Teal = '864860', Purple = '9bc4dc', Brown = 'db9e6b', Pink = '4a9d68'}
 
 ------------------Variables
 gameNum = 1
@@ -81,6 +93,11 @@ function onLoad(saveString)
             end
         end
     end
+    obj = getObjectFromGUID(MARKER_GUID)
+    if not started then
+        obj.interactable = false
+    end
+
     obj = getObjectFromGUID(TABLE_GUID)
     if not started then
         obj.createButton({
@@ -108,6 +125,19 @@ function onLoad(saveString)
             color = {0,0,0,1},
             font_color = 'White',
             tooltip = 'Start an advanced game.',
+        })
+        obj.createButton({
+            label = 'Delete\nHelpers',
+            click_function = 'deleteHelpers',
+            function_owner = Global,
+            position = {0,0.1,0},
+            rotation = {0,180,0},
+            width = 2500,
+            height = 1000,
+            font_size = 300,
+            color = {0,0,0,1},
+            font_color = 'White',
+            tooltip = 'Delete helpers from the game.',
         })
     else
         obj.createButton({
@@ -141,6 +171,7 @@ function onLoad(saveString)
     if hintGiven then
         showHint()
     end
+    setHelperVisibility()
 end
 
 function onSave()
@@ -160,25 +191,47 @@ function onPlayerChangeColor(playerColor)
     end
 end
 
+function onPlayerTurn(player)
+    if player.color == '' then
+        return
+    end
+    local obj = getObjectFromGUID(MARKER_GUID)
+    if obj then
+        obj.setColorTint(stringColorToRGB(player.color))
+        obj.setPositionSmooth(MARKER_POS[player.color])
+        obj.interactable = true
+        obj.setLock(false)
+    end
+end
+
 function startNormalGame(clickedObject, playerColor)
-    gameNum = math.random(1,19)
+    if not DEBUG then
+        gameNum = math.random(1,19)
+    else
+        gameNum = DEBUG_GAMENUM
+    end
     startGame(clickedObject, playerColor)
 end
 
 function startAdvancedGame(clickedObject, playerColor)
-    gameNum = math.random(20,54)
+    if not DEBUG then
+        gameNum = math.random(20,54)
+    else
+        gameNum = DEBUG_GAMENUM
+    end
     startGame(clickedObject, playerColor)
 end
 
 function startGame(clickedObject, playerColor)
-    local obj, xPos, zPos, seatedPlayers, clues, index, found
+    local obj, xPos, zPos, seatedPlayers, clues, index, found, startColor, colors, tempColor
+    local turnOrder = {}
 
     if not Player[playerColor].admin then
         return
     end
 
     seatedPlayers = getSeatedPlayers()
-    if #seatedPlayers < 3 then
+    if #seatedPlayers < 3 and not DEBUG then
         printToColor('You need 3 players seated to start the game.', playerColor, {1,1,1})
         return
     end
@@ -241,7 +294,7 @@ function startGame(clickedObject, playerColor)
         tooltip = 'Reveal all of the clues.',
     })
 
-    if #seatedPlayers == 3 then
+    if #seatedPlayers == 3 or #seatedPlayers < 3 and DEBUG then
         clues = DATA[gameNum].clues3
         hint = HINTS[DATA[gameNum].hints[1]]
     elseif #seatedPlayers == 4 then
@@ -269,9 +322,24 @@ function startGame(clickedObject, playerColor)
             obj.destruct()
             obj = getObjectFromGUID(BAG_GUIDS[v][2])
             obj.destruct()
+            obj = getObjectFromGUID(HELPER_GUIDS[v])
+            obj.destruct()
         end
     end
     setClues()
+
+    index = math.random(1,#seatedPlayers)
+    startColor = seatedPlayers[index]
+    colors = Global.getTable('COLORS')
+    while colors[1] ~= startColor do
+        tempColor = table.remove(colors, 1)
+        table.insert(colors, tempColor)
+    end
+    Turns.order = colors
+    Turns.enable = false
+    Turns.enable = true
+    onPlayerTurn(Player[colors[1]])
+    hideHelperColumns()
 end
 
 function setClues()
@@ -296,4 +364,39 @@ function showHint()
     obj.UI.setValue('hint', hint)
     obj.UI.setAttribute('hint', 'active', true)
     hintGiven = true
+end
+
+function setHelperVisibility()
+    local obj
+    for k,v in pairs(COLORS) do
+        obj = getObjectFromGUID(HELPER_GUIDS[v])
+        if obj then
+            obj.UI.setAttribute('Title','visibility',v)
+            obj.UI.setAttribute('modeButton','visibility',v)
+            obj.UI.setAttribute('table','visibility',v)
+        end
+    end
+end
+
+function hideHelperColumns()
+    local obj
+    local seatedPlayers = getSeatedPlayers()
+    for k,v in pairs(COLORS) do
+        if not Player[v].seated then
+            for k1,v1 in pairs(seatedPlayers) do
+                obj = getObjectFromGUID(HELPER_GUIDS[v1])
+                obj.call('hideColumn', {color = v})
+            end
+        end
+    end
+end
+
+function deleteHelpers()
+    local obj
+    for k,v in pairs(COLORS) do
+        obj = getObjectFromGUID(HELPER_GUIDS[v])
+        if obj then
+            obj.destruct()
+        end
+    end
 end
