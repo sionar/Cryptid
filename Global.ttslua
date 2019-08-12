@@ -6,11 +6,12 @@ Scripted by Sionar
 
 ------------------Constants
 MOD_NAME = 'Cryptid'
-VERSION = '1.3.0'
+VERSION = '1.4.1'
 DEBUG = false
-DEBUG_GAMENUM = 54
+DEBUG_GAMENUM = 9
 START_MESSAGE = '[FF4040]Cryptid[-]\n\nVersion [00FF00]' .. VERSION..'[-]\nScripted by [967BB6]Sionar[-]\n'
 COLORS = {'Red', 'Teal', 'Purple', 'Brown', 'Pink',}
+TAGS = {Red = 'r', Teal = 't', Purple = 'p', Brown = 'b', Pink = 'k'}
 SYMBOLS = {'alpha', 'beta', 'gamma', 'delta', 'epsil'}
 MAP_POS =
 {
@@ -45,7 +46,7 @@ end
 
 TABLE_GUID = 'e1c8f6'
 MAP_GUIDS = {'a70047', '0137df', '38ad67', '7b30ec', '31e825', '81e81d',}
-STRUCTURE_GUIDS = {WT = '127a87', WH = 'ba505c', BT = '0df954', BH = 'a1a56c', GT = '096c34', GH = '0add33', DT = '6019a2', DH = '62ecde',}
+STRUCTURE_GUIDS = {OW = '127a87', TW = 'ba505c', OB = '0df954', TB = 'a1a56c', OG = '096c34', TG = '0add33', OD = '6019a2', TD = '62ecde',}
 BAG_GUIDS = {Red = {'db017c','a46d6a'}, Teal = {'699c89','eef40a'}, Purple = {'2c47b4','9b5f69'}, Brown = {'ce8508','1f954d'}, Pink = {'37c717','ad678d'}}
 MARKER_GUID = 'a17c99'
 HELPER_GUIDS = {Red = '94f3ee', Teal = '864860', Purple = '9bc4dc', Brown = 'db9e6b', Pink = '4a9d68'}
@@ -192,6 +193,9 @@ function onLoad(saveString)
         showHint()
     end
     setUI()
+    if started then
+        generateMap()
+    end
 end
 
 function onSave()
@@ -362,6 +366,7 @@ function startGame(clickedObject, playerColor)
     Turns.enable = true
     onPlayerTurn(Player[colors[1]])
     hideHelperColumns()
+    generateMap()
 end
 
 function setClues()
@@ -392,22 +397,12 @@ function showHint(clickedObject, playerColor)
     hintGiven = true
 end
 
-function hideHelperColumns()
-    local obj
-    local seatedPlayers = getSeatedPlayers()
-    for k,v in pairs(COLORS) do
-        if not Player[v].seated then
-            hideColumn(v)
-        end
-    end
-end
-
 function toggleChecklist(player, value, id)
     local visible = UI.getAttribute(player.color .. 'Table', 'active')
-    if visible == 'True' or visible == 'true' then
-        UI.setAttribute(player.color .. 'Table', 'active', false)
+    if visible == 'true' then
+        UI.setAttribute(player.color .. 'Table', 'active', 'false')
     else
-        UI.setAttribute(player.color .. 'Table', 'active', true)
+        UI.setAttribute(player.color .. 'Table', 'active', 'true')
     end
 end
 
@@ -444,12 +439,10 @@ end
 
 function setUI()
     local id, buttonColor, text
-    local tags = {Red = 'r', Teal = 't', Purple = 'p', Brown = 'b', Pink = 'k'}
-
     for k,v in pairs(checklists) do
         for k1,v1 in pairs(v) do
             for tag,value in pairs(v1) do
-                id = tags[k] .. tag .. k1
+                id = TAGS[k] .. tag .. k1
                 if value == 1 then
                     buttonColor = "#E6E42B"
                     text = "Maybe"
@@ -467,13 +460,119 @@ function setUI()
     end
 end
 
-function hideColumn(color)
-    local tags = {Red = 'r', Teal = 't', Purple = 'p', Brown = 'b', Pink = 'k'}
+function hideHelperColumns()
+    local obj
+    local seatedPlayers = getSeatedPlayers()
+    local index
+    if #seatedPlayers == 4 then
+        hideColumn('Red')
+    elseif #seatedPlayers == 3 then
+        hideColumn('Red')
+        hideColumn('Teal')
+    end
 
     for k,v in pairs(COLORS) do
-        UI.setAttribute(tags[v] .. 'h' .. tags[color], 'active', false)
+        index = 6 - #seatedPlayers
+        for k1,v1 in pairs(seatedPlayers) do
+            UI.setAttribute(TAGS[v]..'h'..TAGS[COLORS[index]], 'text', v1 )
+            UI.setAttribute(TAGS[v]..'h'..TAGS[COLORS[index]], 'color', v1 )
+            index = index + 1
+        end
+    end
+end
+
+function hideColumn(color)
+    for k,v in pairs(COLORS) do
+        UI.setAttribute(TAGS[v] .. 'h' .. TAGS[color], 'active', false)
         for i = 1,24 do
-            UI.setAttribute(tags[v] .. tags[color] .. i, 'active', false)
+            UI.setAttribute(TAGS[v] .. TAGS[color] .. i, 'active', false)
+        end
+    end
+end
+
+function generateMap()
+    local first, last, direction, x, y, step, terrain
+    local xstart = 1
+    local ystart = 1
+    for k,v in pairs(COLORS) do
+        for i1 = 1,6 do
+            if not DATA[gameNum].mapFlip[i1] then
+                first = 1
+                last = 18
+                direction = 1
+            else
+                first = 18
+                last = 1
+                direction = -1
+            end
+            xstart = 1 + 6 * ((i1-1)%2)
+            ystart = 1 + math.floor((i1-1)/2) * 3
+            step = 1
+            for i2 = first, last, direction do
+                x = xstart + math.floor((step-1)/3)
+                y = ystart + (step-1)%3
+                terrain = getTerrain(x,y)
+                UI.setAttribute(TAGS[v]..x..y, 'image', MAP[DATA[gameNum].mapOrder[i1]][i2] .. terrain)
+                if COUGAR[DATA[gameNum].mapOrder[i1]][i2] == 1 then
+                    UI.setAttribute(TAGS[v]..'a'..x..y, 'image', 'Cougar')
+                    UI.setAttribute(TAGS[v]..'a'..x..y, 'active', true)
+                end
+                if BEAR[DATA[gameNum].mapOrder[i1]][i2] == 1 then
+                    UI.setAttribute(TAGS[v]..'a'..x..y, 'image', 'Bear')
+                    UI.setAttribute(TAGS[v]..'a'..x..y, 'active', true)
+                end
+                step = step + 1
+            end
+        end
+    end
+end
+
+function getTerrain(x,y)
+    local coordinates = DATA[gameNum].coord
+    for k,v in pairs(coordinates) do
+        if x == v[1] and y == v[2] then
+            return k
+        end
+    end
+    return 'NN'
+end
+
+function changeHexColor(player, value, id)
+    if UI.getAttribute(id, 'color') ~= '#404040' then
+        UI.setAttribute(id, 'color', '#404040')
+    else
+        UI.setAttribute(id, 'color', '#FFFFFF')
+    end
+end
+
+function toggleMap(player, value, id)
+    if not started then
+        return
+    end
+    local visible = UI.getAttribute(TAGS[player.color] .. 'col1', 'active')
+    if visible == 'true' then
+        for i = 1,12 do
+            UI.setAttribute(TAGS[player.color] .. 'col' .. i, 'active', 'false')
+            UI.setAttribute(TAGS[player.color] .. 'Invert', 'active', 'false')
+        end
+    else
+        for i = 1,12 do
+            UI.setAttribute(TAGS[player.color] .. 'col' .. i, 'active', 'true')
+            UI.setAttribute(TAGS[player.color] .. 'Invert', 'active', 'true')
+        end
+    end
+end
+
+function invertMap(player, value, id)
+    local iden
+    for i = 1, 12 do
+        for j = 1,9 do
+            iden = TAGS[player.color] .. i .. j
+            if UI.getAttribute(iden, 'color') ~= '#404040' then
+                UI.setAttribute(iden, 'color', '#404040')
+            else
+                UI.setAttribute(iden, 'color', '#FFFFFF')
+            end
         end
     end
 end
