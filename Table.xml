@@ -1,0 +1,39 @@
+<Defaults>
+    <Text class = "clue" fontSize = "80" outline = "#000000" outlineSize = "1 1" active = "false"/>
+</Defaults>
+
+<Text
+    class = "clue" id = "redClue" color = "#DA1917" visibility = "Red|Black"
+    position = "0 -2750 -5" rotation = "0 0 0"
+    >Test
+</Text>
+
+<Text
+    class = "clue" id = "tealClue" color = "#20B09A" visibility = "Teal|Black"
+    position = "-2615 -850 -5" rotation = "0 0 -72"
+    >Test
+</Text>
+
+<Text
+    class = "clue" id = "purpleClue" color = "#9F1FEF" visibility = "Purple|Black"
+    position = "-1616 2225 -5" rotation = "0 0 -144"
+    >Test
+</Text>
+
+<Text
+    class = "clue" id = "brownClue" color = "#703A16" visibility = "Brown|Black"
+    position = "1616 2225 -5" rotation = "0 0 -216"
+    >Test
+</Text>
+
+<Text
+    class = "clue" id = "pinkClue" color = "#F46FCD" visibility = "Pink|Black"
+    position = "2615 -850 -5" rotation = "0 0 -288"
+    >Test
+</Text>
+
+<Text
+    class = "clue" id = "hint" color = "#FFFFFF"
+    position = "0 -1400 -5" rotation = "0 0 0"
+    >Hint
+</Text>

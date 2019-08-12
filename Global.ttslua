@@ -6,10 +6,10 @@ Scripted by Sionar
 
 ------------------Constants
 MOD_NAME = 'Cryptid'
-VERSION = '1.2.1'
+VERSION = '1.3.0'
 DEBUG = false
 DEBUG_GAMENUM = 54
-START_MESSAGE = '[FF4040]Cryptid[-]\nA game by Hal Duncan and Ruth Veevers\n\nVersion [00FF00]' .. VERSION..'[-]\nScripted by [967BB6]Sionar[-]\n'
+START_MESSAGE = '[FF4040]Cryptid[-]\n\nVersion [00FF00]' .. VERSION..'[-]\nScripted by [967BB6]Sionar[-]\n'
 COLORS = {'Red', 'Teal', 'Purple', 'Brown', 'Pink',}
 SYMBOLS = {'alpha', 'beta', 'gamma', 'delta', 'epsil'}
 MAP_POS =
@@ -56,6 +56,37 @@ players = {}
 started = false
 hintGiven = false
 hint = ''
+mode = 'normal'
+checklists = {}
+for k,v in pairs(COLORS) do
+    checklists[v] =
+    {
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+        {r = 1, t = 1, p = 1, b = 1, k = 1},
+    }
+end
 
 
 ------------------Functions
@@ -68,6 +99,8 @@ function onLoad(saveString)
         started = save['s']
         hintGiven = save['hg']
         hint = save['h']
+        mode = save['m']
+        checklists = save['c']
     end
     math.randomseed(os.time())
     local obj
@@ -126,19 +159,6 @@ function onLoad(saveString)
             font_color = 'White',
             tooltip = 'Start an advanced game.',
         })
-        obj.createButton({
-            label = 'Delete\nHelpers',
-            click_function = 'deleteHelpers',
-            function_owner = Global,
-            position = {0,0.1,0},
-            rotation = {0,180,0},
-            width = 2500,
-            height = 1000,
-            font_size = 300,
-            color = {0,0,0,1},
-            font_color = 'White',
-            tooltip = 'Delete helpers from the game.',
-        })
     else
         obj.createButton({
             label = 'Show Hint',
@@ -171,7 +191,7 @@ function onLoad(saveString)
     if hintGiven then
         showHint()
     end
-    setHelperVisibility()
+    setUI()
 end
 
 function onSave()
@@ -181,6 +201,8 @@ function onSave()
     save['s'] = started
     save['hg'] = hintGiven
     save['h'] = hint
+    save['m'] = mode
+    save['c'] = checklists
     local saveString = JSON.encode(save)
     return saveString
 end
@@ -207,6 +229,7 @@ end
 function startNormalGame(clickedObject, playerColor)
     if not DEBUG then
         gameNum = math.random(1,19)
+        mode = 'normal'
     else
         gameNum = DEBUG_GAMENUM
     end
@@ -216,6 +239,7 @@ end
 function startAdvancedGame(clickedObject, playerColor)
     if not DEBUG then
         gameNum = math.random(20,54)
+        mode = 'advanced'
     else
         gameNum = DEBUG_GAMENUM
     end
@@ -322,8 +346,6 @@ function startGame(clickedObject, playerColor)
             obj.destruct()
             obj = getObjectFromGUID(BAG_GUIDS[v][2])
             obj.destruct()
-            obj = getObjectFromGUID(HELPER_GUIDS[v])
-            obj.destruct()
         end
     end
     setClues()
@@ -351,31 +373,23 @@ function setClues()
 end
 
 function revealClues(clickedObject, playerColor)
-    if Player[playerColor].admin then
-        local obj = getObjectFromGUID(TABLE_GUID)
-        for k,v in pairs(players) do
-            obj.UI.setAttribute(v.color..'Clue', 'visibility', '' )
-        end
+    if not Player[playerColor].admin then
+        return
+    end
+    local obj = getObjectFromGUID(TABLE_GUID)
+    for k,v in pairs(players) do
+        obj.UI.setAttribute(v.color..'Clue', 'visibility', '' )
     end
 end
 
-function showHint()
+function showHint(clickedObject, playerColor)
+    if not Player[playerColor].admin then
+        return
+    end
     local obj = getObjectFromGUID(TABLE_GUID)
     obj.UI.setValue('hint', hint)
     obj.UI.setAttribute('hint', 'active', true)
     hintGiven = true
-end
-
-function setHelperVisibility()
-    local obj
-    for k,v in pairs(COLORS) do
-        obj = getObjectFromGUID(HELPER_GUIDS[v])
-        if obj then
-            obj.UI.setAttribute('Title','visibility',v)
-            obj.UI.setAttribute('modeButton','visibility',v)
-            obj.UI.setAttribute('table','visibility',v)
-        end
-    end
 end
 
 function hideHelperColumns()
@@ -383,20 +397,83 @@ function hideHelperColumns()
     local seatedPlayers = getSeatedPlayers()
     for k,v in pairs(COLORS) do
         if not Player[v].seated then
-            for k1,v1 in pairs(seatedPlayers) do
-                obj = getObjectFromGUID(HELPER_GUIDS[v1])
-                obj.call('hideColumn', {color = v})
+            hideColumn(v)
+        end
+    end
+end
+
+function toggleChecklist(player, value, id)
+    local visible = UI.getAttribute(player.color .. 'Table', 'active')
+    if visible == 'True' or visible == 'true' then
+        UI.setAttribute(player.color .. 'Table', 'active', false)
+    else
+        UI.setAttribute(player.color .. 'Table', 'active', true)
+    end
+end
+
+function buttonState(player, value, id)
+    local color = string.sub(id,2,2)
+    local clue = tonumber(string.sub(id,3,string.len(id)))
+    local currentState = checklists[player.color][clue][color]
+    local buttonColor, text
+
+    if mode == 'normal' and currentState == 1 then
+        currentState = 3
+    else
+        currentState = currentState + 1
+    end
+
+    if currentState == 4 then
+        currentState = 1
+    end
+    if currentState == 1 then
+        buttonColor = "#E6E42B"
+        text = "Maybe"
+    elseif currentState == 2 then
+        buttonColor = "#F3631C"
+        text = "Inverse"
+    elseif currentState == 3 then
+        buttonColor = "#DA1917"
+        text = "No"
+    end
+    checklists[player.color][clue][color] = currentState
+
+    UI.setAttribute(id, 'color', buttonColor)
+    UI.setAttribute(id, 'text', text)
+end
+
+function setUI()
+    local id, buttonColor, text
+    local tags = {Red = 'r', Teal = 't', Purple = 'p', Brown = 'b', Pink = 'k'}
+
+    for k,v in pairs(checklists) do
+        for k1,v1 in pairs(v) do
+            for tag,value in pairs(v1) do
+                id = tags[k] .. tag .. k1
+                if value == 1 then
+                    buttonColor = "#E6E42B"
+                    text = "Maybe"
+                elseif value == 2 then
+                    buttonColor = "#F3631C"
+                    text = "Inverse"
+                elseif value == 3 then
+                    buttonColor = "#DA1917"
+                    text = "No"
+                end
+                UI.setAttribute(id, 'color', buttonColor)
+                UI.setAttribute(id, 'text', text)
             end
         end
     end
 end
 
-function deleteHelpers()
-    local obj
+function hideColumn(color)
+    local tags = {Red = 'r', Teal = 't', Purple = 'p', Brown = 'b', Pink = 'k'}
+
     for k,v in pairs(COLORS) do
-        obj = getObjectFromGUID(HELPER_GUIDS[v])
-        if obj then
-            obj.destruct()
+        UI.setAttribute(tags[v] .. 'h' .. tags[color], 'active', false)
+        for i = 1,24 do
+            UI.setAttribute(tags[v] .. tags[color] .. i, 'active', false)
         end
     end
 end

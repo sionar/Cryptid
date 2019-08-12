@@ -1,76 +1,1170 @@
-<Text
-    id="redClue"
-    color="#DA1917"
-    fontSize="80"
-    position="0 -2750 -5"
-    rotation="0 0 0"
-    visibility = "Red|Black"
-    active = "false"
-    outline="#000000"
-    outlineSize="1 1"
-    >Test
-</Text>
+<Defaults>
+    <Text class = "header" active = "true" fontSize = "10" color = "#ffffff" fontStyle="bold"/>
+    <Text class = "clue" fontSize = "15" color = "#ffffff" />
+    <Button class = "button" active = "true" fontSize = "10" onClick = "buttonState"/>
+    <TableLayout class = "table" width = "600" height = "525" columnWidths = "375 45 45 45 45 45" active = "false" rectAlignment = "MiddleRight"/>
+</Defaults>
 
-<Text
-    id="tealClue"
-    color="#20B09A"
-    fontSize="80"
-    position="-2615 -850 -5"
-    rotation="0 0 -72"
-    visibility = "Teal|Black"
-    active = "false"
-    outline="#000000"
-    outlineSize="1 1"
-    >Test
-</Text>
+<Button
+    id = "modeButton"
+    rectAlignment = "LowerRight"
+    onClick = "toggleChecklist"
+    fontSize = "20"
+    width = "200"
+    height = "50"
+    colors = "#FFFFFF80|#FFFFFFFF|#FFFFFF60|#FFFFFF80"
+    offsetXY = "0 200"
+    visibility = "Red|Teal|Purple|Brown|Pink"
+    >Toggle Checklist
+</Button>
 
-<Text
-    id="purpleClue"
-    color="#9F1FEF"
-    fontSize="80"
-    position="-1616 2225 -5"
-    rotation="0 0 -144"
-    visibility = "Purple|Black"
-    active = "false"
-    outline="#000000"
-    outlineSize="1 1"
-    >Test
-</Text>
+<TableLayout
+    class = "table"
+    id = "RedTable"
+    visibility = "Red"
+    >
+    <Row>
+        <Cell><Text class = "header" color = "#FFFFFF">Clue</Text></Cell>
+        <Cell><Text class = "header" color = "#DA1917" id = "rhr">Red</Text></Cell>
+        <Cell><Text class = "header" color = "#20B09A" id = "rht">Teal</Text></Cell>
+        <Cell><Text class = "header" color = "#9F1FEF" id = "rhp">Purple</Text></Cell>
+        <Cell><Text class = "header" color = "#703A16" id = "rhb">Brown</Text></Cell>
+        <Cell><Text class = "header" color = "#F46FCD" id = "rhk">Pink</Text></Cell>
+    </Row>
 
-<Text
-    id="brownClue"
-    color="#703A16"
-    fontSize="80"
-    position="1616 2225 -5"
-    rotation="0 0 -216"
-    visibility = "Brown|Black"
-    active = "false"
-    outline="#000000"
-    outlineSize="1 1"
-    >Test
-</Text>
+    <Row>
+        <Cell><Text class = "clue" id = "rc1">On forest or desert</Text></Cell>
+        <Cell><Button class = "button" id = "rr1">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt1">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp1">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb1">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk1">Maybe</Button></Cell>
+    </Row>
 
-<Text
-    id="pinkClue"
-    color="#F46FCD"
-    fontSize="80"
-    position="2615 -850 -5"
-    rotation="0 0 -288"
-    visibility = "Pink|Black"
-    active = "false"
-    outline="#000000"
-    outlineSize="1 1"
-    >Test
-</Text>
+    <Row>
+        <Cell><Text class = "clue" id = "rc2">On forest or water</Text></Cell>
+        <Cell><Button class = "button" id = "rr2">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt2">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp2">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb2">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk2">Maybe</Button></Cell>
+    </Row>
 
-<Text
-    id="hint"
-    color="#FFFFFF"
-    fontSize="80"
-    position="0 -1400 -5"
-    rotation="0 0 0"
-    active = "false"
-    outline="#000000"
-    outlineSize="1 1"
-    >Hint
-</Text>
+    <Row>
+        <Cell><Text class = "clue" id = "rc3">On forest or swamp</Text></Cell>
+        <Cell><Button class = "button" id = "rr3">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt3">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp3">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb3">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk3">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "rc4">On forest or mountain</Text></Cell>
+        <Cell><Button class = "button" id = "rr4">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt4">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp4">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb4">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk4">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "rc5">On desert or water</Text></Cell>
+        <Cell><Button class = "button" id = "rr5">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt5">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp5">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb5">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk5">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "rc6">On desert or swamp</Text></Cell>
+        <Cell><Button class = "button" id = "rr6">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt6">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp6">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb6">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk6">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "rc7">On desert or mountain</Text></Cell>
+        <Cell><Button class = "button" id = "rr7">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt7">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp7">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb7">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk7">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "rc8">On water or swamp</Text></Cell>
+        <Cell><Button class = "button" id = "rr8">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt8">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp8">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb8">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk8">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "rc9">On water or mountain</Text></Cell>
+        <Cell><Button class = "button" id = "rr9">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt9">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp9">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb9">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk9">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "rc10">On swamp or mountain</Text></Cell>
+        <Cell><Button class = "button" id = "rr10">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt10">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp10">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb10">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk10">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "rc11">Within one space of forest</Text></Cell>
+        <Cell><Button class = "button" id = "rr11">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt11">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp11">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb11">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk11">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "rc12">Within one space of desert</Text></Cell>
+        <Cell><Button class = "button" id = "rr12">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt12">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp12">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb12">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk12">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "rc13">Within one space of swamp</Text></Cell>
+        <Cell><Button class = "button" id = "rr13">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt13">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp13">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb13">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk13">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "rc14">Within one space of mountain</Text></Cell>
+        <Cell><Button class = "button" id = "rr14">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt14">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp14">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb14">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk14">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "rc15">Within one space of water</Text></Cell>
+        <Cell><Button class = "button" id = "rr15">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt15">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp15">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb15">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk15">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "rc16">Within one space of either animal territory</Text></Cell>
+        <Cell><Button class = "button" id = "rr16">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt16">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp16">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb16">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk16">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "rc17">Within two spaces of a standing stone</Text></Cell>
+        <Cell><Button class = "button" id = "rr17">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt17">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp17">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb17">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk17">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "rc18">Within two spaces of an abandoned shack</Text></Cell>
+        <Cell><Button class = "button" id = "rr18">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt18">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp18">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb18">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk18">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "rc19">Within two spaces of bear territory</Text></Cell>
+        <Cell><Button class = "button" id = "rr19">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt19">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp19">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb19">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk19">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "rc20">Within two spaces of cougar territory</Text></Cell>
+        <Cell><Button class = "button" id = "rr20">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt20">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp20">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb20">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk20">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "rc21">Within three spaces of a white structure</Text></Cell>
+        <Cell><Button class = "button" id = "rr21">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt21">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp21">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb21">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk21">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "rc22">Within three spaces of a blue structure</Text></Cell>
+        <Cell><Button class = "button" id = "rr22">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt22">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp22">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb22">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk22">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "rc23">Within three spaces of a green structure</Text></Cell>
+        <Cell><Button class = "button" id = "rr23">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt23">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp23">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb23">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk23">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "rc24">Within three spaces of a black structure</Text></Cell>
+        <Cell><Button class = "button" id = "rr24">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rt24">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rp24">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rb24">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "rk24">Maybe</Button></Cell>
+    </Row>
+</TableLayout>
+<TableLayout
+    class = "table"
+    id = "TealTable"
+    visibility = "Teal"
+    >
+    <Row>
+        <Cell><Text class = "header" color = "#FFFFFF">Clue</Text></Cell>
+        <Cell><Text class = "header" color = "#DA1917" id = "thr">Red</Text></Cell>
+        <Cell><Text class = "header" color = "#20B09A" id = "tht">Teal</Text></Cell>
+        <Cell><Text class = "header" color = "#9F1FEF" id = "thp">Purple</Text></Cell>
+        <Cell><Text class = "header" color = "#703A16" id = "thb">Brown</Text></Cell>
+        <Cell><Text class = "header" color = "#F46FCD" id = "thk">Pink</Text></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc1">On forest or desert</Text></Cell>
+        <Cell><Button class = "button" id = "tr1">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt1">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp1">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb1">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk1">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc2">On forest or water</Text></Cell>
+        <Cell><Button class = "button" id = "tr2">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt2">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp2">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb2">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk2">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc3">On forest or swamp</Text></Cell>
+        <Cell><Button class = "button" id = "tr3">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt3">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp3">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb3">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk3">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc4">On forest or mountain</Text></Cell>
+        <Cell><Button class = "button" id = "tr4">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt4">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp4">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb4">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk4">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc5">On desert or water</Text></Cell>
+        <Cell><Button class = "button" id = "tr5">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt5">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp5">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb5">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk5">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc6">On desert or swamp</Text></Cell>
+        <Cell><Button class = "button" id = "tr6">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt6">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp6">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb6">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk6">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc7">On desert or mountain</Text></Cell>
+        <Cell><Button class = "button" id = "tr7">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt7">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp7">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb7">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk7">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc8">On water or swamp</Text></Cell>
+        <Cell><Button class = "button" id = "tr8">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt8">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp8">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb8">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk8">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc9">On water or mountain</Text></Cell>
+        <Cell><Button class = "button" id = "tr9">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt9">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp9">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb9">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk9">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc10">On swamp or mountain</Text></Cell>
+        <Cell><Button class = "button" id = "tr10">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt10">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp10">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb10">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk10">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc11">Within one space of forest</Text></Cell>
+        <Cell><Button class = "button" id = "tr11">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt11">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp11">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb11">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk11">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc12">Within one space of desert</Text></Cell>
+        <Cell><Button class = "button" id = "tr12">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt12">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp12">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb12">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk12">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc13">Within one space of swamp</Text></Cell>
+        <Cell><Button class = "button" id = "tr13">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt13">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp13">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb13">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk13">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc14">Within one space of mountain</Text></Cell>
+        <Cell><Button class = "button" id = "tr14">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt14">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp14">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb14">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk14">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc15">Within one space of water</Text></Cell>
+        <Cell><Button class = "button" id = "tr15">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt15">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp15">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb15">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk15">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc16">Within one space of either animal territory</Text></Cell>
+        <Cell><Button class = "button" id = "tr16">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt16">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp16">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb16">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk16">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc17">Within two spaces of a standing stone</Text></Cell>
+        <Cell><Button class = "button" id = "tr17">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt17">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp17">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb17">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk17">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc18">Within two spaces of an abandoned shack</Text></Cell>
+        <Cell><Button class = "button" id = "tr18">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt18">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp18">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb18">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk18">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc19">Within two spaces of bear territory</Text></Cell>
+        <Cell><Button class = "button" id = "tr19">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt19">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp19">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb19">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk19">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc20">Within two spaces of cougar territory</Text></Cell>
+        <Cell><Button class = "button" id = "tr20">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt20">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp20">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb20">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk20">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc21">Within three spaces of a white structure</Text></Cell>
+        <Cell><Button class = "button" id = "tr21">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt21">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp21">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb21">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk21">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc22">Within three spaces of a blue structure</Text></Cell>
+        <Cell><Button class = "button" id = "tr22">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt22">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp22">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb22">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk22">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc23">Within three spaces of a green structure</Text></Cell>
+        <Cell><Button class = "button" id = "tr23">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt23">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp23">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb23">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk23">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "tc24">Within three spaces of a black structure</Text></Cell>
+        <Cell><Button class = "button" id = "tr24">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tt24">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tp24">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tb24">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "tk24">Maybe</Button></Cell>
+    </Row>
+</TableLayout>
+<TableLayout
+    class = "table"
+    id = "PurpleTable"
+    visibility = "Purple"
+    >
+    <Row>
+        <Cell><Text class = "header" color = "#FFFFFF">Clue</Text></Cell>
+        <Cell><Text class = "header" color = "#DA1917" id = "phr">Red</Text></Cell>
+        <Cell><Text class = "header" color = "#20B09A" id = "pht">Teal</Text></Cell>
+        <Cell><Text class = "header" color = "#9F1FEF" id = "php">Purple</Text></Cell>
+        <Cell><Text class = "header" color = "#703A16" id = "phb">Brown</Text></Cell>
+        <Cell><Text class = "header" color = "#F46FCD" id = "phk">Pink</Text></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc1">On forest or desert</Text></Cell>
+        <Cell><Button class = "button" id = "pr1">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt1">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp1">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb1">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk1">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc2">On forest or water</Text></Cell>
+        <Cell><Button class = "button" id = "pr2">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt2">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp2">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb2">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk2">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc3">On forest or swamp</Text></Cell>
+        <Cell><Button class = "button" id = "pr3">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt3">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp3">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb3">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk3">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc4">On forest or mountain</Text></Cell>
+        <Cell><Button class = "button" id = "pr4">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt4">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp4">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb4">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk4">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc5">On desert or water</Text></Cell>
+        <Cell><Button class = "button" id = "pr5">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt5">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp5">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb5">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk5">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc6">On desert or swamp</Text></Cell>
+        <Cell><Button class = "button" id = "pr6">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt6">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp6">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb6">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk6">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc7">On desert or mountain</Text></Cell>
+        <Cell><Button class = "button" id = "pr7">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt7">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp7">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb7">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk7">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc8">On water or swamp</Text></Cell>
+        <Cell><Button class = "button" id = "pr8">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt8">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp8">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb8">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk8">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc9">On water or mountain</Text></Cell>
+        <Cell><Button class = "button" id = "pr9">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt9">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp9">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb9">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk9">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc10">On swamp or mountain</Text></Cell>
+        <Cell><Button class = "button" id = "pr10">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt10">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp10">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb10">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk10">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc11">Within one space of forest</Text></Cell>
+        <Cell><Button class = "button" id = "pr11">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt11">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp11">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb11">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk11">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc12">Within one space of desert</Text></Cell>
+        <Cell><Button class = "button" id = "pr12">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt12">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp12">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb12">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk12">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc13">Within one space of swamp</Text></Cell>
+        <Cell><Button class = "button" id = "pr13">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt13">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp13">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb13">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk13">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc14">Within one space of mountain</Text></Cell>
+        <Cell><Button class = "button" id = "pr14">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt14">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp14">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb14">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk14">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc15">Within one space of water</Text></Cell>
+        <Cell><Button class = "button" id = "pr15">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt15">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp15">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb15">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk15">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc16">Within one space of either animal territory</Text></Cell>
+        <Cell><Button class = "button" id = "pr16">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt16">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp16">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb16">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk16">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc17">Within two spaces of a standing stone</Text></Cell>
+        <Cell><Button class = "button" id = "pr17">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt17">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp17">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb17">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk17">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc18">Within two spaces of an abandoned shack</Text></Cell>
+        <Cell><Button class = "button" id = "pr18">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt18">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp18">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb18">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk18">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc19">Within two spaces of bear territory</Text></Cell>
+        <Cell><Button class = "button" id = "pr19">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt19">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp19">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb19">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk19">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc20">Within two spaces of cougar territory</Text></Cell>
+        <Cell><Button class = "button" id = "pr20">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt20">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp20">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb20">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk20">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc21">Within three spaces of a white structure</Text></Cell>
+        <Cell><Button class = "button" id = "pr21">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt21">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp21">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb21">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk21">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc22">Within three spaces of a blue structure</Text></Cell>
+        <Cell><Button class = "button" id = "pr22">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt22">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp22">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb22">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk22">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc23">Within three spaces of a green structure</Text></Cell>
+        <Cell><Button class = "button" id = "pr23">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt23">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp23">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb23">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk23">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "pc24">Within three spaces of a black structure</Text></Cell>
+        <Cell><Button class = "button" id = "pr24">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pt24">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pp24">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pb24">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "pk24">Maybe</Button></Cell>
+    </Row>
+</TableLayout>
+<TableLayout
+    class = "table"
+    id = "BrownTable"
+    visibility = "Brown"
+    >
+    <Row>
+        <Cell><Text class = "header" color = "#FFFFFF">Clue</Text></Cell>
+        <Cell><Text class = "header" color = "#DA1917" id = "bhr">Red</Text></Cell>
+        <Cell><Text class = "header" color = "#20B09A" id = "bht">Teal</Text></Cell>
+        <Cell><Text class = "header" color = "#9F1FEF" id = "bhp">Purple</Text></Cell>
+        <Cell><Text class = "header" color = "#703A16" id = "bhb">Brown</Text></Cell>
+        <Cell><Text class = "header" color = "#F46FCD" id = "bhk">Pink</Text></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc1">On forest or desert</Text></Cell>
+        <Cell><Button class = "button" id = "br1">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt1">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp1">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb1">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk1">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc2">On forest or water</Text></Cell>
+        <Cell><Button class = "button" id = "br2">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt2">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp2">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb2">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk2">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc3">On forest or swamp</Text></Cell>
+        <Cell><Button class = "button" id = "br3">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt3">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp3">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb3">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk3">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc4">On forest or mountain</Text></Cell>
+        <Cell><Button class = "button" id = "br4">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt4">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp4">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb4">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk4">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc5">On desert or water</Text></Cell>
+        <Cell><Button class = "button" id = "br5">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt5">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp5">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb5">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk5">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc6">On desert or swamp</Text></Cell>
+        <Cell><Button class = "button" id = "br6">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt6">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp6">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb6">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk6">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc7">On desert or mountain</Text></Cell>
+        <Cell><Button class = "button" id = "br7">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt7">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp7">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb7">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk7">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc8">On water or swamp</Text></Cell>
+        <Cell><Button class = "button" id = "br8">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt8">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp8">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb8">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk8">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc9">On water or mountain</Text></Cell>
+        <Cell><Button class = "button" id = "br9">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt9">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp9">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb9">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk9">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc10">On swamp or mountain</Text></Cell>
+        <Cell><Button class = "button" id = "br10">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt10">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp10">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb10">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk10">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc11">Within one space of forest</Text></Cell>
+        <Cell><Button class = "button" id = "br11">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt11">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp11">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb11">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk11">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc12">Within one space of desert</Text></Cell>
+        <Cell><Button class = "button" id = "br12">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt12">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp12">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb12">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk12">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc13">Within one space of swamp</Text></Cell>
+        <Cell><Button class = "button" id = "br13">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt13">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp13">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb13">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk13">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc14">Within one space of mountain</Text></Cell>
+        <Cell><Button class = "button" id = "br14">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt14">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp14">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb14">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk14">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc15">Within one space of water</Text></Cell>
+        <Cell><Button class = "button" id = "br15">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt15">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp15">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb15">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk15">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc16">Within one space of either animal territory</Text></Cell>
+        <Cell><Button class = "button" id = "br16">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt16">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp16">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb16">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk16">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc17">Within two spaces of a standing stone</Text></Cell>
+        <Cell><Button class = "button" id = "br17">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt17">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp17">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb17">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk17">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc18">Within two spaces of an abandoned shack</Text></Cell>
+        <Cell><Button class = "button" id = "br18">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt18">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp18">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb18">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk18">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc19">Within two spaces of bear territory</Text></Cell>
+        <Cell><Button class = "button" id = "br19">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt19">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp19">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb19">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk19">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc20">Within two spaces of cougar territory</Text></Cell>
+        <Cell><Button class = "button" id = "br20">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt20">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp20">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb20">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk20">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc21">Within three spaces of a white structure</Text></Cell>
+        <Cell><Button class = "button" id = "br21">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt21">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp21">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb21">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk21">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc22">Within three spaces of a blue structure</Text></Cell>
+        <Cell><Button class = "button" id = "br22">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt22">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp22">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb22">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk22">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc23">Within three spaces of a green structure</Text></Cell>
+        <Cell><Button class = "button" id = "br23">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt23">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp23">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb23">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk23">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "bc24">Within three spaces of a black structure</Text></Cell>
+        <Cell><Button class = "button" id = "br24">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bt24">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bp24">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bb24">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "bk24">Maybe</Button></Cell>
+    </Row>
+</TableLayout>
+<TableLayout
+    class = "table"
+    id = "PinkTable"
+    visibility = "Pink"
+    >
+    <Row>
+        <Cell><Text class = "header" color = "#FFFFFF">Clue</Text></Cell>
+        <Cell><Text class = "header" color = "#DA1917" id = "khr">Red</Text></Cell>
+        <Cell><Text class = "header" color = "#20B09A" id = "kht">Teal</Text></Cell>
+        <Cell><Text class = "header" color = "#9F1FEF" id = "khp">Purple</Text></Cell>
+        <Cell><Text class = "header" color = "#703A16" id = "khb">Brown</Text></Cell>
+        <Cell><Text class = "header" color = "#F46FCD" id = "khk">Pink</Text></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc1">On forest or desert</Text></Cell>
+        <Cell><Button class = "button" id = "kr1">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt1">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp1">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb1">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk1">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc2">On forest or water</Text></Cell>
+        <Cell><Button class = "button" id = "kr2">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt2">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp2">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb2">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk2">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc3">On forest or swamp</Text></Cell>
+        <Cell><Button class = "button" id = "kr3">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt3">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp3">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb3">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk3">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc4">On forest or mountain</Text></Cell>
+        <Cell><Button class = "button" id = "kr4">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt4">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp4">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb4">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk4">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc5">On desert or water</Text></Cell>
+        <Cell><Button class = "button" id = "kr5">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt5">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp5">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb5">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk5">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc6">On desert or swamp</Text></Cell>
+        <Cell><Button class = "button" id = "kr6">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt6">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp6">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb6">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk6">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc7">On desert or mountain</Text></Cell>
+        <Cell><Button class = "button" id = "kr7">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt7">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp7">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb7">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk7">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc8">On water or swamp</Text></Cell>
+        <Cell><Button class = "button" id = "kr8">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt8">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp8">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb8">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk8">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc9">On water or mountain</Text></Cell>
+        <Cell><Button class = "button" id = "kr9">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt9">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp9">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb9">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk9">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc10">On swamp or mountain</Text></Cell>
+        <Cell><Button class = "button" id = "kr10">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt10">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp10">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb10">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk10">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc11">Within one space of forest</Text></Cell>
+        <Cell><Button class = "button" id = "kr11">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt11">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp11">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb11">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk11">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc12">Within one space of desert</Text></Cell>
+        <Cell><Button class = "button" id = "kr12">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt12">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp12">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb12">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk12">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc13">Within one space of swamp</Text></Cell>
+        <Cell><Button class = "button" id = "kr13">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt13">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp13">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb13">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk13">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc14">Within one space of mountain</Text></Cell>
+        <Cell><Button class = "button" id = "kr14">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt14">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp14">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb14">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk14">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc15">Within one space of water</Text></Cell>
+        <Cell><Button class = "button" id = "kr15">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt15">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp15">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb15">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk15">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc16">Within one space of either animal territory</Text></Cell>
+        <Cell><Button class = "button" id = "kr16">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt16">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp16">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb16">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk16">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc17">Within two spaces of a standing stone</Text></Cell>
+        <Cell><Button class = "button" id = "kr17">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt17">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp17">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb17">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk17">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc18">Within two spaces of an abandoned shack</Text></Cell>
+        <Cell><Button class = "button" id = "kr18">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt18">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp18">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb18">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk18">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc19">Within two spaces of bear territory</Text></Cell>
+        <Cell><Button class = "button" id = "kr19">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt19">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp19">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb19">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk19">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc20">Within two spaces of cougar territory</Text></Cell>
+        <Cell><Button class = "button" id = "kr20">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt20">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp20">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb20">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk20">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc21">Within three spaces of a white structure</Text></Cell>
+        <Cell><Button class = "button" id = "kr21">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt21">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp21">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb21">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk21">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc22">Within three spaces of a blue structure</Text></Cell>
+        <Cell><Button class = "button" id = "kr22">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt22">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp22">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb22">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk22">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc23">Within three spaces of a green structure</Text></Cell>
+        <Cell><Button class = "button" id = "kr23">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt23">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp23">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb23">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk23">Maybe</Button></Cell>
+    </Row>
+
+    <Row>
+        <Cell><Text class = "clue" id = "kc24">Within three spaces of a black structure</Text></Cell>
+        <Cell><Button class = "button" id = "kr24">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kt24">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kp24">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kb24">Maybe</Button></Cell>
+        <Cell><Button class = "button" id = "kk24">Maybe</Button></Cell>
+    </Row>
+</TableLayout>
