@@ -6,13 +6,15 @@ Scripted by Sionar
 
 ------------------Constants
 MOD_NAME = 'Cryptid'
-VERSION = '1.4.1'
+VERSION = '1.4.5'
 DEBUG = false
-DEBUG_GAMENUM = 9
+DEBUG_GAMENUM = 1
 START_MESSAGE = '[FF4040]Cryptid[-]\n\nVersion [00FF00]' .. VERSION..'[-]\nScripted by [967BB6]Sionar[-]\n'
 COLORS = {'Red', 'Teal', 'Purple', 'Brown', 'Pink',}
-TAGS = {Red = 'r', Teal = 't', Purple = 'p', Brown = 'b', Pink = 'k'}
+COLORS_ALL = {'Red', 'Teal', 'Purple', 'Brown', 'Pink', 'Black', 'Grey'}
+TAGS = {Red = 'r', Teal = 't', Purple = 'p', Brown = 'b', Pink = 'k', Black = 'l', Grey = 'y'}
 SYMBOLS = {'alpha', 'beta', 'gamma', 'delta', 'epsil'}
+COLOR_DARK = '#303030'
 MAP_POS =
 {
     {-6.89, 1.11, 7.89},
@@ -88,7 +90,7 @@ for k,v in pairs(COLORS) do
         {r = 1, t = 1, p = 1, b = 1, k = 1},
     }
 end
-
+map = {}
 
 ------------------Functions
 function onLoad(saveString)
@@ -102,13 +104,14 @@ function onLoad(saveString)
         hint = save['h']
         mode = save['m']
         checklists = save['c']
+        map = save ['ma']
     end
     math.randomseed(os.time())
-    local obj
 
+    local obj
     obj = getObjectFromGUID(TABLE_GUID)
     if obj then
-        obj.interactable = false
+        obj.interactable = true
     end
 
     for k,v in pairs(MAP_GUIDS) do
@@ -120,18 +123,14 @@ function onLoad(saveString)
     for k,v in pairs(STRUCTURE_GUIDS) do
         obj = getObjectFromGUID(v)
         if obj then
-            if not started then
-                obj.interactable = false
-            else
-                obj.interactable = true
-            end
+            obj.interactable = false
         end
     end
+
     obj = getObjectFromGUID(MARKER_GUID)
     if not started then
         obj.interactable = false
     end
-
     obj = getObjectFromGUID(TABLE_GUID)
     if not started then
         obj.createButton({
@@ -189,6 +188,9 @@ function onLoad(saveString)
         })
         setClues()
     end
+    if not started then
+        Turns.enable = false
+    end
     if hintGiven then
         showHint()
     end
@@ -207,6 +209,7 @@ function onSave()
     save['h'] = hint
     save['m'] = mode
     save['c'] = checklists
+    save['ma'] = map
     local saveString = JSON.encode(save)
     return saveString
 end
@@ -251,7 +254,7 @@ function startAdvancedGame(clickedObject, playerColor)
 end
 
 function startGame(clickedObject, playerColor)
-    local obj, xPos, zPos, seatedPlayers, clues, index, found, startColor, colors, tempColor
+    local obj, xPos, yPos, zPos, seatedPlayers, clues, index, found, startColor, colors, tempColor
     local turnOrder = {}
 
     if not Player[playerColor].admin then
@@ -267,7 +270,6 @@ function startGame(clickedObject, playerColor)
     if DEBUG then
         print(gameNum)
     end
-
     started = true
     for i = 1,6 do
         obj = getObjectFromGUID(MAP_GUIDS[DATA[gameNum].mapOrder[i]])
@@ -282,13 +284,17 @@ function startGame(clickedObject, playerColor)
     for k,v in pairs(STRUCTURE_GUIDS) do
         obj = getObjectFromGUID(v)
         if DATA[gameNum].coord[k] ~= nil then
+            if string.sub(k,1,1) == 'T' then
+                yPos = 1.54
+            elseif string.sub(k,1,1) == 'O' then
+                yPos = 1.71
+            end
             xPos = GRID_X[DATA[gameNum].coord[k][1]]
             zPos = GRID_Z[DATA[gameNum].coord[k][2]]
             if DATA[gameNum].coord[k][1] % 2 == 0 then
                 zPos = zPos + GRID_Z_SPACING * 0.5
             end
-            obj.setPositionSmooth({xPos, 1.81, zPos})
-            obj.interactable = true
+            obj.setPositionSmooth({xPos, yPos, zPos})
         else
             obj.destruct()
         end
@@ -321,7 +327,6 @@ function startGame(clickedObject, playerColor)
         font_color = 'White',
         tooltip = 'Reveal all of the clues.',
     })
-
     if #seatedPlayers == 3 or #seatedPlayers < 3 and DEBUG then
         clues = DATA[gameNum].clues3
         hint = HINTS[DATA[gameNum].hints[1]]
@@ -333,19 +338,18 @@ function startGame(clickedObject, playerColor)
         hint = HINTS[DATA[gameNum].hints[3]]
     end
     obj.UI.setValue('hint', hint)
+
     index = 1
     players = {}
+    for k,v in pairs(SYMBOLS) do
+        if clues[v] ~= nil then
+            table.insert(players, {color = seatedPlayers[index], symbol = v, clue = clues[v]})
+            index = index + 1
+        end
+    end
+
     for k,v in pairs(COLORS) do
-        if Player[v].seated then
-            found = false
-            while found == false do
-                if clues[SYMBOLS[index]] ~= nil then
-                    found = true
-                    table.insert(players, {color = v, symbol = SYMBOLS[index], clue = clues[SYMBOLS[index]]})
-                end
-                index = index + 1
-            end
-        else
+        if not Player[v].seated then
             obj = getObjectFromGUID(BAG_GUIDS[v][1])
             obj.destruct()
             obj = getObjectFromGUID(BAG_GUIDS[v][2])
@@ -362,17 +366,16 @@ function startGame(clickedObject, playerColor)
         table.insert(colors, tempColor)
     end
     Turns.order = colors
-    Turns.enable = false
     Turns.enable = true
     onPlayerTurn(Player[colors[1]])
-    hideHelperColumns()
+    adjustHelperColumns()
     generateMap()
 end
 
 function setClues()
     local obj = getObjectFromGUID(TABLE_GUID)
     for k,v in pairs(players) do
-        obj.UI.setAttribute(v.color..'Clue', 'active', true )
+        obj.UI.setAttribute(v.color..'Clue', 'active', 'true' )
         obj.UI.setValue(v.color..'Clue', CLUES[v.symbol][v.clue])
     end
 end
@@ -388,12 +391,12 @@ function revealClues(clickedObject, playerColor)
 end
 
 function showHint(clickedObject, playerColor)
-    if not Player[playerColor].admin then
+    if not hintGiven and not Player[playerColor].admin then
         return
     end
     local obj = getObjectFromGUID(TABLE_GUID)
     obj.UI.setValue('hint', hint)
-    obj.UI.setAttribute('hint', 'active', true)
+    obj.UI.setAttribute('hint', 'active', 'true')
     hintGiven = true
 end
 
@@ -460,10 +463,14 @@ function setUI()
     end
 end
 
-function hideHelperColumns()
+function adjustHelperColumns()
     local obj
     local seatedPlayers = getSeatedPlayers()
     local index
+    if #seatedPlayers < 3 or #seatedPlayers >= 5 then
+        return
+    end
+
     if #seatedPlayers == 4 then
         hideColumn('Red')
     elseif #seatedPlayers == 3 then
@@ -483,9 +490,9 @@ end
 
 function hideColumn(color)
     for k,v in pairs(COLORS) do
-        UI.setAttribute(TAGS[v] .. 'h' .. TAGS[color], 'active', false)
+        UI.setAttribute(TAGS[v] .. 'h' .. TAGS[color], 'active', 'false')
         for i = 1,24 do
-            UI.setAttribute(TAGS[v] .. TAGS[color] .. i, 'active', false)
+            UI.setAttribute(TAGS[v] .. TAGS[color] .. i, 'active', 'false')
         end
     end
 end
@@ -494,7 +501,7 @@ function generateMap()
     local first, last, direction, x, y, step, terrain
     local xstart = 1
     local ystart = 1
-    for k,v in pairs(COLORS) do
+    for k,v in pairs(COLORS_ALL) do
         for i1 = 1,6 do
             if not DATA[gameNum].mapFlip[i1] then
                 first = 1
@@ -515,11 +522,11 @@ function generateMap()
                 UI.setAttribute(TAGS[v]..x..y, 'image', MAP[DATA[gameNum].mapOrder[i1]][i2] .. terrain)
                 if COUGAR[DATA[gameNum].mapOrder[i1]][i2] == 1 then
                     UI.setAttribute(TAGS[v]..'a'..x..y, 'image', 'Cougar')
-                    UI.setAttribute(TAGS[v]..'a'..x..y, 'active', true)
+                    UI.setAttribute(TAGS[v]..'a'..x..y, 'active', 'true')
                 end
                 if BEAR[DATA[gameNum].mapOrder[i1]][i2] == 1 then
                     UI.setAttribute(TAGS[v]..'a'..x..y, 'image', 'Bear')
-                    UI.setAttribute(TAGS[v]..'a'..x..y, 'active', true)
+                    UI.setAttribute(TAGS[v]..'a'..x..y, 'active', 'true')
                 end
                 step = step + 1
             end
@@ -538,8 +545,8 @@ function getTerrain(x,y)
 end
 
 function changeHexColor(player, value, id)
-    if UI.getAttribute(id, 'color') ~= '#404040' then
-        UI.setAttribute(id, 'color', '#404040')
+    if UI.getAttribute(id, 'color') ~= COLOR_DARK then
+        UI.setAttribute(id, 'color', COLOR_DARK)
     else
         UI.setAttribute(id, 'color', '#FFFFFF')
     end
@@ -547,19 +554,22 @@ end
 
 function toggleMap(player, value, id)
     if not started then
+        player.print('Game has not started.')
         return
     end
     local visible = UI.getAttribute(TAGS[player.color] .. 'col1', 'active')
     if visible == 'true' then
         for i = 1,12 do
             UI.setAttribute(TAGS[player.color] .. 'col' .. i, 'active', 'false')
-            UI.setAttribute(TAGS[player.color] .. 'Invert', 'active', 'false')
         end
+        UI.setAttribute(TAGS[player.color] .. 'Invert', 'active', 'false')
+        UI.setAttribute(TAGS[player.color] .. 'Reset', 'active', 'false')
     else
         for i = 1,12 do
             UI.setAttribute(TAGS[player.color] .. 'col' .. i, 'active', 'true')
-            UI.setAttribute(TAGS[player.color] .. 'Invert', 'active', 'true')
         end
+        UI.setAttribute(TAGS[player.color] .. 'Invert', 'active', 'true')
+        UI.setAttribute(TAGS[player.color] .. 'Reset', 'active', 'true')
     end
 end
 
@@ -568,11 +578,21 @@ function invertMap(player, value, id)
     for i = 1, 12 do
         for j = 1,9 do
             iden = TAGS[player.color] .. i .. j
-            if UI.getAttribute(iden, 'color') ~= '#404040' then
-                UI.setAttribute(iden, 'color', '#404040')
+            if UI.getAttribute(iden, 'color') ~= COLOR_DARK then
+                UI.setAttribute(iden, 'color', COLOR_DARK)
             else
                 UI.setAttribute(iden, 'color', '#FFFFFF')
             end
+        end
+    end
+end
+
+function resetMap(player, value, id)
+    local iden
+    for i = 1, 12 do
+        for j = 1,9 do
+            iden = TAGS[player.color] .. i .. j
+            UI.setAttribute(iden, 'color', '#FFFFFF')
         end
     end
 end
