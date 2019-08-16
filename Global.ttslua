@@ -6,14 +6,13 @@ Scripted by Sionar
 
 ------------------Constants
 MOD_NAME = 'Cryptid'
-VERSION = '1.4.5'
+VERSION = '1.5.0'
 DEBUG = false
 DEBUG_GAMENUM = 1
-START_MESSAGE = '[FF4040]Cryptid[-]\n\nVersion [00FF00]' .. VERSION..'[-]\nScripted by [967BB6]Sionar[-]\n'
+START_MESSAGE = '[FF4040]Cryptid[-]\nVersion [00FF00]' .. VERSION..'[-]\nScripted by [49D5FD]Sionar[-]\n'
 COLORS = {'Red', 'Teal', 'Purple', 'Brown', 'Pink',}
 COLORS_ALL = {'Red', 'Teal', 'Purple', 'Brown', 'Pink', 'Black', 'Grey'}
 TAGS = {Red = 'r', Teal = 't', Purple = 'p', Brown = 'b', Pink = 'k', Black = 'l', Grey = 'y'}
-SYMBOLS = {'alpha', 'beta', 'gamma', 'delta', 'epsil'}
 COLOR_DARK = '#303030'
 MAP_POS =
 {
@@ -57,11 +56,10 @@ HELPER_GUIDS = {Red = '94f3ee', Teal = '864860', Purple = '9bc4dc', Brown = 'db9
 gameNum = 1
 players = {}
 started = false
-hintGiven = false
-hint = ''
 mode = 'normal'
 checklists = {}
-for k,v in pairs(COLORS) do
+solution = {}
+for k,v in pairs(COLORS_ALL) do
     checklists[v] =
     {
         {r = 1, t = 1, p = 1, b = 1, k = 1},
@@ -90,7 +88,19 @@ for k,v in pairs(COLORS) do
         {r = 1, t = 1, p = 1, b = 1, k = 1},
     }
 end
+data = {}
 map = {}
+validClues = {}
+for i = 1,12 do
+    map[i] = {}
+    for j = 1,9 do
+        map[i][j] = {}
+        validClues[(i-1)*9 + j] = {}
+    end
+end
+cluesTable = {}
+generatedClues = {}
+
 
 ------------------Functions
 function onLoad(saveString)
@@ -100,18 +110,19 @@ function onLoad(saveString)
         gameNum = save['g']
         players = save['p']
         started = save['s']
-        hintGiven = save['hg']
-        hint = save['h']
         mode = save['m']
         checklists = save['c']
         map = save ['ma']
+        cluesTable = save['ct']
+        validClues = save['v']
+        generatedClues = save['cl']
     end
     math.randomseed(os.time())
 
     local obj
     obj = getObjectFromGUID(TABLE_GUID)
     if obj then
-        obj.interactable = true
+        obj.interactable = false
     end
 
     for k,v in pairs(MAP_GUIDS) do
@@ -131,6 +142,7 @@ function onLoad(saveString)
     if not started then
         obj.interactable = false
     end
+
     obj = getObjectFromGUID(TABLE_GUID)
     if not started then
         obj.createButton({
@@ -161,19 +173,6 @@ function onLoad(saveString)
         })
     else
         obj.createButton({
-            label = 'Show Hint',
-            click_function = 'showHint',
-            function_owner = Global,
-            position = {0,0.1,20},
-            rotation = {0,180,0},
-            width = 2500,
-            height = 1000,
-            font_size = 300,
-            color = {0,0,0,1},
-            font_color = 'White',
-            tooltip = 'Give a hint.',
-        })
-        obj.createButton({
             label = 'Reveal\nAll Clues',
             click_function = 'revealClues',
             function_owner = Global,
@@ -191,12 +190,9 @@ function onLoad(saveString)
     if not started then
         Turns.enable = false
     end
-    if hintGiven then
-        showHint()
-    end
     setUI()
     if started then
-        generateMap()
+        generateMapUI()
     end
 end
 
@@ -205,11 +201,12 @@ function onSave()
     save['g'] = gameNum
     save['p'] = players
     save['s'] = started
-    save['hg'] = hintGiven
-    save['h'] = hint
     save['m'] = mode
     save['c'] = checklists
     save['ma'] = map
+    save['ct'] = cluesTable
+    save['v'] = validClues
+    save['cl'] = clues
     local saveString = JSON.encode(save)
     return saveString
 end
@@ -234,47 +231,46 @@ function onPlayerTurn(player)
 end
 
 function startNormalGame(clickedObject, playerColor)
-    if not DEBUG then
-        gameNum = math.random(1,19)
-        mode = 'normal'
-    else
-        gameNum = DEBUG_GAMENUM
-    end
-    startGame(clickedObject, playerColor)
-end
-
-function startAdvancedGame(clickedObject, playerColor)
-    if not DEBUG then
-        gameNum = math.random(20,54)
-        mode = 'advanced'
-    else
-        gameNum = DEBUG_GAMENUM
-    end
-    startGame(clickedObject, playerColor)
-end
-
-function startGame(clickedObject, playerColor)
-    local obj, xPos, yPos, zPos, seatedPlayers, clues, index, found, startColor, colors, tempColor
-    local turnOrder = {}
-
     if not Player[playerColor].admin then
         return
     end
+    mode = 'normal'
+    startGame()
+end
+
+function startAdvancedGame(clickedObject, playerColor)
+    if not Player[playerColor].admin then
+        return
+    end
+    mode = 'advanced'
+    startGame()
+end
+
+function startGame()
+    local obj, xPos, yPos, zPos, seatedPlayers, clues, index, found, startColor, colors, tempColor
+    local turnOrder = {}
+    local cluesFound = false
 
     seatedPlayers = getSeatedPlayers()
     if #seatedPlayers < 3 and not DEBUG then
         printToColor('You need 3 players seated to start the game.', playerColor, {1,1,1})
         return
     end
-
-    if DEBUG then
-        print(gameNum)
-    end
     started = true
+    obj = getObjectFromGUID(TABLE_GUID)
+    obj.clearButtons()
+
+    while cluesFound == false do
+        generateRandomMap()
+        populateMap()
+        cluesFound = generateClues()
+    end
+    generateMapUI()
+
     for i = 1,6 do
-        obj = getObjectFromGUID(MAP_GUIDS[DATA[gameNum].mapOrder[i]])
+        obj = getObjectFromGUID(MAP_GUIDS[data.mapOrder[i]])
         obj.setPositionSmooth(MAP_POS[i])
-        if DATA[gameNum].mapFlip[i] then
+        if data.mapFlip[i] then
             obj.setRotationSmooth({0,0,0})
         else
             obj.setRotationSmooth({0,180,0})
@@ -283,15 +279,15 @@ function startGame(clickedObject, playerColor)
 
     for k,v in pairs(STRUCTURE_GUIDS) do
         obj = getObjectFromGUID(v)
-        if DATA[gameNum].coord[k] ~= nil then
+        if data.coord[k] ~= nil then
             if string.sub(k,1,1) == 'T' then
                 yPos = 1.54
             elseif string.sub(k,1,1) == 'O' then
                 yPos = 1.71
             end
-            xPos = GRID_X[DATA[gameNum].coord[k][1]]
-            zPos = GRID_Z[DATA[gameNum].coord[k][2]]
-            if DATA[gameNum].coord[k][1] % 2 == 0 then
+            xPos = GRID_X[data.coord[k][1]]
+            zPos = GRID_Z[data.coord[k][2]]
+            if data.coord[k][1] % 2 == 0 then
                 zPos = zPos + GRID_Z_SPACING * 0.5
             end
             obj.setPositionSmooth({xPos, yPos, zPos})
@@ -300,20 +296,6 @@ function startGame(clickedObject, playerColor)
         end
     end
     obj = getObjectFromGUID(TABLE_GUID)
-    obj.clearButtons()
-    obj.createButton({
-        label = 'Show Hint',
-        click_function = 'showHint',
-        function_owner = Global,
-        position = {0,0.1,20},
-        rotation = {0,180,0},
-        width = 2500,
-        height = 1000,
-        font_size = 300,
-        color = {0,0,0,1},
-        font_color = 'White',
-        tooltip = 'Give a hint.',
-    })
     obj.createButton({
         label = 'Reveal\nAll Clues',
         click_function = 'revealClues',
@@ -327,26 +309,14 @@ function startGame(clickedObject, playerColor)
         font_color = 'White',
         tooltip = 'Reveal all of the clues.',
     })
-    if #seatedPlayers == 3 or #seatedPlayers < 3 and DEBUG then
-        clues = DATA[gameNum].clues3
-        hint = HINTS[DATA[gameNum].hints[1]]
-    elseif #seatedPlayers == 4 then
-        clues = DATA[gameNum].clues4
-        hint = HINTS[DATA[gameNum].hints[2]]
-    elseif #seatedPlayers == 5 then
-        clues = DATA[gameNum].clues5
-        hint = HINTS[DATA[gameNum].hints[3]]
-    end
-    obj.UI.setValue('hint', hint)
 
     index = 1
     players = {}
-    for k,v in pairs(SYMBOLS) do
-        if clues[v] ~= nil then
-            table.insert(players, {color = seatedPlayers[index], symbol = v, clue = clues[v]})
-            index = index + 1
-        end
+    for k,v in pairs(seatedPlayers) do
+        table.insert(players, {color = v, clue = generatedClues[index]})
+        index = index + 1
     end
+    setClues()
 
     for k,v in pairs(COLORS) do
         if not Player[v].seated then
@@ -356,11 +326,11 @@ function startGame(clickedObject, playerColor)
             obj.destruct()
         end
     end
-    setClues()
 
     index = math.random(1,#seatedPlayers)
     startColor = seatedPlayers[index]
     colors = Global.getTable('COLORS')
+
     while colors[1] ~= startColor do
         tempColor = table.remove(colors, 1)
         table.insert(colors, tempColor)
@@ -369,14 +339,13 @@ function startGame(clickedObject, playerColor)
     Turns.enable = true
     onPlayerTurn(Player[colors[1]])
     adjustHelperColumns()
-    generateMap()
 end
 
 function setClues()
     local obj = getObjectFromGUID(TABLE_GUID)
     for k,v in pairs(players) do
         obj.UI.setAttribute(v.color..'Clue', 'active', 'true' )
-        obj.UI.setValue(v.color..'Clue', CLUES[v.symbol][v.clue])
+        obj.UI.setValue(v.color..'Clue', CLUE_DATA[v.clue].name)
     end
 end
 
@@ -388,16 +357,6 @@ function revealClues(clickedObject, playerColor)
     for k,v in pairs(players) do
         obj.UI.setAttribute(v.color..'Clue', 'visibility', '' )
     end
-end
-
-function showHint(clickedObject, playerColor)
-    if not hintGiven and not Player[playerColor].admin then
-        return
-    end
-    local obj = getObjectFromGUID(TABLE_GUID)
-    obj.UI.setValue('hint', hint)
-    obj.UI.setAttribute('hint', 'active', 'true')
-    hintGiven = true
 end
 
 function toggleChecklist(player, value, id)
@@ -497,13 +456,67 @@ function hideColumn(color)
     end
 end
 
-function generateMap()
-    local first, last, direction, x, y, step, terrain
+function generateRandomMap()
+    local structures = {}
+    local randCoord = {}
+    local match
+    local structures = {'OW', 'TW', 'OB', 'TB', 'OG', 'TG', 'OD', 'TD'}
+    local coords = {}
+
+    data = {}
+    data.mapOrder = shuffleTable({1,2,3,4,5,6})
+    data.mapFlip = {}
+    data.coord = {}
+    for i = 1,6 do
+        if math.random(0,1) == 0 then
+            table.insert(data.mapFlip, false)
+        else
+            table.insert(data.mapFlip, true)
+        end
+    end
+    for i = 1,8 do
+        match = true
+        while match == true do
+            match = false
+            randCoord = {math.random(1,12), math.random(1,9)}
+            for j = 1, i-1 do
+                if randCoord[1] == coords[j][1] and randCoord[2] == coords[j][2] then
+                    match = true
+                end
+            end
+        end
+        table.insert(coords, randCoord)
+    end
+    for i = 1,8 do
+        data.coord[structures[i]] = coords[i]
+    end
+    if mode == 'normal' then
+        data.coord.OD = nil
+        data.coord.TD = nil
+    end
+end
+
+function shuffleTable(array)
+    local currIndex, randIndex, temp
+    currIndex = #array
+
+    while (currIndex ~= 1) do
+        randIndex = math.random(1, currIndex)
+        temp = array[currIndex]
+        array[currIndex] = array[randIndex]
+        array[randIndex] = temp
+        currIndex = currIndex - 1
+    end
+    return array
+end
+
+function populateMap()
+    local first, last, direction, x, y, step, structure
     local xstart = 1
     local ystart = 1
     for k,v in pairs(COLORS_ALL) do
         for i1 = 1,6 do
-            if not DATA[gameNum].mapFlip[i1] then
+            if not data.mapFlip[i1] then
                 first = 1
                 last = 18
                 direction = 1
@@ -518,15 +531,21 @@ function generateMap()
             for i2 = first, last, direction do
                 x = xstart + math.floor((step-1)/3)
                 y = ystart + (step-1)%3
-                terrain = getTerrain(x,y)
-                UI.setAttribute(TAGS[v]..x..y, 'image', MAP[DATA[gameNum].mapOrder[i1]][i2] .. terrain)
-                if COUGAR[DATA[gameNum].mapOrder[i1]][i2] == 1 then
-                    UI.setAttribute(TAGS[v]..'a'..x..y, 'image', 'Cougar')
-                    UI.setAttribute(TAGS[v]..'a'..x..y, 'active', 'true')
+                map[x][y].structType = 'N'
+                map[x][y].structColor = 'N'
+                for k1,v1 in pairs(data.coord) do
+                    if x == v1[1] and y == v1[2] then
+                        map[x][y].structType = string.sub(k1,1,1)
+                        map[x][y].structColor = string.sub(k1,2,2)
+                    end
                 end
-                if BEAR[DATA[gameNum].mapOrder[i1]][i2] == 1 then
-                    UI.setAttribute(TAGS[v]..'a'..x..y, 'image', 'Bear')
-                    UI.setAttribute(TAGS[v]..'a'..x..y, 'active', 'true')
+                map[x][y].terrain = MAP[data.mapOrder[i1]][i2]
+                if COUGAR[data.mapOrder[i1]][i2] == 1 then
+                    map[x][y].animal = 'C'
+                elseif BEAR[data.mapOrder[i1]][i2] == 1 then
+                    map[x][y].animal = 'B'
+                else
+                    map[x][y].animal = 'N'
                 end
                 step = step + 1
             end
@@ -534,14 +553,196 @@ function generateMap()
     end
 end
 
-function getTerrain(x,y)
-    local coordinates = DATA[gameNum].coord
-    for k,v in pairs(coordinates) do
-        if x == v[1] and y == v[2] then
-            return k
+function getValidHexes(x,y)
+    local hexes
+    local validHexes = {{},{},{},{}}
+    if x%2 == 1 then
+        hexes =
+        {
+            {{x,y},},
+            {{x-1, y-1}, {x-1, y}, {x, y-1}, {x, y+1}, {x+1, y-1}, {x+1, y}},
+            {{x-2, y-1}, {x-2, y}, {x-2, y+1}, {x-1, y-2}, {x-1, y+1}, {x, y-2}, {x, y+2}, {x+1, y-2}, {x+1, y+1}, {x+2, y-1}, {x+2, y}, {x+2, y+1},},
+            {{x-3, y-2}, {x-3, y-1}, {x-3, y}, {x-3, y+1}, {x-2, y-2}, {x-2, y+2}, {x-1, y-3}, {x-1, y+2}, {x,y-3}, {x,y+3}, {x+1,y-3}, {x+1,y+2}, {x+2,y-2}, {x+2,y+2}, {x+3,y-2}, {x+3,y-1}, {x+3,y}, {x+3,y+1},},
+        }
+    else
+        hexes =
+        {
+            {{x,y},},
+            {{x-1, y}, {x-1, y+1}, {x, y-1}, {x, y+1}, {x+1, y}, {x+1, y+1}},
+            {{x-2, y-1}, {x-2, y}, {x-2, y+1}, {x-1, y-1}, {x-1, y+2}, {x, y-2}, {x, y+2}, {x+1, y-1}, {x+1, y+2}, {x+2, y-1}, {x+2, y}, {x+2, y+1},},
+            {{x-3, y-1}, {x-3, y}, {x-3, y+1}, {x-3, y+2}, {x-2, y-2}, {x-2, y+2}, {x-1, y-2}, {x-1, y+3}, {x,y-3}, {x,y+3}, {x+1,y-2}, {x+1,y+3}, {x+2,y-2}, {x+2,y+2}, {x+3,y-1}, {x+3,y}, {x+3,y+1}, {x+3,y+2},},
+        }
+    end
+    for i = 1, 4 do
+        for k,v in pairs(hexes[i]) do
+            if v[1] >= 1 and v[1] <= 12 and v[2] >= 1 and v[2] <= 9 then
+                for j = i, 4 do
+                    table.insert(validHexes[j], v)
+                end
+            end
         end
     end
-    return 'NN'
+    return validHexes
+end
+
+function findValidClues(coord)
+    local validHexes = {}     --distance of 0,1,2,3
+    local distance
+    local value, found
+
+    validHexes = getValidHexes(coord[1], coord[2])
+    for i = 1,24 do
+        found = false
+        distance = CLUE_DATA[i].distance
+        for k,v in pairs(validHexes[distance+1]) do
+            value = map[v[1]][v[2]][CLUE_DATA[i].type]
+            if value == CLUE_DATA[i].value1 or value == CLUE_DATA[i].value2 then
+                found = true
+                break
+            end
+        end
+        if found then
+            table.insert(cluesTable[i], (coord[1]-1) * 9 + coord[2] )
+        else
+            if mode == 'advanced' then
+                table.insert(cluesTable[i+24], (coord[1]-1) * 9 + coord[2] )
+            end
+        end
+    end
+end
+
+function generateClues()
+    local clueMaxIndex, randomClue
+    local minClues = 108
+    local maxClues = 0
+    local minClueIndex, maxClueIndex, removeEntries
+    local found = false
+    local tries = 0
+    local seatedPlayers = getSeatedPlayers()
+
+    clues = {}
+    cluesTable = {}
+    generatedClues = {}
+
+    for i = 1,48 do
+        cluesTable[i] = {}
+    end
+
+    if mode == 'normal' then
+        clueMaxIndex = 23
+    else
+        clueMaxIndex = 48
+    end
+    for i = 1,12 do
+        for j = 1,9 do
+            findValidClues({i,j})
+        end
+    end
+
+    clues = Global.getTable('cluesTable')
+    table.insert(generatedClues, math.random(1,clueMaxIndex))
+    removeEntries = {}
+    for i = 1,108 do
+        if not inTable(clues[generatedClues[1]], i) then
+            table.insert(removeEntries, i)
+        end
+    end
+    pruneTable(clues, removeEntries)
+    if #seatedPlayers == 5 then
+        randomClue = math.random(1,clueMaxIndex)
+        while randomClue == generatedClues[1] or #clues[randomClue] == 0 do
+            randomClue = math.random(1,clueMaxIndex)
+        end
+        table.insert(generatedClues, randomClue)
+        removeEntries = {}
+        for i = 1,108 do
+            if not inTable(clues[generatedClues[2]], i) then
+                table.insert(removeEntries, i)
+            end
+        end
+        pruneTable(clues, removeEntries)
+    end
+    if #seatedPlayers >= 4 then
+        for i = 1,clueMaxIndex do
+            if #clues[i] > maxClues and i ~= generatedClues[1] and i ~= generatedClues[#seatedPlayers-3] then
+                maxClues = #cluesTable[i]
+                maxClueIndex = i
+            end
+        end
+        table.insert(generatedClues, maxClueIndex)
+        removeEntries = {}
+        for i = 1,108 do
+            if not inTable(clues[generatedClues[#generatedClues]], i) then
+                table.insert(removeEntries, i)
+            end
+        end
+        pruneTable(clues, removeEntries)
+    end
+    for i = 1,clueMaxIndex do
+        if #clues[i] < minClues and #clues[i] > 1 then
+            minClues = #clues[i]
+            minClueIndex = i
+        end
+    end
+    table.insert(generatedClues, minClueIndex)
+    removeEntries = {}
+    for i = 1,108 do
+        if not inTable(clues[generatedClues[#generatedClues]], i) then
+            table.insert(removeEntries, i)
+        end
+    end
+    pruneTable(clues, removeEntries)
+
+    for i = 1,clueMaxIndex do
+        if #clues[i] == 1 then
+            found = true
+            table.insert(generatedClues, i)
+            break
+        end
+    end
+    return found
+end
+
+function inTable(tab, value)
+    for k,v in pairs(tab) do
+        if v == value then
+            return true
+        end
+    end
+    return false
+end
+
+function pruneTable(tab, entries)
+    for k,v in pairs(entries) do
+        for k1,v1 in pairs(tab) do
+            for k2,v2 in pairs(v1) do
+                if v2 == v then
+                    table.remove(v1, k2)
+                end
+            end
+        end
+    end
+end
+
+function generateMapUI()
+    local first, last, direction, x, y, step, structure
+    local xstart = 1
+    local ystart = 1
+    for k,v in pairs(COLORS_ALL) do
+        for x = 1,12 do
+            for y = 1,9 do
+                UI.setAttribute(TAGS[v]..x..y, 'image', map[x][y].terrain .. map[x][y].structType .. map[x][y].structColor)
+                if map[x][y].animal == 'C' then
+                    UI.setAttribute(TAGS[v]..'a'..x..y, 'image', 'Cougar')
+                    UI.setAttribute(TAGS[v]..'a'..x..y, 'active', 'true')
+                elseif map[x][y].animal == 'B' then
+                    map[x][y].animal = 'B'
+                    UI.setAttribute(TAGS[v]..'a'..x..y, 'image', 'Bear')
+                    UI.setAttribute(TAGS[v]..'a'..x..y, 'active', 'true')
+                end
+            end
+        end
+    end
 end
 
 function changeHexColor(player, value, id)
