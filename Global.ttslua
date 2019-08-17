@@ -497,7 +497,7 @@ function findValidClues()
     local distance
     local value, found
     local outputTab = {}
-    local map = Global.getTable('map')
+    local map = map
     for i = 1,48 do
         outputTab[i] = {}
         for j = 1,108 do
@@ -720,16 +720,40 @@ function adjustChecklist()
 end
 
 function fillChecklist()
-    for k,v in pairs(COLORS) do
+    local index
+    for k,v in pairs(seatedPlayers) do
+        index = players[v].clue
+        if index > 24 then
+            index = index - 24
+        end
         for i = 1,24 do
-            print(TAGS[v]..TAGS[v]..i)
             UI.setAttribute(TAGS[v]..TAGS[v]..i, 'color', '#DA1917')
             UI.setAttribute(TAGS[v]..TAGS[v]..i, 'text', 'No')
             checklists[v][i][TAGS[v]] = 3
         end
+        for k1,v1 in pairs(COLORS) do
+            UI.setAttribute(TAGS[v]..TAGS[v1]..index, 'color', '#DA1917')
+            UI.setAttribute(TAGS[v]..TAGS[v1]..index, 'text', 'No')
+            checklists[v][index][TAGS[v1]] = 3
+        end
+        if players[v].clue <= 24 then
+            UI.setAttribute(TAGS[v]..TAGS[v]..index, 'color', '#E6E42B')
+            UI.setAttribute(TAGS[v]..TAGS[v]..index, 'text', 'Maybe')
+            checklists[v][index][TAGS[v]] = 1
+        else
+            UI.setAttribute(TAGS[v]..TAGS[v]..index, 'color', '#F3631C')
+            UI.setAttribute(TAGS[v]..TAGS[v]..index, 'text', 'Inverse')
+            checklists[v][index][TAGS[v]] = 2
+        end
+        if mode == 'normal' then
+            for k1, v1 in pairs(COLORS) do
+                UI.setAttribute(TAGS[v]..TAGS[v1]..24, 'color', '#DA1917')
+                UI.setAttribute(TAGS[v]..TAGS[v1]..24, 'text', 'No')
+                checklists[v][24][TAGS[v1]] = 3
+            end
+        end
     end
 end
-
 
 function generateMapUI()
     local first, last, direction, x, y, step, structure
