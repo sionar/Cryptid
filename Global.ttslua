@@ -6,7 +6,7 @@ Scripted by Sionar
 
 ------------------Constants
 MOD_NAME = 'Cryptid'
-VERSION = '1.5.3'
+VERSION = '1.5.4'
 DEBUG = false
 DEBUG_GAMENUM = 1
 START_MESSAGE = '[FF4040]Cryptid[-]\nVersion [00FF00]' .. VERSION..'[-]\nScripted by [49D5FD]Sionar[-]\n'
@@ -296,6 +296,7 @@ function startGame()
         populateMap()
         cluesFound = generateClues()
     end
+    clues = shuffleTable(clues)
 
     for i = 1,6 do
         obj = getObjectFromGUID(MAP_GUIDS[data.mapOrder[i]])
@@ -498,12 +499,16 @@ function findValidClues()
     local value, found
     local outputTab = {}
     local map = map
+    local startTime = os.time()
+    local timeTable = {}
+
     for i = 1,48 do
         outputTab[i] = {}
         for j = 1,108 do
             outputTab[i][j] = false
         end
     end
+
     for x = 1,12 do
         for y = 1,9 do
             validHexes = getValidHexes(x,y)
@@ -537,6 +542,7 @@ function generateClues()
     local tries = 0
     local cluesCount = {}
     local cluesCopy = {}
+    local numZeroDistClues
 
     if mode == 'normal' then
         clueMaxIndex = 23
@@ -546,11 +552,15 @@ function generateClues()
 
     cluesTable = findValidClues()
     while tries < 10 and not found do
+        numZeroDistClues = 0
         minClues = 108
         maxClues = 0
         cluesCopy = Global.getTable('cluesTable')
         clues = {}
         table.insert(clues, math.random(1,clueMaxIndex))
+        if CLUE_DATA[clues[1]].distance == 0 then
+            numZeroDistClues = numZeroDistClues + 1
+        end
         cluesCopy,cluesCount = updateTable(cluesCopy, cluesCopy[clues[1]])
         if #seatedPlayers == 5 then
             randomClue = math.random(1,clueMaxIndex)
@@ -558,30 +568,39 @@ function generateClues()
                 randomClue = math.random(1,clueMaxIndex)
             end
             table.insert(clues, randomClue)
+            if CLUE_DATA[clues[2]].distance == 0 then
+                numZeroDistClues = numZeroDistClues + 1
+            end
             cluesCopy,cluesCount = updateTable(cluesCopy, cluesCopy[clues[2]])
         end
         if #seatedPlayers >= 4 then
             for i = 1,clueMaxIndex do
-                if cluesCount[i] > maxClues and i ~= clues[1] and i ~= clues[#clues] then
+                if cluesCount[i] > maxClues and i ~= clues[1] and i ~= clues[#clues] and not (numZeroDistClues >= 1 and CLUE_DATA[i].distance == 0) then
                     maxClues = cluesCount[i]
                     maxClueIndex = i
                 end
             end
             table.insert(clues, maxClueIndex)
+            if CLUE_DATA[clues[#clues]].distance == 0 then
+                numZeroDistClues = numZeroDistClues + 1
+            end
             cluesCopy,cluesCount = updateTable(cluesCopy, cluesCopy[clues[#clues]])
         end
         for i = 1,clueMaxIndex do
-            if cluesCount[i] < minClues and cluesCount[i] > 1 then
+            if cluesCount[i] < minClues and cluesCount[i] > 1 and not (numZeroDistClues == 2 and CLUE_DATA[i].distance == 0) then
                 minClues = cluesCount[i]
                 minClueIndex = i
             end
         end
         table.insert(clues, minClueIndex)
+        if CLUE_DATA[clues[#clues]].distance == 0 then
+            numZeroDistClues = numZeroDistClues + 1
+        end
         cluesCopy,cluesCount = updateTable(cluesCopy, cluesCopy[clues[#clues]])
         for i = 1,clueMaxIndex do
-            if cluesCount[i] == 1 then
-                found = true
+            if cluesCount[i] == 1 and not (numZeroDistClues == 2 and CLUE_DATA[i].distance == 0) then
                 table.insert(clues, i)
+                found = true
                 break
             end
         end
