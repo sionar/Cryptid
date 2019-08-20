@@ -6,7 +6,7 @@ Scripted by Sionar
 
 ------------------Constants
 MOD_NAME = 'Cryptid'
-VERSION = '1.5.4'
+VERSION = '1.5.5'
 DEBUG = false
 DEBUG_GAMENUM = 1
 START_MESSAGE = '[FF4040]Cryptid[-]\nVersion [00FF00]' .. VERSION..'[-]\nScripted by [49D5FD]Sionar[-]\n'
@@ -43,6 +43,39 @@ for i = 1,12 do
 end
 for i = 1,9 do
     GRID_Z[i] = GRID_Z_START + (i-1) * GRID_Z_SPACING
+end
+VALID_HEXES = {}
+for x = 1,12 do
+    VALID_HEXES[x] = {}
+    for y = 1,9 do
+        VALID_HEXES[x][y] = {{},{},{},{}}
+        if x%2 == 1 then
+            hexes =
+            {
+                {{x,y},},
+                {{x-1, y-1}, {x-1, y}, {x, y-1}, {x, y+1}, {x+1, y-1}, {x+1, y}},
+                {{x-2, y-1}, {x-2, y}, {x-2, y+1}, {x-1, y-2}, {x-1, y+1}, {x, y-2}, {x, y+2}, {x+1, y-2}, {x+1, y+1}, {x+2, y-1}, {x+2, y}, {x+2, y+1},},
+                {{x-3, y-2}, {x-3, y-1}, {x-3, y}, {x-3, y+1}, {x-2, y-2}, {x-2, y+2}, {x-1, y-3}, {x-1, y+2}, {x,y-3}, {x,y+3}, {x+1,y-3}, {x+1,y+2}, {x+2,y-2}, {x+2,y+2}, {x+3,y-2}, {x+3,y-1}, {x+3,y}, {x+3,y+1},},
+            }
+        else
+            hexes =
+            {
+                {{x,y},},
+                {{x-1, y}, {x-1, y+1}, {x, y-1}, {x, y+1}, {x+1, y}, {x+1, y+1}},
+                {{x-2, y-1}, {x-2, y}, {x-2, y+1}, {x-1, y-1}, {x-1, y+2}, {x, y-2}, {x, y+2}, {x+1, y-1}, {x+1, y+2}, {x+2, y-1}, {x+2, y}, {x+2, y+1},},
+                {{x-3, y-1}, {x-3, y}, {x-3, y+1}, {x-3, y+2}, {x-2, y-2}, {x-2, y+2}, {x-1, y-2}, {x-1, y+3}, {x,y-3}, {x,y+3}, {x+1,y-2}, {x+1,y+3}, {x+2,y-2}, {x+2,y+2}, {x+3,y-1}, {x+3,y}, {x+3,y+1}, {x+3,y+2},},
+            }
+        end
+        for i = 1, 4 do
+            for k,v in pairs(hexes[i]) do
+                if v[1] >= 1 and v[1] <= 12 and v[2] >= 1 and v[2] <= 9 then
+                    for j = i, 4 do
+                        table.insert(VALID_HEXES[x][y][j], v)
+                    end
+                end
+            end
+        end
+    end
 end
 
 TABLE_GUID = 'e1c8f6'
@@ -271,6 +304,7 @@ function startGame()
     local obj, cluesFound
     local xPos, yPos, zPos, index
     local startColor, colors, tempColor
+    local startTime = os.time()
 
     seatedPlayers = getSeatedPlayers()
     started = true
@@ -295,6 +329,9 @@ function startGame()
         generateRandomMap()
         populateMap()
         cluesFound = generateClues()
+    end
+    if DEBUG then
+        print(os.time() - startTime)
     end
     clues = shuffleTable(clues)
 
@@ -461,38 +498,6 @@ function populateMap()
     end
 end
 
-function getValidHexes(x,y)
-    local hexes
-    local validHexes = {{},{},{},{}}
-    if x%2 == 1 then
-        hexes =
-        {
-            {{x,y},},
-            {{x-1, y-1}, {x-1, y}, {x, y-1}, {x, y+1}, {x+1, y-1}, {x+1, y}},
-            {{x-2, y-1}, {x-2, y}, {x-2, y+1}, {x-1, y-2}, {x-1, y+1}, {x, y-2}, {x, y+2}, {x+1, y-2}, {x+1, y+1}, {x+2, y-1}, {x+2, y}, {x+2, y+1},},
-            {{x-3, y-2}, {x-3, y-1}, {x-3, y}, {x-3, y+1}, {x-2, y-2}, {x-2, y+2}, {x-1, y-3}, {x-1, y+2}, {x,y-3}, {x,y+3}, {x+1,y-3}, {x+1,y+2}, {x+2,y-2}, {x+2,y+2}, {x+3,y-2}, {x+3,y-1}, {x+3,y}, {x+3,y+1},},
-        }
-    else
-        hexes =
-        {
-            {{x,y},},
-            {{x-1, y}, {x-1, y+1}, {x, y-1}, {x, y+1}, {x+1, y}, {x+1, y+1}},
-            {{x-2, y-1}, {x-2, y}, {x-2, y+1}, {x-1, y-1}, {x-1, y+2}, {x, y-2}, {x, y+2}, {x+1, y-1}, {x+1, y+2}, {x+2, y-1}, {x+2, y}, {x+2, y+1},},
-            {{x-3, y-1}, {x-3, y}, {x-3, y+1}, {x-3, y+2}, {x-2, y-2}, {x-2, y+2}, {x-1, y-2}, {x-1, y+3}, {x,y-3}, {x,y+3}, {x+1,y-2}, {x+1,y+3}, {x+2,y-2}, {x+2,y+2}, {x+3,y-1}, {x+3,y}, {x+3,y+1}, {x+3,y+2},},
-        }
-    end
-    for i = 1, 4 do
-        for k,v in pairs(hexes[i]) do
-            if v[1] >= 1 and v[1] <= 12 and v[2] >= 1 and v[2] <= 9 then
-                for j = i, 4 do
-                    table.insert(validHexes[j], v)
-                end
-            end
-        end
-    end
-    return validHexes
-end
-
 function findValidClues()
     local validHexes = {}     --distance of 0,1,2,3
     local distance
@@ -511,7 +516,7 @@ function findValidClues()
 
     for x = 1,12 do
         for y = 1,9 do
-            validHexes = getValidHexes(x,y)
+            validHexes = VALID_HEXES[x][y]
             for i = 1,24 do
                 found = false
                 distance = CLUE_DATA[i].distance
