@@ -6,9 +6,8 @@ Scripted by Sionar
 
 ------------------Constants
 MOD_NAME = 'Cryptid'
-VERSION = '1.5.5'
-DEBUG = true
-DEBUG_GAMENUM = 1
+VERSION = '1.5.6'
+DEBUG = false
 START_MESSAGE = '[FF4040]Cryptid[-]\nVersion [00FF00]' .. VERSION..'[-]\nScripted by [49D5FD]Sionar[-]\n'
 COLORS = {'Red', 'Teal', 'Purple', 'Brown', 'Pink',}
 COLORS_ALL = {'Red', 'Teal', 'Purple', 'Brown', 'Pink', 'Black', 'Grey'}
@@ -125,6 +124,10 @@ data = {}
 map = {}
 cluesTable = {}
 clues = {}
+cluesAll = {}
+dataAll = {}
+mapAll = {}
+
 for i = 1,12 do
     map[i] = {}
     for j = 1,9 do
@@ -221,6 +224,7 @@ function onLoad(saveString)
     end
     setUI()
     if not started then
+        generateAllClues()
         Turns.enable = false
         for k,v in pairs(seated) do
             found = false
@@ -324,17 +328,9 @@ function startGame()
         tooltip = 'Reveal all of the clues.',
     })
 
-    cluesFound = false
-    while cluesFound == false do
-        generateRandomMap()
-        populateMap()
-        cluesFound = generateClues()
-    end
-    if DEBUG then
-        print(os.time() - startTime)
-    end
-    checkSolution()
-    --clues = shuffleTable(clues)
+    data = dataAll[mode .. #seatedPlayers]
+    map = mapAll[mode .. #seatedPlayers]
+    clues = cluesAll[mode .. #seatedPlayers]
 
     for i = 1,6 do
         obj = getObjectFromGUID(MAP_GUIDS[data.mapOrder[i]])
@@ -540,7 +536,7 @@ function findValidClues()
     return outputTab
 end
 
-function generateClues()
+function generateClues(numPlayers)
     local clueMaxIndex, randomClue, numZeroDistClues, validSolution
     local minClues, maxClues, minClueIndex, maxClueIndex
     local found = false
@@ -566,7 +562,7 @@ function generateClues()
             numZeroDistClues = numZeroDistClues + 1
         end
         cluesCopy,cluesCount = updateTable(cluesCopy, cluesCopy[clues[1]])
-        if #seatedPlayers == 5 then
+        if numPlayers == 5 then
             randomClue = math.random(1,clueMaxIndex)
             while randomClue == clues[1] or cluesCount[randomClue] == 0 do
                 randomClue = math.random(1,clueMaxIndex)
@@ -577,7 +573,7 @@ function generateClues()
             end
             cluesCopy,cluesCount = updateTable(cluesCopy, cluesCopy[clues[2]])
         end
-        if #seatedPlayers >= 4 then
+        if numPlayers >= 4 then
             for i = 1,clueMaxIndex do
                 if cluesCount[i] < minClues and cluesCount[i] > 1 and not (numZeroDistClues == 2 and CLUE_DATA[i].distance == 0) then
                     minClues = cluesCount[i]
@@ -608,15 +604,14 @@ function generateClues()
                 break
             end
         end
-        if found and #seatedPlayers > 3 then
+        if found and numPlayers > 3 then
             validSolution = checkSolution()
             if not validSolution then
                 found = false
             end
-            tries = tries + 1
         end
+        tries = tries + 1
     end
-    print(tries)
     return found
 end
 
@@ -661,6 +656,35 @@ function checkSolution()
         end
     end
     return true
+end
+
+function generateAllClues()
+    local cluesFound
+    for i = 3,5 do
+        mode = 'normal'
+        cluesFound = false
+        while cluesFound == false do
+            generateRandomMap()
+            populateMap()
+            cluesFound = generateClues(i)
+        end
+        clues = shuffleTable(clues)
+        cluesAll[mode..i] = Global.getTable('clues')
+        dataAll[mode..i] = Global.getTable('data')
+        mapAll[mode..i] = Global.getTable('map')
+
+        mode = 'advanced'
+        cluesFound = false
+        while cluesFound == false do
+            generateRandomMap()
+            populateMap()
+            cluesFound = generateClues(i)
+        end
+        clues = shuffleTable(clues)
+        cluesAll[mode..i] = Global.getTable('clues')
+        dataAll[mode..i] = Global.getTable('data')
+        mapAll[mode..i] = Global.getTable('map')
+    end
 end
 
 function setClues()
