@@ -7,7 +7,7 @@ Scripted by Sionar
 ------------------Constants
 MOD_NAME = 'Cryptid'
 VERSION = '1.5.5'
-DEBUG = false
+DEBUG = true
 DEBUG_GAMENUM = 1
 START_MESSAGE = '[FF4040]Cryptid[-]\nVersion [00FF00]' .. VERSION..'[-]\nScripted by [49D5FD]Sionar[-]\n'
 COLORS = {'Red', 'Teal', 'Purple', 'Brown', 'Pink',}
@@ -333,7 +333,8 @@ function startGame()
     if DEBUG then
         print(os.time() - startTime)
     end
-    clues = shuffleTable(clues)
+    checkSolution()
+    --clues = shuffleTable(clues)
 
     for i = 1,6 do
         obj = getObjectFromGUID(MAP_GUIDS[data.mapOrder[i]])
@@ -363,7 +364,6 @@ function startGame()
             obj.destruct()
         end
     end
-
 
     for k,v in pairs(COLORS) do
         if not Player[v].seated then
@@ -541,13 +541,12 @@ function findValidClues()
 end
 
 function generateClues()
-    local clueMaxIndex, randomClue
+    local clueMaxIndex, randomClue, numZeroDistClues, validSolution
     local minClues, maxClues, minClueIndex, maxClueIndex
     local found = false
     local tries = 0
     local cluesCount = {}
     local cluesCopy = {}
-    local numZeroDistClues
 
     if mode == 'normal' then
         clueMaxIndex = 23
@@ -580,12 +579,12 @@ function generateClues()
         end
         if #seatedPlayers >= 4 then
             for i = 1,clueMaxIndex do
-                if cluesCount[i] > maxClues and i ~= clues[1] and i ~= clues[#clues] and not (numZeroDistClues >= 1 and CLUE_DATA[i].distance == 0) then
-                    maxClues = cluesCount[i]
-                    maxClueIndex = i
+                if cluesCount[i] < minClues and cluesCount[i] > 1 and not (numZeroDistClues == 2 and CLUE_DATA[i].distance == 0) then
+                    minClues = cluesCount[i]
+                    minClueIndex = i
                 end
             end
-            table.insert(clues, maxClueIndex)
+            table.insert(clues, minClueIndex)
             if CLUE_DATA[clues[#clues]].distance == 0 then
                 numZeroDistClues = numZeroDistClues + 1
             end
@@ -609,18 +608,16 @@ function generateClues()
                 break
             end
         end
-        tries = tries + 1
-    end
-    return found
-end
-
-function inTable(tab, value)
-    for k,v in pairs(tab) do
-        if v == value then
-            return true
+        if found and #seatedPlayers > 3 then
+            validSolution = checkSolution()
+            if not validSolution then
+                found = false
+            end
+            tries = tries + 1
         end
     end
-    return false
+    print(tries)
+    return found
 end
 
 function updateTable(tab, entries)
@@ -643,6 +640,27 @@ function updateTable(tab, entries)
         end
     end
     return tab, cluesCount
+end
+
+function checkSolution()
+    local cluesCopy, cluesIndexes, cluesCount
+
+    for i = 1, #seatedPlayers do
+        cluesIndexes = {}
+        cluesCopy = Global.getTable('cluesTable')
+        for j = 1, #seatedPlayers do
+            if j ~= i then
+                table.insert(cluesIndexes,j)
+            end
+        end
+        for k,v in pairs(cluesIndexes) do
+            cluesCopy,cluesCount = updateTable(cluesCopy, cluesCopy[clues[v]])
+        end
+        if cluesCount[clues[cluesIndexes[1]]] == 1 then
+            return false
+        end
+    end
+    return true
 end
 
 function setClues()
