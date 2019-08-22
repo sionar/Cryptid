@@ -6,7 +6,7 @@ Scripted by Sionar
 
 ------------------Constants
 MOD_NAME = 'Cryptid'
-VERSION = '1.5.6'
+VERSION = '1.6.0'
 DEBUG = false
 START_MESSAGE = '[FF4040]Cryptid[-]\nVersion [00FF00]' .. VERSION..'[-]\nScripted by [49D5FD]Sionar[-]\n'
 COLORS = {'Red', 'Teal', 'Purple', 'Brown', 'Pink',}
@@ -85,49 +85,31 @@ MARKER_GUID = 'a17c99'
 HELPER_GUIDS = {Red = '94f3ee', Teal = '864860', Purple = '9bc4dc', Brown = 'db9e6b', Pink = '4a9d68'}
 TIMER_GUID = 'f74b73'
 
+
 ------------------Variables
 players = {}
 seatedPlayers = {}
 started = false
 mode = 'normal'
 checklists = {}
-for k,v in pairs(COLORS_ALL) do
-    checklists[v] =
-    {
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-        {r = 1, t = 1, p = 1, b = 1, k = 1},
-    }
-end
 data = {}
 map = {}
-cluesTable = {}
 clues = {}
-cluesAll = {}
+cluesTable = {}
 dataAll = {}
 mapAll = {}
+cluesAll = {}
+cluesTableAll = {}
 
+for k,v in pairs(COLORS_ALL) do
+    checklists[v] = {}
+    for i = 1,24 do
+        checklists[v][i] = {}
+        for k1,v1 in pairs(COLORS) do
+            checklists[v][i][TAGS[v1]] = 1
+        end
+    end
+end
 for i = 1,12 do
     map[i] = {}
     for j = 1,9 do
@@ -145,9 +127,8 @@ function onLoad(saveString)
         started = save['s']
         mode = save['mo']
         checklists = save['c']
-        map = save ['ma']
+        map = save['ma']
     end
-
     setNotes(START_MESSAGE)
     math.randomseed(os.time())
     local seated = getSeatedPlayers()
@@ -240,6 +221,7 @@ function onLoad(saveString)
     else
         adjustChecklist()
         generateMapUI()
+        cluesTable = findValidClues()
     end
 end
 
@@ -308,7 +290,6 @@ function startGame()
     local obj, cluesFound
     local xPos, yPos, zPos, index
     local startColor, colors, tempColor
-    local startTime = os.time()
 
     seatedPlayers = getSeatedPlayers()
     started = true
@@ -331,6 +312,7 @@ function startGame()
     data = dataAll[mode .. #seatedPlayers]
     map = mapAll[mode .. #seatedPlayers]
     clues = cluesAll[mode .. #seatedPlayers]
+    cluesTable = cluesTableAll[mode .. #seatedPlayers]
 
     for i = 1,6 do
         obj = getObjectFromGUID(MAP_GUIDS[data.mapOrder[i]])
@@ -397,6 +379,9 @@ function startGame()
     adjustChecklist()
     fillChecklist()
     generateMapUI()
+    for k,v in pairs(seatedPlayers) do
+        resetMap(Player[v], _, _)
+    end
 end
 
 function generateRandomMap()
@@ -500,8 +485,6 @@ function findValidClues()
     local value, found
     local outputTab = {}
     local map = map
-    local startTime = os.time()
-    local timeTable = {}
 
     for i = 1,48 do
         outputTab[i] = {}
@@ -537,8 +520,7 @@ function findValidClues()
 end
 
 function generateClues(numPlayers)
-    local clueMaxIndex, randomClue, numZeroDistClues, validSolution
-    local minClues, maxClues, minClueIndex, maxClueIndex
+    local clueMaxIndex, randomClue, numZeroDistClues, validSolution, minClues, minClueIndex
     local found = false
     local tries = 0
     local cluesCount = {}
@@ -554,7 +536,6 @@ function generateClues(numPlayers)
     while tries < 10 and not found do
         numZeroDistClues = 0
         minClues = 108
-        maxClues = 0
         cluesCopy = Global.getTable('cluesTable')
         clues = {}
         table.insert(clues, math.random(1,clueMaxIndex))
@@ -655,6 +636,14 @@ function checkSolution()
             return false
         end
     end
+
+    for i = 1, #clues do
+        for j = i+1, #clues do
+            if clues[i] == clues[j] then
+                return false
+            end
+        end
+    end
     return true
 end
 
@@ -670,6 +659,7 @@ function generateAllClues()
         end
         clues = shuffleTable(clues)
         cluesAll[mode..i] = Global.getTable('clues')
+        cluesTableAll[mode..i] = Global.getTable('cluesTable')
         dataAll[mode..i] = Global.getTable('data')
         mapAll[mode..i] = Global.getTable('map')
 
@@ -682,6 +672,7 @@ function generateAllClues()
         end
         clues = shuffleTable(clues)
         cluesAll[mode..i] = Global.getTable('clues')
+        cluesTableAll[mode..i] = Global.getTable('cluesTable')
         dataAll[mode..i] = Global.getTable('data')
         mapAll[mode..i] = Global.getTable('map')
     end
@@ -891,6 +882,17 @@ function resetMap(player, value, id)
         for j = 1,9 do
             iden = TAGS[player.color] .. i .. j
             UI.setAttribute(iden, 'color', '#FFFFFF')
+        end
+    end
+    if players[player.color] ~= nil then
+        local clueNum = players[player.color].clue
+        for i = 1,12 do
+            for j = 1,9 do
+                if cluesTable[clueNum][(i-1)*9+j] == false then
+                    iden = TAGS[player.color] .. i .. j
+                    UI.setAttribute(iden, 'color', COLOR_DARK)
+                end
+            end
         end
     end
 end
