@@ -6,7 +6,7 @@ Scripted by Sionar
 
 ------------------Constants
 MOD_NAME = 'Cryptid'
-VERSION = '1.6.0'
+VERSION = '1.7.1'
 DEBUG = false
 START_MESSAGE = '[FF4040]Cryptid[-]\nVersion [00FF00]' .. VERSION..'[-]\nScripted by [49D5FD]Sionar[-]\n'
 COLORS = {'Red', 'Teal', 'Purple', 'Brown', 'Pink',}
@@ -91,6 +91,7 @@ players = {}
 seatedPlayers = {}
 started = false
 mode = 'normal'
+twoPlayers = false
 checklists = {}
 data = {}
 map = {}
@@ -128,6 +129,7 @@ function onLoad(saveString)
         mode = save['mo']
         checklists = save['c']
         map = save['ma']
+        twoPlayers = save['t']
     end
     setNotes(START_MESSAGE)
     math.randomseed(os.time())
@@ -233,6 +235,7 @@ function onSave()
     save['mo'] = mode
     save['c'] = checklists
     save['ma'] = map
+    save['t'] = twoPlayers
     local saveString = JSON.encode(save)
     return saveString
 end
@@ -265,8 +268,8 @@ function startNormalGame(clickedObject, playerColor)
         return
     end
     local seated = getSeatedPlayers()
-    if #seated < 3 and not DEBUG then
-        printToColor('You need 3 players seated to start the game.', playerColor, {1,1,1})
+    if #seated == 1 and not DEBUG then
+        printToColor('You need 2 players seated to start the game.', playerColor, {1,1,1})
         return
     end
     mode = 'normal'
@@ -278,8 +281,8 @@ function startAdvancedGame(clickedObject, playerColor)
         return
     end
     local seated= getSeatedPlayers()
-    if #seated < 3 and not DEBUG then
-        printToColor('You need 3 players seated to start the game.', playerColor, {1,1,1})
+    if #seated == 1 and not DEBUG then
+        printToColor('You need 2 players seated to start the game.', playerColor, {1,1,1})
         return
     end
     mode = 'advanced'
@@ -292,6 +295,9 @@ function startGame()
     local startColor, colors, tempColor
 
     seatedPlayers = getSeatedPlayers()
+    if #seatedPlayers == 2 then
+        setTwoPlayerMode()
+    end
     started = true
     obj = getObjectFromGUID(TABLE_GUID)
     obj.clearButtons()
@@ -313,6 +319,14 @@ function startGame()
     map = mapAll[mode .. #seatedPlayers]
     clues = cluesAll[mode .. #seatedPlayers]
     cluesTable = cluesTableAll[mode .. #seatedPlayers]
+
+    index = 1
+    players = {}
+    for k,v in pairs(seatedPlayers) do
+        players[v] = {clue = clues[index]}
+        index = index + 1
+    end
+    setClues()
 
     for i = 1,6 do
         obj = getObjectFromGUID(MAP_GUIDS[data.mapOrder[i]])
@@ -344,21 +358,13 @@ function startGame()
     end
 
     for k,v in pairs(COLORS) do
-        if not Player[v].seated then
+        if players[v] == nil then
             obj = getObjectFromGUID(BAG_GUIDS[v][1])
             obj.destruct()
             obj = getObjectFromGUID(BAG_GUIDS[v][2])
             obj.destruct()
         end
     end
-
-    index = 1
-    players = {}
-    for k,v in pairs(seatedPlayers) do
-        players[v] = {clue = clues[index]}
-        index = index + 1
-    end
-    setClues()
 
     index = math.random(1,#seatedPlayers)
     startColor = seatedPlayers[index]
@@ -381,6 +387,38 @@ function startGame()
     generateMapUI()
     for k,v in pairs(seatedPlayers) do
         resetMap(Player[v], _, _)
+    end
+end
+
+function setTwoPlayerMode()
+    twoPlayers = true
+    for k,v in pairs(COLORS) do
+        if seatedPlayers[1] == v then
+            index = k-1
+            if index == 0 then
+                index = 5
+            end
+            if not Player[COLORS[index]].seated then
+                table.insert(seatedPlayers, COLORS[index])
+            else
+                index = k%5 + 1
+                table.insert(seatedPlayers, COLORS[index])
+            end
+        end
+    end
+    for k,v in pairs(COLORS) do
+        if seatedPlayers[2] == v then
+            index = k-1
+            if index == 0 then
+                index = 5
+            end
+            if not Player[COLORS[index]].seated then
+                table.insert(seatedPlayers, COLORS[index])
+            else
+                index = k%5 + 1
+                table.insert(seatedPlayers, COLORS[index])
+            end
+        end
     end
 end
 
@@ -542,7 +580,7 @@ function generateClues(numPlayers)
         if CLUE_DATA[clues[1]].distance == 0 then
             numZeroDistClues = numZeroDistClues + 1
         end
-        cluesCopy,cluesCount = updateTable(cluesCopy, cluesCopy[clues[1]])
+        cluesCopy,cluesCount = filterTable(cluesCopy, cluesCopy[clues[1]])
         if numPlayers == 5 then
             randomClue = math.random(1,clueMaxIndex)
             while randomClue == clues[1] or cluesCount[randomClue] == 0 do
@@ -552,20 +590,18 @@ function generateClues(numPlayers)
             if CLUE_DATA[clues[2]].distance == 0 then
                 numZeroDistClues = numZeroDistClues + 1
             end
-            cluesCopy,cluesCount = updateTable(cluesCopy, cluesCopy[clues[2]])
+            cluesCopy,cluesCount = filterTable(cluesCopy, cluesCopy[clues[2]])
         end
         if numPlayers >= 4 then
-            for i = 1,clueMaxIndex do
-                if cluesCount[i] < minClues and cluesCount[i] > 1 and not (numZeroDistClues == 2 and CLUE_DATA[i].distance == 0) then
-                    minClues = cluesCount[i]
-                    minClueIndex = i
-                end
+            randomClue = math.random(1,clueMaxIndex)
+            while randomClue == clues[1] or randomClue == clues[#clues] or cluesCount[randomClue] == 0 or (numZeroDistClues == 2 and CLUE_DATA[randomClue].distance == 0) do
+                randomClue = math.random(1,clueMaxIndex)
             end
-            table.insert(clues, minClueIndex)
+            table.insert(clues, randomClue)
             if CLUE_DATA[clues[#clues]].distance == 0 then
                 numZeroDistClues = numZeroDistClues + 1
             end
-            cluesCopy,cluesCount = updateTable(cluesCopy, cluesCopy[clues[#clues]])
+            cluesCopy,cluesCount = filterTable(cluesCopy, cluesCopy[clues[#clues]])
         end
         for i = 1,clueMaxIndex do
             if cluesCount[i] < minClues and cluesCount[i] > 1 and not (numZeroDistClues == 2 and CLUE_DATA[i].distance == 0) then
@@ -577,7 +613,7 @@ function generateClues(numPlayers)
         if CLUE_DATA[clues[#clues]].distance == 0 then
             numZeroDistClues = numZeroDistClues + 1
         end
-        cluesCopy,cluesCount = updateTable(cluesCopy, cluesCopy[clues[#clues]])
+        cluesCopy,cluesCount = filterTable(cluesCopy, cluesCopy[clues[#clues]])
         for i = 1,clueMaxIndex do
             if cluesCount[i] == 1 and not (numZeroDistClues == 2 and CLUE_DATA[i].distance == 0) then
                 table.insert(clues, i)
@@ -596,7 +632,7 @@ function generateClues(numPlayers)
     return found
 end
 
-function updateTable(tab, entries)
+function filterTable(tab, entries)
     local cluesCount = {}
     local clueMaxIndex
 
@@ -620,17 +656,18 @@ end
 
 function checkSolution()
     local cluesCopy, cluesIndexes, cluesCount
-
-    for i = 1, #seatedPlayers do
+    for i = 1, #clues do
         cluesIndexes = {}
         cluesCopy = Global.getTable('cluesTable')
-        for j = 1, #seatedPlayers do
+        for j = 1, #clues do
             if j ~= i then
                 table.insert(cluesIndexes,j)
             end
         end
         for k,v in pairs(cluesIndexes) do
-            cluesCopy,cluesCount = updateTable(cluesCopy, cluesCopy[clues[v]])
+            cluesCopy,cluesCount = filterTable(cluesCopy, cluesCopy[clues[v]])
+        end
+        for k,v in pairs(cluesIndexes) do
         end
         if cluesCount[clues[cluesIndexes[1]]] == 1 then
             return false
@@ -683,6 +720,10 @@ function setClues()
     for k,v in pairs(players) do
         obj.UI.setAttribute(k..'Clue', 'active', 'true' )
         obj.UI.setValue(k..'Clue', CLUE_DATA[v.clue].name)
+    end
+    if twoPlayers then
+        obj.UI.setAttribute(seatedPlayers[3]..'Clue', 'visibility', seatedPlayers[1])
+        obj.UI.setAttribute(seatedPlayers[4]..'Clue', 'visibility', seatedPlayers[2])
     end
 end
 
@@ -810,6 +851,40 @@ function fillChecklist()
             end
         end
     end
+    if twoPlayers then
+        for j = 1,2 do
+            index = players[seatedPlayers[j+2]].clue
+            if index > 24 then
+                index = index - 24
+            end
+            for i = 1,24 do
+                UI.setAttribute(TAGS[seatedPlayers[j]]..TAGS[seatedPlayers[j+2]]..i, 'color', '#DA1917')
+                UI.setAttribute(TAGS[seatedPlayers[j]]..TAGS[seatedPlayers[j+2]]..i, 'text', 'No')
+                checklists[seatedPlayers[j]][i][TAGS[seatedPlayers[j+2]]] = 3
+            end
+            for k1,v1 in pairs(COLORS) do
+                UI.setAttribute(TAGS[seatedPlayers[j]]..TAGS[v1]..index, 'color', '#DA1917')
+                UI.setAttribute(TAGS[seatedPlayers[j]]..TAGS[v1]..index, 'text', 'No')
+                checklists[seatedPlayers[j]][index][TAGS[v1]] = 3
+            end
+            if players[seatedPlayers[j+2]].clue <= 24 then
+                UI.setAttribute(TAGS[seatedPlayers[j]]..TAGS[seatedPlayers[j+2]]..index, 'color', '#E6E42B')
+                UI.setAttribute(TAGS[seatedPlayers[j]]..TAGS[seatedPlayers[j+2]]..index, 'text', 'Maybe')
+                checklists[seatedPlayers[j]][index][TAGS[seatedPlayers[j+2]]] = 1
+            else
+                UI.setAttribute(TAGS[seatedPlayers[j]]..TAGS[seatedPlayers[j+2]]..index, 'color', '#F3631C')
+                UI.setAttribute(TAGS[seatedPlayers[j]]..TAGS[seatedPlayers[j+2]]..index, 'text', 'Inverse')
+                checklists[seatedPlayers[j]][index][TAGS[seatedPlayers[j+2]]] = 2
+            end
+            if mode == 'normal' then
+                for k1, v1 in pairs(COLORS) do
+                    UI.setAttribute(TAGS[seatedPlayers[j]]..TAGS[v1]..24, 'color', '#DA1917')
+                    UI.setAttribute(TAGS[seatedPlayers[j]]..TAGS[v1]..24, 'text', 'No')
+                    checklists[seatedPlayers[j]][24][TAGS[v1]] = 3
+                end
+            end
+        end
+    end
 end
 
 function generateMapUI()
@@ -877,7 +952,7 @@ function invertMap(player, value, id)
 end
 
 function resetMap(player, value, id)
-    local iden
+    local iden, index
     for i = 1, 12 do
         for j = 1,9 do
             iden = TAGS[player.color] .. i .. j
@@ -886,6 +961,22 @@ function resetMap(player, value, id)
     end
     if players[player.color] ~= nil then
         local clueNum = players[player.color].clue
+        for i = 1,12 do
+            for j = 1,9 do
+                if cluesTable[clueNum][(i-1)*9+j] == false then
+                    iden = TAGS[player.color] .. i .. j
+                    UI.setAttribute(iden, 'color', COLOR_DARK)
+                end
+            end
+        end
+    end
+    if twoPlayers then
+        if player.color == seatedPlayers[1] then
+            index = 1
+        else
+            index = 2
+        end
+        local clueNum = players[seatedPlayers[index+2]].clue
         for i = 1,12 do
             for j = 1,9 do
                 if cluesTable[clueNum][(i-1)*9+j] == false then
