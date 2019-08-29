@@ -6,7 +6,7 @@ Scripted by Sionar
 
 ------------------Constants
 MOD_NAME = 'Cryptid'
-VERSION = '1.7.1'
+VERSION = '1.7.2'
 DEBUG = false
 START_MESSAGE = '[FF4040]Cryptid[-]\nVersion [00FF00]' .. VERSION..'[-]\nScripted by [49D5FD]Sionar[-]\n'
 COLORS = {'Red', 'Teal', 'Purple', 'Brown', 'Pink',}
@@ -78,6 +78,7 @@ for x = 1,12 do
 end
 
 TABLE_GUID = 'e1c8f6'
+SIDE_TABLE_GUID = '2e72cd'
 MAP_GUIDS = {'a70047', '0137df', '38ad67', '7b30ec', '31e825', '81e81d',}
 STRUCTURE_GUIDS = {OW = '127a87', TW = 'ba505c', OB = '0df954', TB = 'a1a56c', OG = '096c34', TG = '0add33', OD = '6019a2', TD = '62ecde',}
 BAG_GUIDS = {Red = {'db017c','a46d6a'}, Teal = {'699c89','eef40a'}, Purple = {'2c47b4','9b5f69'}, Brown = {'ce8508','1f954d'}, Pink = {'37c717','ad678d'}}
@@ -138,6 +139,10 @@ function onLoad(saveString)
 
     local obj
     obj = getObjectFromGUID(TABLE_GUID)
+    if obj then
+        obj.interactable = false
+    end
+    obj = getObjectFromGUID(SIDE_TABLE_GUID)
     if obj then
         obj.interactable = false
     end
@@ -269,7 +274,7 @@ function startNormalGame(clickedObject, playerColor)
     end
     local seated = getSeatedPlayers()
     if #seated == 1 and not DEBUG then
-        printToColor('You need 2 players seated to start the game.', playerColor, {1,1,1})
+        Player[playerColor].print('You need 2 players seated to start the game.')
         return
     end
     mode = 'normal'
@@ -282,7 +287,7 @@ function startAdvancedGame(clickedObject, playerColor)
     end
     local seated= getSeatedPlayers()
     if #seated == 1 and not DEBUG then
-        printToColor('You need 2 players seated to start the game.', playerColor, {1,1,1})
+        Player[playerColor].print('You need 2 players seated to start the game.')
         return
     end
     mode = 'advanced'
@@ -292,7 +297,8 @@ end
 function startGame()
     local obj, cluesFound
     local xPos, yPos, zPos, index
-    local startColor, colors, tempColor
+    local startColor, colors, tempColor, tempEntry
+    local distances = {}
 
     seatedPlayers = getSeatedPlayers()
     if #seatedPlayers == 2 then
@@ -325,6 +331,16 @@ function startGame()
     for k,v in pairs(seatedPlayers) do
         players[v] = {clue = clues[index]}
         index = index + 1
+    end
+    if twoPlayers then
+        for i = 1,4 do
+            distances[i] = CLUE_DATA[players[seatedPlayers[i]].clue].distance
+        end
+        if (distances[1] == 0 and distances[3] == 0) or (distances[2] == 0 and distances[4] == 0) then
+            tempEntry = players[seatedPlayers[1]].clue
+            players[seatedPlayers[1]].clue = players[seatedPlayers[2]].clue
+            players[seatedPlayers[2]].clue = tempEntry
+        end
     end
     setClues()
 
