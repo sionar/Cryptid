@@ -6,7 +6,7 @@ Scripted by Sionar
 
 ------------------Constants
 MOD_NAME = 'Cryptid'
-VERSION = '1.7.2'
+VERSION = '1.8.0'
 DEBUG = false
 START_MESSAGE = '[FF4040]Cryptid[-]\nVersion [00FF00]' .. VERSION..'[-]\nScripted by [49D5FD]Sionar[-]\n'
 COLORS = {'Red', 'Teal', 'Purple', 'Brown', 'Pink',}
@@ -910,14 +910,11 @@ function generateMapUI()
     for k,v in pairs(COLORS_ALL) do
         for x = 1,12 do
             for y = 1,9 do
-                UI.setAttribute(TAGS[v]..x..y, 'image', map[x][y].terrain .. map[x][y].structType .. map[x][y].structColor)
-                if map[x][y].animal == 'C' then
-                    UI.setAttribute(TAGS[v]..'a'..x..y, 'image', 'Cougar')
-                    UI.setAttribute(TAGS[v]..'a'..x..y, 'active', 'true')
-                elseif map[x][y].animal == 'B' then
-                    map[x][y].animal = 'B'
-                    UI.setAttribute(TAGS[v]..'a'..x..y, 'image', 'Bear')
-                    UI.setAttribute(TAGS[v]..'a'..x..y, 'active', 'true')
+                UI.setAttribute(TAGS[v]..x..y, 'image', map[x][y].terrain)
+                UI.setAttribute(TAGS[v]..'s'..x..y, 'image', map[x][y].structType .. map[x][y].structColor)
+                if map[x][y].animal ~= 'N' then
+                    UI.setAttribute(TAGS[v]..'a'..x..y, 'image', map[x][y].animal)
+                    UI.setAttribute(TAGS[v]..'a'..x..y, 'active', true)
                 end
             end
         end
