@@ -1694,8 +1694,8 @@
     <Panel><Image class = "hex" id = "r12"><Image class = "structure" id = "rs12"><Image class = "animal" id = "ra12"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r13"><Image class = "structure" id = "rs13"><Image class = "animal" id = "ra13"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r14"><Image class = "structure" id = "rs14"><Image class = "animal" id = "ra14"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r16"><Image class = "structure" id = "rs15"><Image class = "animal" id = "ra16"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r15"><Image class = "structure" id = "rs16"><Image class = "animal" id = "ra15"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r15"><Image class = "structure" id = "rs15"><Image class = "animal" id = "ra16"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r16"><Image class = "structure" id = "rs16"><Image class = "animal" id = "ra15"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r17"><Image class = "structure" id = "rs17"><Image class = "animal" id = "ra17"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r18"><Image class = "structure" id = "rs18"><Image class = "animal" id = "ra18"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r19"><Image class = "structure" id = "rs19"><Image class = "animal" id = "ra19"></Image></Image></Image></Panel>
@@ -1705,8 +1705,8 @@
     <Panel><Image class = "hex" id = "r22"><Image class = "structure" id = "rs22"><Image class = "animal" id = "ra22"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r23"><Image class = "structure" id = "rs23"><Image class = "animal" id = "ra23"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r24"><Image class = "structure" id = "rs24"><Image class = "animal" id = "ra24"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r26"><Image class = "structure" id = "rs25"><Image class = "animal" id = "ra26"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r25"><Image class = "structure" id = "rs26"><Image class = "animal" id = "ra25"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r25"><Image class = "structure" id = "rs25"><Image class = "animal" id = "ra26"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r26"><Image class = "structure" id = "rs26"><Image class = "animal" id = "ra25"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r27"><Image class = "structure" id = "rs27"><Image class = "animal" id = "ra27"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r28"><Image class = "structure" id = "rs28"><Image class = "animal" id = "ra28"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r29"><Image class = "structure" id = "rs29"><Image class = "animal" id = "ra29"></Image></Image></Image></Panel>
@@ -1716,8 +1716,8 @@
     <Panel><Image class = "hex" id = "r32"><Image class = "structure" id = "rs32"><Image class = "animal" id = "ra32"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r33"><Image class = "structure" id = "rs33"><Image class = "animal" id = "ra33"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r34"><Image class = "structure" id = "rs34"><Image class = "animal" id = "ra34"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r36"><Image class = "structure" id = "rs35"><Image class = "animal" id = "ra36"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r35"><Image class = "structure" id = "rs36"><Image class = "animal" id = "ra35"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r35"><Image class = "structure" id = "rs35"><Image class = "animal" id = "ra36"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r36"><Image class = "structure" id = "rs36"><Image class = "animal" id = "ra35"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r37"><Image class = "structure" id = "rs37"><Image class = "animal" id = "ra37"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r38"><Image class = "structure" id = "rs38"><Image class = "animal" id = "ra38"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r39"><Image class = "structure" id = "rs39"><Image class = "animal" id = "ra39"></Image></Image></Image></Panel>
@@ -1727,8 +1727,8 @@
     <Panel><Image class = "hex" id = "r42"><Image class = "structure" id = "rs42"><Image class = "animal" id = "ra42"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r43"><Image class = "structure" id = "rs43"><Image class = "animal" id = "ra43"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r44"><Image class = "structure" id = "rs44"><Image class = "animal" id = "ra44"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r46"><Image class = "structure" id = "rs45"><Image class = "animal" id = "ra46"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r45"><Image class = "structure" id = "rs46"><Image class = "animal" id = "ra45"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r45"><Image class = "structure" id = "rs45"><Image class = "animal" id = "ra46"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r46"><Image class = "structure" id = "rs46"><Image class = "animal" id = "ra45"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r47"><Image class = "structure" id = "rs47"><Image class = "animal" id = "ra47"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r48"><Image class = "structure" id = "rs48"><Image class = "animal" id = "ra48"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r49"><Image class = "structure" id = "rs49"><Image class = "animal" id = "ra49"></Image></Image></Image></Panel>
@@ -1738,8 +1738,8 @@
     <Panel><Image class = "hex" id = "r52"><Image class = "structure" id = "rs52"><Image class = "animal" id = "ra52"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r53"><Image class = "structure" id = "rs53"><Image class = "animal" id = "ra53"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r54"><Image class = "structure" id = "rs54"><Image class = "animal" id = "ra54"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r56"><Image class = "structure" id = "rs55"><Image class = "animal" id = "ra56"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r55"><Image class = "structure" id = "rs56"><Image class = "animal" id = "ra55"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r55"><Image class = "structure" id = "rs55"><Image class = "animal" id = "ra56"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r56"><Image class = "structure" id = "rs56"><Image class = "animal" id = "ra55"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r57"><Image class = "structure" id = "rs57"><Image class = "animal" id = "ra57"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r58"><Image class = "structure" id = "rs58"><Image class = "animal" id = "ra58"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r59"><Image class = "structure" id = "rs59"><Image class = "animal" id = "ra59"></Image></Image></Image></Panel>
@@ -1749,8 +1749,8 @@
     <Panel><Image class = "hex" id = "r62"><Image class = "structure" id = "rs62"><Image class = "animal" id = "ra62"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r63"><Image class = "structure" id = "rs63"><Image class = "animal" id = "ra63"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r64"><Image class = "structure" id = "rs64"><Image class = "animal" id = "ra64"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r66"><Image class = "structure" id = "rs65"><Image class = "animal" id = "ra66"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r65"><Image class = "structure" id = "rs66"><Image class = "animal" id = "ra65"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r65"><Image class = "structure" id = "rs65"><Image class = "animal" id = "ra66"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r66"><Image class = "structure" id = "rs66"><Image class = "animal" id = "ra65"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r67"><Image class = "structure" id = "rs67"><Image class = "animal" id = "ra67"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r68"><Image class = "structure" id = "rs68"><Image class = "animal" id = "ra68"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r69"><Image class = "structure" id = "rs69"><Image class = "animal" id = "ra69"></Image></Image></Image></Panel>
@@ -1760,8 +1760,8 @@
     <Panel><Image class = "hex" id = "r72"><Image class = "structure" id = "rs72"><Image class = "animal" id = "ra72"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r73"><Image class = "structure" id = "rs73"><Image class = "animal" id = "ra73"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r74"><Image class = "structure" id = "rs74"><Image class = "animal" id = "ra74"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r76"><Image class = "structure" id = "rs75"><Image class = "animal" id = "ra76"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r75"><Image class = "structure" id = "rs76"><Image class = "animal" id = "ra75"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r75"><Image class = "structure" id = "rs75"><Image class = "animal" id = "ra76"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r76"><Image class = "structure" id = "rs76"><Image class = "animal" id = "ra75"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r77"><Image class = "structure" id = "rs77"><Image class = "animal" id = "ra77"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r78"><Image class = "structure" id = "rs78"><Image class = "animal" id = "ra78"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r79"><Image class = "structure" id = "rs79"><Image class = "animal" id = "ra79"></Image></Image></Image></Panel>
@@ -1771,8 +1771,8 @@
     <Panel><Image class = "hex" id = "r82"><Image class = "structure" id = "rs82"><Image class = "animal" id = "ra82"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r83"><Image class = "structure" id = "rs83"><Image class = "animal" id = "ra83"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r84"><Image class = "structure" id = "rs84"><Image class = "animal" id = "ra84"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r86"><Image class = "structure" id = "rs85"><Image class = "animal" id = "ra86"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r85"><Image class = "structure" id = "rs86"><Image class = "animal" id = "ra85"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r85"><Image class = "structure" id = "rs85"><Image class = "animal" id = "ra86"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r86"><Image class = "structure" id = "rs86"><Image class = "animal" id = "ra85"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r87"><Image class = "structure" id = "rs87"><Image class = "animal" id = "ra87"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r88"><Image class = "structure" id = "rs88"><Image class = "animal" id = "ra88"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r89"><Image class = "structure" id = "rs89"><Image class = "animal" id = "ra89"></Image></Image></Image></Panel>
@@ -1782,8 +1782,8 @@
     <Panel><Image class = "hex" id = "r92"><Image class = "structure" id = "rs92"><Image class = "animal" id = "ra92"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r93"><Image class = "structure" id = "rs93"><Image class = "animal" id = "ra93"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r94"><Image class = "structure" id = "rs94"><Image class = "animal" id = "ra94"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r96"><Image class = "structure" id = "rs95"><Image class = "animal" id = "ra96"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r95"><Image class = "structure" id = "rs96"><Image class = "animal" id = "ra95"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r95"><Image class = "structure" id = "rs95"><Image class = "animal" id = "ra96"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r96"><Image class = "structure" id = "rs96"><Image class = "animal" id = "ra95"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r97"><Image class = "structure" id = "rs97"><Image class = "animal" id = "ra97"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r98"><Image class = "structure" id = "rs98"><Image class = "animal" id = "ra98"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r99"><Image class = "structure" id = "rs99"><Image class = "animal" id = "ra99"></Image></Image></Image></Panel>
@@ -1793,8 +1793,8 @@
     <Panel><Image class = "hex" id = "r102"><Image class = "structure" id = "rs102"><Image class = "animal" id = "ra102"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r103"><Image class = "structure" id = "rs103"><Image class = "animal" id = "ra103"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r104"><Image class = "structure" id = "rs104"><Image class = "animal" id = "ra104"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r106"><Image class = "structure" id = "rs105"><Image class = "animal" id = "ra106"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r105"><Image class = "structure" id = "rs106"><Image class = "animal" id = "ra105"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r105"><Image class = "structure" id = "rs105"><Image class = "animal" id = "ra106"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r106"><Image class = "structure" id = "rs106"><Image class = "animal" id = "ra105"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r107"><Image class = "structure" id = "rs107"><Image class = "animal" id = "ra107"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r108"><Image class = "structure" id = "rs108"><Image class = "animal" id = "ra108"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r109"><Image class = "structure" id = "rs109"><Image class = "animal" id = "ra109"></Image></Image></Image></Panel>
@@ -1804,8 +1804,8 @@
     <Panel><Image class = "hex" id = "r112"><Image class = "structure" id = "rs112"><Image class = "animal" id = "ra112"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r113"><Image class = "structure" id = "rs113"><Image class = "animal" id = "ra113"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r114"><Image class = "structure" id = "rs114"><Image class = "animal" id = "ra114"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r116"><Image class = "structure" id = "rs115"><Image class = "animal" id = "ra116"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r115"><Image class = "structure" id = "rs116"><Image class = "animal" id = "ra115"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r115"><Image class = "structure" id = "rs115"><Image class = "animal" id = "ra116"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r116"><Image class = "structure" id = "rs116"><Image class = "animal" id = "ra115"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r117"><Image class = "structure" id = "rs117"><Image class = "animal" id = "ra117"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r118"><Image class = "structure" id = "rs118"><Image class = "animal" id = "ra118"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r119"><Image class = "structure" id = "rs119"><Image class = "animal" id = "ra119"></Image></Image></Image></Panel>
@@ -1815,8 +1815,8 @@
     <Panel><Image class = "hex" id = "r122"><Image class = "structure" id = "rs122"><Image class = "animal" id = "ra122"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r123"><Image class = "structure" id = "rs123"><Image class = "animal" id = "ra123"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r124"><Image class = "structure" id = "rs124"><Image class = "animal" id = "ra124"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r126"><Image class = "structure" id = "rs125"><Image class = "animal" id = "ra126"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "r125"><Image class = "structure" id = "rs126"><Image class = "animal" id = "ra125"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r125"><Image class = "structure" id = "rs125"><Image class = "animal" id = "ra126"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "r126"><Image class = "structure" id = "rs126"><Image class = "animal" id = "ra125"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r127"><Image class = "structure" id = "rs127"><Image class = "animal" id = "ra127"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r128"><Image class = "structure" id = "rs128"><Image class = "animal" id = "ra128"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "r129"><Image class = "structure" id = "rs129"><Image class = "animal" id = "ra129"></Image></Image></Image></Panel>
@@ -1827,8 +1827,8 @@
     <Panel><Image class = "hex" id = "t12"><Image class = "structure" id = "ts12"><Image class = "animal" id = "ta12"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t13"><Image class = "structure" id = "ts13"><Image class = "animal" id = "ta13"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t14"><Image class = "structure" id = "ts14"><Image class = "animal" id = "ta14"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t16"><Image class = "structure" id = "ts15"><Image class = "animal" id = "ta16"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t15"><Image class = "structure" id = "ts16"><Image class = "animal" id = "ta15"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t15"><Image class = "structure" id = "ts15"><Image class = "animal" id = "ta16"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t16"><Image class = "structure" id = "ts16"><Image class = "animal" id = "ta15"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t17"><Image class = "structure" id = "ts17"><Image class = "animal" id = "ta17"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t18"><Image class = "structure" id = "ts18"><Image class = "animal" id = "ta18"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t19"><Image class = "structure" id = "ts19"><Image class = "animal" id = "ta19"></Image></Image></Image></Panel>
@@ -1838,8 +1838,8 @@
     <Panel><Image class = "hex" id = "t22"><Image class = "structure" id = "ts22"><Image class = "animal" id = "ta22"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t23"><Image class = "structure" id = "ts23"><Image class = "animal" id = "ta23"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t24"><Image class = "structure" id = "ts24"><Image class = "animal" id = "ta24"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t26"><Image class = "structure" id = "ts25"><Image class = "animal" id = "ta26"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t25"><Image class = "structure" id = "ts26"><Image class = "animal" id = "ta25"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t25"><Image class = "structure" id = "ts25"><Image class = "animal" id = "ta26"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t26"><Image class = "structure" id = "ts26"><Image class = "animal" id = "ta25"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t27"><Image class = "structure" id = "ts27"><Image class = "animal" id = "ta27"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t28"><Image class = "structure" id = "ts28"><Image class = "animal" id = "ta28"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t29"><Image class = "structure" id = "ts29"><Image class = "animal" id = "ta29"></Image></Image></Image></Panel>
@@ -1849,8 +1849,8 @@
     <Panel><Image class = "hex" id = "t32"><Image class = "structure" id = "ts32"><Image class = "animal" id = "ta32"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t33"><Image class = "structure" id = "ts33"><Image class = "animal" id = "ta33"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t34"><Image class = "structure" id = "ts34"><Image class = "animal" id = "ta34"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t36"><Image class = "structure" id = "ts35"><Image class = "animal" id = "ta36"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t35"><Image class = "structure" id = "ts36"><Image class = "animal" id = "ta35"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t35"><Image class = "structure" id = "ts35"><Image class = "animal" id = "ta36"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t36"><Image class = "structure" id = "ts36"><Image class = "animal" id = "ta35"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t37"><Image class = "structure" id = "ts37"><Image class = "animal" id = "ta37"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t38"><Image class = "structure" id = "ts38"><Image class = "animal" id = "ta38"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t39"><Image class = "structure" id = "ts39"><Image class = "animal" id = "ta39"></Image></Image></Image></Panel>
@@ -1860,8 +1860,8 @@
     <Panel><Image class = "hex" id = "t42"><Image class = "structure" id = "ts42"><Image class = "animal" id = "ta42"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t43"><Image class = "structure" id = "ts43"><Image class = "animal" id = "ta43"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t44"><Image class = "structure" id = "ts44"><Image class = "animal" id = "ta44"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t46"><Image class = "structure" id = "ts45"><Image class = "animal" id = "ta46"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t45"><Image class = "structure" id = "ts46"><Image class = "animal" id = "ta45"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t45"><Image class = "structure" id = "ts45"><Image class = "animal" id = "ta46"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t46"><Image class = "structure" id = "ts46"><Image class = "animal" id = "ta45"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t47"><Image class = "structure" id = "ts47"><Image class = "animal" id = "ta47"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t48"><Image class = "structure" id = "ts48"><Image class = "animal" id = "ta48"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t49"><Image class = "structure" id = "ts49"><Image class = "animal" id = "ta49"></Image></Image></Image></Panel>
@@ -1871,8 +1871,8 @@
     <Panel><Image class = "hex" id = "t52"><Image class = "structure" id = "ts52"><Image class = "animal" id = "ta52"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t53"><Image class = "structure" id = "ts53"><Image class = "animal" id = "ta53"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t54"><Image class = "structure" id = "ts54"><Image class = "animal" id = "ta54"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t56"><Image class = "structure" id = "ts55"><Image class = "animal" id = "ta56"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t55"><Image class = "structure" id = "ts56"><Image class = "animal" id = "ta55"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t55"><Image class = "structure" id = "ts55"><Image class = "animal" id = "ta56"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t56"><Image class = "structure" id = "ts56"><Image class = "animal" id = "ta55"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t57"><Image class = "structure" id = "ts57"><Image class = "animal" id = "ta57"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t58"><Image class = "structure" id = "ts58"><Image class = "animal" id = "ta58"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t59"><Image class = "structure" id = "ts59"><Image class = "animal" id = "ta59"></Image></Image></Image></Panel>
@@ -1882,8 +1882,8 @@
     <Panel><Image class = "hex" id = "t62"><Image class = "structure" id = "ts62"><Image class = "animal" id = "ta62"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t63"><Image class = "structure" id = "ts63"><Image class = "animal" id = "ta63"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t64"><Image class = "structure" id = "ts64"><Image class = "animal" id = "ta64"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t66"><Image class = "structure" id = "ts65"><Image class = "animal" id = "ta66"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t65"><Image class = "structure" id = "ts66"><Image class = "animal" id = "ta65"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t65"><Image class = "structure" id = "ts65"><Image class = "animal" id = "ta66"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t66"><Image class = "structure" id = "ts66"><Image class = "animal" id = "ta65"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t67"><Image class = "structure" id = "ts67"><Image class = "animal" id = "ta67"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t68"><Image class = "structure" id = "ts68"><Image class = "animal" id = "ta68"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t69"><Image class = "structure" id = "ts69"><Image class = "animal" id = "ta69"></Image></Image></Image></Panel>
@@ -1893,8 +1893,8 @@
     <Panel><Image class = "hex" id = "t72"><Image class = "structure" id = "ts72"><Image class = "animal" id = "ta72"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t73"><Image class = "structure" id = "ts73"><Image class = "animal" id = "ta73"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t74"><Image class = "structure" id = "ts74"><Image class = "animal" id = "ta74"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t76"><Image class = "structure" id = "ts75"><Image class = "animal" id = "ta76"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t75"><Image class = "structure" id = "ts76"><Image class = "animal" id = "ta75"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t75"><Image class = "structure" id = "ts75"><Image class = "animal" id = "ta76"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t76"><Image class = "structure" id = "ts76"><Image class = "animal" id = "ta75"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t77"><Image class = "structure" id = "ts77"><Image class = "animal" id = "ta77"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t78"><Image class = "structure" id = "ts78"><Image class = "animal" id = "ta78"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t79"><Image class = "structure" id = "ts79"><Image class = "animal" id = "ta79"></Image></Image></Image></Panel>
@@ -1904,8 +1904,8 @@
     <Panel><Image class = "hex" id = "t82"><Image class = "structure" id = "ts82"><Image class = "animal" id = "ta82"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t83"><Image class = "structure" id = "ts83"><Image class = "animal" id = "ta83"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t84"><Image class = "structure" id = "ts84"><Image class = "animal" id = "ta84"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t86"><Image class = "structure" id = "ts85"><Image class = "animal" id = "ta86"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t85"><Image class = "structure" id = "ts86"><Image class = "animal" id = "ta85"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t85"><Image class = "structure" id = "ts85"><Image class = "animal" id = "ta86"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t86"><Image class = "structure" id = "ts86"><Image class = "animal" id = "ta85"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t87"><Image class = "structure" id = "ts87"><Image class = "animal" id = "ta87"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t88"><Image class = "structure" id = "ts88"><Image class = "animal" id = "ta88"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t89"><Image class = "structure" id = "ts89"><Image class = "animal" id = "ta89"></Image></Image></Image></Panel>
@@ -1915,8 +1915,8 @@
     <Panel><Image class = "hex" id = "t92"><Image class = "structure" id = "ts92"><Image class = "animal" id = "ta92"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t93"><Image class = "structure" id = "ts93"><Image class = "animal" id = "ta93"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t94"><Image class = "structure" id = "ts94"><Image class = "animal" id = "ta94"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t96"><Image class = "structure" id = "ts95"><Image class = "animal" id = "ta96"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t95"><Image class = "structure" id = "ts96"><Image class = "animal" id = "ta95"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t95"><Image class = "structure" id = "ts95"><Image class = "animal" id = "ta96"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t96"><Image class = "structure" id = "ts96"><Image class = "animal" id = "ta95"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t97"><Image class = "structure" id = "ts97"><Image class = "animal" id = "ta97"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t98"><Image class = "structure" id = "ts98"><Image class = "animal" id = "ta98"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t99"><Image class = "structure" id = "ts99"><Image class = "animal" id = "ta99"></Image></Image></Image></Panel>
@@ -1926,8 +1926,8 @@
     <Panel><Image class = "hex" id = "t102"><Image class = "structure" id = "ts102"><Image class = "animal" id = "ta102"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t103"><Image class = "structure" id = "ts103"><Image class = "animal" id = "ta103"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t104"><Image class = "structure" id = "ts104"><Image class = "animal" id = "ta104"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t106"><Image class = "structure" id = "ts105"><Image class = "animal" id = "ta106"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t105"><Image class = "structure" id = "ts106"><Image class = "animal" id = "ta105"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t105"><Image class = "structure" id = "ts105"><Image class = "animal" id = "ta106"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t106"><Image class = "structure" id = "ts106"><Image class = "animal" id = "ta105"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t107"><Image class = "structure" id = "ts107"><Image class = "animal" id = "ta107"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t108"><Image class = "structure" id = "ts108"><Image class = "animal" id = "ta108"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t109"><Image class = "structure" id = "ts109"><Image class = "animal" id = "ta109"></Image></Image></Image></Panel>
@@ -1937,8 +1937,8 @@
     <Panel><Image class = "hex" id = "t112"><Image class = "structure" id = "ts112"><Image class = "animal" id = "ta112"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t113"><Image class = "structure" id = "ts113"><Image class = "animal" id = "ta113"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t114"><Image class = "structure" id = "ts114"><Image class = "animal" id = "ta114"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t116"><Image class = "structure" id = "ts115"><Image class = "animal" id = "ta116"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t115"><Image class = "structure" id = "ts116"><Image class = "animal" id = "ta115"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t115"><Image class = "structure" id = "ts115"><Image class = "animal" id = "ta116"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t116"><Image class = "structure" id = "ts116"><Image class = "animal" id = "ta115"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t117"><Image class = "structure" id = "ts117"><Image class = "animal" id = "ta117"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t118"><Image class = "structure" id = "ts118"><Image class = "animal" id = "ta118"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t119"><Image class = "structure" id = "ts119"><Image class = "animal" id = "ta119"></Image></Image></Image></Panel>
@@ -1948,8 +1948,8 @@
     <Panel><Image class = "hex" id = "t122"><Image class = "structure" id = "ts122"><Image class = "animal" id = "ta122"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t123"><Image class = "structure" id = "ts123"><Image class = "animal" id = "ta123"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t124"><Image class = "structure" id = "ts124"><Image class = "animal" id = "ta124"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t126"><Image class = "structure" id = "ts125"><Image class = "animal" id = "ta126"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "t125"><Image class = "structure" id = "ts126"><Image class = "animal" id = "ta125"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t125"><Image class = "structure" id = "ts125"><Image class = "animal" id = "ta126"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "t126"><Image class = "structure" id = "ts126"><Image class = "animal" id = "ta125"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t127"><Image class = "structure" id = "ts127"><Image class = "animal" id = "ta127"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t128"><Image class = "structure" id = "ts128"><Image class = "animal" id = "ta128"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "t129"><Image class = "structure" id = "ts129"><Image class = "animal" id = "ta129"></Image></Image></Image></Panel>
@@ -1960,8 +1960,8 @@
     <Panel><Image class = "hex" id = "p12"><Image class = "structure" id = "ps12"><Image class = "animal" id = "pa12"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p13"><Image class = "structure" id = "ps13"><Image class = "animal" id = "pa13"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p14"><Image class = "structure" id = "ps14"><Image class = "animal" id = "pa14"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p16"><Image class = "structure" id = "ps15"><Image class = "animal" id = "pa16"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p15"><Image class = "structure" id = "ps16"><Image class = "animal" id = "pa15"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p15"><Image class = "structure" id = "ps15"><Image class = "animal" id = "pa16"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p16"><Image class = "structure" id = "ps16"><Image class = "animal" id = "pa15"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p17"><Image class = "structure" id = "ps17"><Image class = "animal" id = "pa17"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p18"><Image class = "structure" id = "ps18"><Image class = "animal" id = "pa18"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p19"><Image class = "structure" id = "ps19"><Image class = "animal" id = "pa19"></Image></Image></Image></Panel>
@@ -1971,8 +1971,8 @@
     <Panel><Image class = "hex" id = "p22"><Image class = "structure" id = "ps22"><Image class = "animal" id = "pa22"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p23"><Image class = "structure" id = "ps23"><Image class = "animal" id = "pa23"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p24"><Image class = "structure" id = "ps24"><Image class = "animal" id = "pa24"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p26"><Image class = "structure" id = "ps25"><Image class = "animal" id = "pa26"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p25"><Image class = "structure" id = "ps26"><Image class = "animal" id = "pa25"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p25"><Image class = "structure" id = "ps25"><Image class = "animal" id = "pa26"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p26"><Image class = "structure" id = "ps26"><Image class = "animal" id = "pa25"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p27"><Image class = "structure" id = "ps27"><Image class = "animal" id = "pa27"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p28"><Image class = "structure" id = "ps28"><Image class = "animal" id = "pa28"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p29"><Image class = "structure" id = "ps29"><Image class = "animal" id = "pa29"></Image></Image></Image></Panel>
@@ -1982,8 +1982,8 @@
     <Panel><Image class = "hex" id = "p32"><Image class = "structure" id = "ps32"><Image class = "animal" id = "pa32"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p33"><Image class = "structure" id = "ps33"><Image class = "animal" id = "pa33"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p34"><Image class = "structure" id = "ps34"><Image class = "animal" id = "pa34"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p36"><Image class = "structure" id = "ps35"><Image class = "animal" id = "pa36"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p35"><Image class = "structure" id = "ps36"><Image class = "animal" id = "pa35"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p35"><Image class = "structure" id = "ps35"><Image class = "animal" id = "pa36"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p36"><Image class = "structure" id = "ps36"><Image class = "animal" id = "pa35"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p37"><Image class = "structure" id = "ps37"><Image class = "animal" id = "pa37"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p38"><Image class = "structure" id = "ps38"><Image class = "animal" id = "pa38"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p39"><Image class = "structure" id = "ps39"><Image class = "animal" id = "pa39"></Image></Image></Image></Panel>
@@ -1993,8 +1993,8 @@
     <Panel><Image class = "hex" id = "p42"><Image class = "structure" id = "ps42"><Image class = "animal" id = "pa42"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p43"><Image class = "structure" id = "ps43"><Image class = "animal" id = "pa43"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p44"><Image class = "structure" id = "ps44"><Image class = "animal" id = "pa44"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p46"><Image class = "structure" id = "ps45"><Image class = "animal" id = "pa46"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p45"><Image class = "structure" id = "ps46"><Image class = "animal" id = "pa45"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p45"><Image class = "structure" id = "ps45"><Image class = "animal" id = "pa46"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p46"><Image class = "structure" id = "ps46"><Image class = "animal" id = "pa45"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p47"><Image class = "structure" id = "ps47"><Image class = "animal" id = "pa47"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p48"><Image class = "structure" id = "ps48"><Image class = "animal" id = "pa48"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p49"><Image class = "structure" id = "ps49"><Image class = "animal" id = "pa49"></Image></Image></Image></Panel>
@@ -2004,8 +2004,8 @@
     <Panel><Image class = "hex" id = "p52"><Image class = "structure" id = "ps52"><Image class = "animal" id = "pa52"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p53"><Image class = "structure" id = "ps53"><Image class = "animal" id = "pa53"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p54"><Image class = "structure" id = "ps54"><Image class = "animal" id = "pa54"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p56"><Image class = "structure" id = "ps55"><Image class = "animal" id = "pa56"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p55"><Image class = "structure" id = "ps56"><Image class = "animal" id = "pa55"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p55"><Image class = "structure" id = "ps55"><Image class = "animal" id = "pa56"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p56"><Image class = "structure" id = "ps56"><Image class = "animal" id = "pa55"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p57"><Image class = "structure" id = "ps57"><Image class = "animal" id = "pa57"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p58"><Image class = "structure" id = "ps58"><Image class = "animal" id = "pa58"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p59"><Image class = "structure" id = "ps59"><Image class = "animal" id = "pa59"></Image></Image></Image></Panel>
@@ -2015,8 +2015,8 @@
     <Panel><Image class = "hex" id = "p62"><Image class = "structure" id = "ps62"><Image class = "animal" id = "pa62"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p63"><Image class = "structure" id = "ps63"><Image class = "animal" id = "pa63"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p64"><Image class = "structure" id = "ps64"><Image class = "animal" id = "pa64"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p66"><Image class = "structure" id = "ps65"><Image class = "animal" id = "pa66"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p65"><Image class = "structure" id = "ps66"><Image class = "animal" id = "pa65"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p65"><Image class = "structure" id = "ps65"><Image class = "animal" id = "pa66"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p66"><Image class = "structure" id = "ps66"><Image class = "animal" id = "pa65"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p67"><Image class = "structure" id = "ps67"><Image class = "animal" id = "pa67"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p68"><Image class = "structure" id = "ps68"><Image class = "animal" id = "pa68"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p69"><Image class = "structure" id = "ps69"><Image class = "animal" id = "pa69"></Image></Image></Image></Panel>
@@ -2026,8 +2026,8 @@
     <Panel><Image class = "hex" id = "p72"><Image class = "structure" id = "ps72"><Image class = "animal" id = "pa72"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p73"><Image class = "structure" id = "ps73"><Image class = "animal" id = "pa73"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p74"><Image class = "structure" id = "ps74"><Image class = "animal" id = "pa74"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p76"><Image class = "structure" id = "ps75"><Image class = "animal" id = "pa76"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p75"><Image class = "structure" id = "ps76"><Image class = "animal" id = "pa75"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p75"><Image class = "structure" id = "ps75"><Image class = "animal" id = "pa76"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p76"><Image class = "structure" id = "ps76"><Image class = "animal" id = "pa75"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p77"><Image class = "structure" id = "ps77"><Image class = "animal" id = "pa77"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p78"><Image class = "structure" id = "ps78"><Image class = "animal" id = "pa78"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p79"><Image class = "structure" id = "ps79"><Image class = "animal" id = "pa79"></Image></Image></Image></Panel>
@@ -2037,8 +2037,8 @@
     <Panel><Image class = "hex" id = "p82"><Image class = "structure" id = "ps82"><Image class = "animal" id = "pa82"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p83"><Image class = "structure" id = "ps83"><Image class = "animal" id = "pa83"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p84"><Image class = "structure" id = "ps84"><Image class = "animal" id = "pa84"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p86"><Image class = "structure" id = "ps85"><Image class = "animal" id = "pa86"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p85"><Image class = "structure" id = "ps86"><Image class = "animal" id = "pa85"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p85"><Image class = "structure" id = "ps85"><Image class = "animal" id = "pa86"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p86"><Image class = "structure" id = "ps86"><Image class = "animal" id = "pa85"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p87"><Image class = "structure" id = "ps87"><Image class = "animal" id = "pa87"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p88"><Image class = "structure" id = "ps88"><Image class = "animal" id = "pa88"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p89"><Image class = "structure" id = "ps89"><Image class = "animal" id = "pa89"></Image></Image></Image></Panel>
@@ -2048,8 +2048,8 @@
     <Panel><Image class = "hex" id = "p92"><Image class = "structure" id = "ps92"><Image class = "animal" id = "pa92"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p93"><Image class = "structure" id = "ps93"><Image class = "animal" id = "pa93"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p94"><Image class = "structure" id = "ps94"><Image class = "animal" id = "pa94"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p96"><Image class = "structure" id = "ps95"><Image class = "animal" id = "pa96"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p95"><Image class = "structure" id = "ps96"><Image class = "animal" id = "pa95"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p95"><Image class = "structure" id = "ps95"><Image class = "animal" id = "pa96"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p96"><Image class = "structure" id = "ps96"><Image class = "animal" id = "pa95"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p97"><Image class = "structure" id = "ps97"><Image class = "animal" id = "pa97"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p98"><Image class = "structure" id = "ps98"><Image class = "animal" id = "pa98"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p99"><Image class = "structure" id = "ps99"><Image class = "animal" id = "pa99"></Image></Image></Image></Panel>
@@ -2059,8 +2059,8 @@
     <Panel><Image class = "hex" id = "p102"><Image class = "structure" id = "ps102"><Image class = "animal" id = "pa102"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p103"><Image class = "structure" id = "ps103"><Image class = "animal" id = "pa103"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p104"><Image class = "structure" id = "ps104"><Image class = "animal" id = "pa104"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p106"><Image class = "structure" id = "ps105"><Image class = "animal" id = "pa106"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p105"><Image class = "structure" id = "ps106"><Image class = "animal" id = "pa105"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p105"><Image class = "structure" id = "ps105"><Image class = "animal" id = "pa106"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p106"><Image class = "structure" id = "ps106"><Image class = "animal" id = "pa105"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p107"><Image class = "structure" id = "ps107"><Image class = "animal" id = "pa107"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p108"><Image class = "structure" id = "ps108"><Image class = "animal" id = "pa108"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p109"><Image class = "structure" id = "ps109"><Image class = "animal" id = "pa109"></Image></Image></Image></Panel>
@@ -2070,8 +2070,8 @@
     <Panel><Image class = "hex" id = "p112"><Image class = "structure" id = "ps112"><Image class = "animal" id = "pa112"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p113"><Image class = "structure" id = "ps113"><Image class = "animal" id = "pa113"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p114"><Image class = "structure" id = "ps114"><Image class = "animal" id = "pa114"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p116"><Image class = "structure" id = "ps115"><Image class = "animal" id = "pa116"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p115"><Image class = "structure" id = "ps116"><Image class = "animal" id = "pa115"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p115"><Image class = "structure" id = "ps115"><Image class = "animal" id = "pa116"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p116"><Image class = "structure" id = "ps116"><Image class = "animal" id = "pa115"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p117"><Image class = "structure" id = "ps117"><Image class = "animal" id = "pa117"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p118"><Image class = "structure" id = "ps118"><Image class = "animal" id = "pa118"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p119"><Image class = "structure" id = "ps119"><Image class = "animal" id = "pa119"></Image></Image></Image></Panel>
@@ -2081,8 +2081,8 @@
     <Panel><Image class = "hex" id = "p122"><Image class = "structure" id = "ps122"><Image class = "animal" id = "pa122"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p123"><Image class = "structure" id = "ps123"><Image class = "animal" id = "pa123"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p124"><Image class = "structure" id = "ps124"><Image class = "animal" id = "pa124"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p126"><Image class = "structure" id = "ps125"><Image class = "animal" id = "pa126"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "p125"><Image class = "structure" id = "ps126"><Image class = "animal" id = "pa125"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p125"><Image class = "structure" id = "ps125"><Image class = "animal" id = "pa126"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "p126"><Image class = "structure" id = "ps126"><Image class = "animal" id = "pa125"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p127"><Image class = "structure" id = "ps127"><Image class = "animal" id = "pa127"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p128"><Image class = "structure" id = "ps128"><Image class = "animal" id = "pa128"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "p129"><Image class = "structure" id = "ps129"><Image class = "animal" id = "pa129"></Image></Image></Image></Panel>
@@ -2093,8 +2093,8 @@
     <Panel><Image class = "hex" id = "b12"><Image class = "structure" id = "bs12"><Image class = "animal" id = "ba12"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b13"><Image class = "structure" id = "bs13"><Image class = "animal" id = "ba13"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b14"><Image class = "structure" id = "bs14"><Image class = "animal" id = "ba14"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b16"><Image class = "structure" id = "bs15"><Image class = "animal" id = "ba16"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b15"><Image class = "structure" id = "bs16"><Image class = "animal" id = "ba15"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b15"><Image class = "structure" id = "bs15"><Image class = "animal" id = "ba16"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b16"><Image class = "structure" id = "bs16"><Image class = "animal" id = "ba15"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b17"><Image class = "structure" id = "bs17"><Image class = "animal" id = "ba17"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b18"><Image class = "structure" id = "bs18"><Image class = "animal" id = "ba18"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b19"><Image class = "structure" id = "bs19"><Image class = "animal" id = "ba19"></Image></Image></Image></Panel>
@@ -2104,8 +2104,8 @@
     <Panel><Image class = "hex" id = "b22"><Image class = "structure" id = "bs22"><Image class = "animal" id = "ba22"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b23"><Image class = "structure" id = "bs23"><Image class = "animal" id = "ba23"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b24"><Image class = "structure" id = "bs24"><Image class = "animal" id = "ba24"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b26"><Image class = "structure" id = "bs25"><Image class = "animal" id = "ba26"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b25"><Image class = "structure" id = "bs26"><Image class = "animal" id = "ba25"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b25"><Image class = "structure" id = "bs25"><Image class = "animal" id = "ba26"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b26"><Image class = "structure" id = "bs26"><Image class = "animal" id = "ba25"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b27"><Image class = "structure" id = "bs27"><Image class = "animal" id = "ba27"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b28"><Image class = "structure" id = "bs28"><Image class = "animal" id = "ba28"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b29"><Image class = "structure" id = "bs29"><Image class = "animal" id = "ba29"></Image></Image></Image></Panel>
@@ -2115,8 +2115,8 @@
     <Panel><Image class = "hex" id = "b32"><Image class = "structure" id = "bs32"><Image class = "animal" id = "ba32"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b33"><Image class = "structure" id = "bs33"><Image class = "animal" id = "ba33"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b34"><Image class = "structure" id = "bs34"><Image class = "animal" id = "ba34"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b36"><Image class = "structure" id = "bs35"><Image class = "animal" id = "ba36"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b35"><Image class = "structure" id = "bs36"><Image class = "animal" id = "ba35"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b35"><Image class = "structure" id = "bs35"><Image class = "animal" id = "ba36"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b36"><Image class = "structure" id = "bs36"><Image class = "animal" id = "ba35"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b37"><Image class = "structure" id = "bs37"><Image class = "animal" id = "ba37"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b38"><Image class = "structure" id = "bs38"><Image class = "animal" id = "ba38"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b39"><Image class = "structure" id = "bs39"><Image class = "animal" id = "ba39"></Image></Image></Image></Panel>
@@ -2126,8 +2126,8 @@
     <Panel><Image class = "hex" id = "b42"><Image class = "structure" id = "bs42"><Image class = "animal" id = "ba42"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b43"><Image class = "structure" id = "bs43"><Image class = "animal" id = "ba43"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b44"><Image class = "structure" id = "bs44"><Image class = "animal" id = "ba44"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b46"><Image class = "structure" id = "bs45"><Image class = "animal" id = "ba46"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b45"><Image class = "structure" id = "bs46"><Image class = "animal" id = "ba45"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b45"><Image class = "structure" id = "bs45"><Image class = "animal" id = "ba46"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b46"><Image class = "structure" id = "bs46"><Image class = "animal" id = "ba45"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b47"><Image class = "structure" id = "bs47"><Image class = "animal" id = "ba47"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b48"><Image class = "structure" id = "bs48"><Image class = "animal" id = "ba48"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b49"><Image class = "structure" id = "bs49"><Image class = "animal" id = "ba49"></Image></Image></Image></Panel>
@@ -2137,8 +2137,8 @@
     <Panel><Image class = "hex" id = "b52"><Image class = "structure" id = "bs52"><Image class = "animal" id = "ba52"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b53"><Image class = "structure" id = "bs53"><Image class = "animal" id = "ba53"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b54"><Image class = "structure" id = "bs54"><Image class = "animal" id = "ba54"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b56"><Image class = "structure" id = "bs55"><Image class = "animal" id = "ba56"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b55"><Image class = "structure" id = "bs56"><Image class = "animal" id = "ba55"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b55"><Image class = "structure" id = "bs55"><Image class = "animal" id = "ba56"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b56"><Image class = "structure" id = "bs56"><Image class = "animal" id = "ba55"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b57"><Image class = "structure" id = "bs57"><Image class = "animal" id = "ba57"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b58"><Image class = "structure" id = "bs58"><Image class = "animal" id = "ba58"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b59"><Image class = "structure" id = "bs59"><Image class = "animal" id = "ba59"></Image></Image></Image></Panel>
@@ -2148,8 +2148,8 @@
     <Panel><Image class = "hex" id = "b62"><Image class = "structure" id = "bs62"><Image class = "animal" id = "ba62"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b63"><Image class = "structure" id = "bs63"><Image class = "animal" id = "ba63"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b64"><Image class = "structure" id = "bs64"><Image class = "animal" id = "ba64"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b66"><Image class = "structure" id = "bs65"><Image class = "animal" id = "ba66"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b65"><Image class = "structure" id = "bs66"><Image class = "animal" id = "ba65"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b65"><Image class = "structure" id = "bs65"><Image class = "animal" id = "ba66"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b66"><Image class = "structure" id = "bs66"><Image class = "animal" id = "ba65"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b67"><Image class = "structure" id = "bs67"><Image class = "animal" id = "ba67"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b68"><Image class = "structure" id = "bs68"><Image class = "animal" id = "ba68"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b69"><Image class = "structure" id = "bs69"><Image class = "animal" id = "ba69"></Image></Image></Image></Panel>
@@ -2159,8 +2159,8 @@
     <Panel><Image class = "hex" id = "b72"><Image class = "structure" id = "bs72"><Image class = "animal" id = "ba72"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b73"><Image class = "structure" id = "bs73"><Image class = "animal" id = "ba73"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b74"><Image class = "structure" id = "bs74"><Image class = "animal" id = "ba74"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b76"><Image class = "structure" id = "bs75"><Image class = "animal" id = "ba76"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b75"><Image class = "structure" id = "bs76"><Image class = "animal" id = "ba75"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b75"><Image class = "structure" id = "bs75"><Image class = "animal" id = "ba76"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b76"><Image class = "structure" id = "bs76"><Image class = "animal" id = "ba75"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b77"><Image class = "structure" id = "bs77"><Image class = "animal" id = "ba77"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b78"><Image class = "structure" id = "bs78"><Image class = "animal" id = "ba78"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b79"><Image class = "structure" id = "bs79"><Image class = "animal" id = "ba79"></Image></Image></Image></Panel>
@@ -2170,8 +2170,8 @@
     <Panel><Image class = "hex" id = "b82"><Image class = "structure" id = "bs82"><Image class = "animal" id = "ba82"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b83"><Image class = "structure" id = "bs83"><Image class = "animal" id = "ba83"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b84"><Image class = "structure" id = "bs84"><Image class = "animal" id = "ba84"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b86"><Image class = "structure" id = "bs85"><Image class = "animal" id = "ba86"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b85"><Image class = "structure" id = "bs86"><Image class = "animal" id = "ba85"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b85"><Image class = "structure" id = "bs85"><Image class = "animal" id = "ba86"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b86"><Image class = "structure" id = "bs86"><Image class = "animal" id = "ba85"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b87"><Image class = "structure" id = "bs87"><Image class = "animal" id = "ba87"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b88"><Image class = "structure" id = "bs88"><Image class = "animal" id = "ba88"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b89"><Image class = "structure" id = "bs89"><Image class = "animal" id = "ba89"></Image></Image></Image></Panel>
@@ -2181,8 +2181,8 @@
     <Panel><Image class = "hex" id = "b92"><Image class = "structure" id = "bs92"><Image class = "animal" id = "ba92"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b93"><Image class = "structure" id = "bs93"><Image class = "animal" id = "ba93"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b94"><Image class = "structure" id = "bs94"><Image class = "animal" id = "ba94"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b96"><Image class = "structure" id = "bs95"><Image class = "animal" id = "ba96"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b95"><Image class = "structure" id = "bs96"><Image class = "animal" id = "ba95"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b95"><Image class = "structure" id = "bs95"><Image class = "animal" id = "ba96"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b96"><Image class = "structure" id = "bs96"><Image class = "animal" id = "ba95"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b97"><Image class = "structure" id = "bs97"><Image class = "animal" id = "ba97"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b98"><Image class = "structure" id = "bs98"><Image class = "animal" id = "ba98"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b99"><Image class = "structure" id = "bs99"><Image class = "animal" id = "ba99"></Image></Image></Image></Panel>
@@ -2192,8 +2192,8 @@
     <Panel><Image class = "hex" id = "b102"><Image class = "structure" id = "bs102"><Image class = "animal" id = "ba102"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b103"><Image class = "structure" id = "bs103"><Image class = "animal" id = "ba103"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b104"><Image class = "structure" id = "bs104"><Image class = "animal" id = "ba104"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b106"><Image class = "structure" id = "bs105"><Image class = "animal" id = "ba106"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b105"><Image class = "structure" id = "bs106"><Image class = "animal" id = "ba105"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b105"><Image class = "structure" id = "bs105"><Image class = "animal" id = "ba106"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b106"><Image class = "structure" id = "bs106"><Image class = "animal" id = "ba105"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b107"><Image class = "structure" id = "bs107"><Image class = "animal" id = "ba107"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b108"><Image class = "structure" id = "bs108"><Image class = "animal" id = "ba108"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b109"><Image class = "structure" id = "bs109"><Image class = "animal" id = "ba109"></Image></Image></Image></Panel>
@@ -2203,8 +2203,8 @@
     <Panel><Image class = "hex" id = "b112"><Image class = "structure" id = "bs112"><Image class = "animal" id = "ba112"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b113"><Image class = "structure" id = "bs113"><Image class = "animal" id = "ba113"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b114"><Image class = "structure" id = "bs114"><Image class = "animal" id = "ba114"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b116"><Image class = "structure" id = "bs115"><Image class = "animal" id = "ba116"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b115"><Image class = "structure" id = "bs116"><Image class = "animal" id = "ba115"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b115"><Image class = "structure" id = "bs115"><Image class = "animal" id = "ba116"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b116"><Image class = "structure" id = "bs116"><Image class = "animal" id = "ba115"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b117"><Image class = "structure" id = "bs117"><Image class = "animal" id = "ba117"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b118"><Image class = "structure" id = "bs118"><Image class = "animal" id = "ba118"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b119"><Image class = "structure" id = "bs119"><Image class = "animal" id = "ba119"></Image></Image></Image></Panel>
@@ -2214,8 +2214,8 @@
     <Panel><Image class = "hex" id = "b122"><Image class = "structure" id = "bs122"><Image class = "animal" id = "ba122"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b123"><Image class = "structure" id = "bs123"><Image class = "animal" id = "ba123"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b124"><Image class = "structure" id = "bs124"><Image class = "animal" id = "ba124"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b126"><Image class = "structure" id = "bs125"><Image class = "animal" id = "ba126"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "b125"><Image class = "structure" id = "bs126"><Image class = "animal" id = "ba125"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b125"><Image class = "structure" id = "bs125"><Image class = "animal" id = "ba126"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "b126"><Image class = "structure" id = "bs126"><Image class = "animal" id = "ba125"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b127"><Image class = "structure" id = "bs127"><Image class = "animal" id = "ba127"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b128"><Image class = "structure" id = "bs128"><Image class = "animal" id = "ba128"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "b129"><Image class = "structure" id = "bs129"><Image class = "animal" id = "ba129"></Image></Image></Image></Panel>
@@ -2226,8 +2226,8 @@
     <Panel><Image class = "hex" id = "k12"><Image class = "structure" id = "ks12"><Image class = "animal" id = "ka12"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k13"><Image class = "structure" id = "ks13"><Image class = "animal" id = "ka13"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k14"><Image class = "structure" id = "ks14"><Image class = "animal" id = "ka14"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k16"><Image class = "structure" id = "ks15"><Image class = "animal" id = "ka16"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k15"><Image class = "structure" id = "ks16"><Image class = "animal" id = "ka15"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k15"><Image class = "structure" id = "ks15"><Image class = "animal" id = "ka16"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k16"><Image class = "structure" id = "ks16"><Image class = "animal" id = "ka15"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k17"><Image class = "structure" id = "ks17"><Image class = "animal" id = "ka17"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k18"><Image class = "structure" id = "ks18"><Image class = "animal" id = "ka18"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k19"><Image class = "structure" id = "ks19"><Image class = "animal" id = "ka19"></Image></Image></Image></Panel>
@@ -2237,8 +2237,8 @@
     <Panel><Image class = "hex" id = "k22"><Image class = "structure" id = "ks22"><Image class = "animal" id = "ka22"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k23"><Image class = "structure" id = "ks23"><Image class = "animal" id = "ka23"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k24"><Image class = "structure" id = "ks24"><Image class = "animal" id = "ka24"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k26"><Image class = "structure" id = "ks25"><Image class = "animal" id = "ka26"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k25"><Image class = "structure" id = "ks26"><Image class = "animal" id = "ka25"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k25"><Image class = "structure" id = "ks25"><Image class = "animal" id = "ka26"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k26"><Image class = "structure" id = "ks26"><Image class = "animal" id = "ka25"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k27"><Image class = "structure" id = "ks27"><Image class = "animal" id = "ka27"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k28"><Image class = "structure" id = "ks28"><Image class = "animal" id = "ka28"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k29"><Image class = "structure" id = "ks29"><Image class = "animal" id = "ka29"></Image></Image></Image></Panel>
@@ -2248,8 +2248,8 @@
     <Panel><Image class = "hex" id = "k32"><Image class = "structure" id = "ks32"><Image class = "animal" id = "ka32"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k33"><Image class = "structure" id = "ks33"><Image class = "animal" id = "ka33"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k34"><Image class = "structure" id = "ks34"><Image class = "animal" id = "ka34"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k36"><Image class = "structure" id = "ks35"><Image class = "animal" id = "ka36"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k35"><Image class = "structure" id = "ks36"><Image class = "animal" id = "ka35"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k35"><Image class = "structure" id = "ks35"><Image class = "animal" id = "ka36"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k36"><Image class = "structure" id = "ks36"><Image class = "animal" id = "ka35"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k37"><Image class = "structure" id = "ks37"><Image class = "animal" id = "ka37"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k38"><Image class = "structure" id = "ks38"><Image class = "animal" id = "ka38"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k39"><Image class = "structure" id = "ks39"><Image class = "animal" id = "ka39"></Image></Image></Image></Panel>
@@ -2259,8 +2259,8 @@
     <Panel><Image class = "hex" id = "k42"><Image class = "structure" id = "ks42"><Image class = "animal" id = "ka42"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k43"><Image class = "structure" id = "ks43"><Image class = "animal" id = "ka43"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k44"><Image class = "structure" id = "ks44"><Image class = "animal" id = "ka44"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k46"><Image class = "structure" id = "ks45"><Image class = "animal" id = "ka46"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k45"><Image class = "structure" id = "ks46"><Image class = "animal" id = "ka45"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k45"><Image class = "structure" id = "ks45"><Image class = "animal" id = "ka46"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k46"><Image class = "structure" id = "ks46"><Image class = "animal" id = "ka45"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k47"><Image class = "structure" id = "ks47"><Image class = "animal" id = "ka47"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k48"><Image class = "structure" id = "ks48"><Image class = "animal" id = "ka48"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k49"><Image class = "structure" id = "ks49"><Image class = "animal" id = "ka49"></Image></Image></Image></Panel>
@@ -2270,8 +2270,8 @@
     <Panel><Image class = "hex" id = "k52"><Image class = "structure" id = "ks52"><Image class = "animal" id = "ka52"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k53"><Image class = "structure" id = "ks53"><Image class = "animal" id = "ka53"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k54"><Image class = "structure" id = "ks54"><Image class = "animal" id = "ka54"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k56"><Image class = "structure" id = "ks55"><Image class = "animal" id = "ka56"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k55"><Image class = "structure" id = "ks56"><Image class = "animal" id = "ka55"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k55"><Image class = "structure" id = "ks55"><Image class = "animal" id = "ka56"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k56"><Image class = "structure" id = "ks56"><Image class = "animal" id = "ka55"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k57"><Image class = "structure" id = "ks57"><Image class = "animal" id = "ka57"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k58"><Image class = "structure" id = "ks58"><Image class = "animal" id = "ka58"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k59"><Image class = "structure" id = "ks59"><Image class = "animal" id = "ka59"></Image></Image></Image></Panel>
@@ -2281,8 +2281,8 @@
     <Panel><Image class = "hex" id = "k62"><Image class = "structure" id = "ks62"><Image class = "animal" id = "ka62"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k63"><Image class = "structure" id = "ks63"><Image class = "animal" id = "ka63"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k64"><Image class = "structure" id = "ks64"><Image class = "animal" id = "ka64"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k66"><Image class = "structure" id = "ks65"><Image class = "animal" id = "ka66"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k65"><Image class = "structure" id = "ks66"><Image class = "animal" id = "ka65"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k65"><Image class = "structure" id = "ks65"><Image class = "animal" id = "ka66"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k66"><Image class = "structure" id = "ks66"><Image class = "animal" id = "ka65"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k67"><Image class = "structure" id = "ks67"><Image class = "animal" id = "ka67"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k68"><Image class = "structure" id = "ks68"><Image class = "animal" id = "ka68"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k69"><Image class = "structure" id = "ks69"><Image class = "animal" id = "ka69"></Image></Image></Image></Panel>
@@ -2292,8 +2292,8 @@
     <Panel><Image class = "hex" id = "k72"><Image class = "structure" id = "ks72"><Image class = "animal" id = "ka72"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k73"><Image class = "structure" id = "ks73"><Image class = "animal" id = "ka73"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k74"><Image class = "structure" id = "ks74"><Image class = "animal" id = "ka74"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k76"><Image class = "structure" id = "ks75"><Image class = "animal" id = "ka76"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k75"><Image class = "structure" id = "ks76"><Image class = "animal" id = "ka75"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k75"><Image class = "structure" id = "ks75"><Image class = "animal" id = "ka76"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k76"><Image class = "structure" id = "ks76"><Image class = "animal" id = "ka75"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k77"><Image class = "structure" id = "ks77"><Image class = "animal" id = "ka77"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k78"><Image class = "structure" id = "ks78"><Image class = "animal" id = "ka78"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k79"><Image class = "structure" id = "ks79"><Image class = "animal" id = "ka79"></Image></Image></Image></Panel>
@@ -2303,8 +2303,8 @@
     <Panel><Image class = "hex" id = "k82"><Image class = "structure" id = "ks82"><Image class = "animal" id = "ka82"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k83"><Image class = "structure" id = "ks83"><Image class = "animal" id = "ka83"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k84"><Image class = "structure" id = "ks84"><Image class = "animal" id = "ka84"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k86"><Image class = "structure" id = "ks85"><Image class = "animal" id = "ka86"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k85"><Image class = "structure" id = "ks86"><Image class = "animal" id = "ka85"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k85"><Image class = "structure" id = "ks85"><Image class = "animal" id = "ka86"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k86"><Image class = "structure" id = "ks86"><Image class = "animal" id = "ka85"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k87"><Image class = "structure" id = "ks87"><Image class = "animal" id = "ka87"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k88"><Image class = "structure" id = "ks88"><Image class = "animal" id = "ka88"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k89"><Image class = "structure" id = "ks89"><Image class = "animal" id = "ka89"></Image></Image></Image></Panel>
@@ -2314,8 +2314,8 @@
     <Panel><Image class = "hex" id = "k92"><Image class = "structure" id = "ks92"><Image class = "animal" id = "ka92"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k93"><Image class = "structure" id = "ks93"><Image class = "animal" id = "ka93"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k94"><Image class = "structure" id = "ks94"><Image class = "animal" id = "ka94"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k96"><Image class = "structure" id = "ks95"><Image class = "animal" id = "ka96"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k95"><Image class = "structure" id = "ks96"><Image class = "animal" id = "ka95"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k95"><Image class = "structure" id = "ks95"><Image class = "animal" id = "ka96"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k96"><Image class = "structure" id = "ks96"><Image class = "animal" id = "ka95"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k97"><Image class = "structure" id = "ks97"><Image class = "animal" id = "ka97"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k98"><Image class = "structure" id = "ks98"><Image class = "animal" id = "ka98"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k99"><Image class = "structure" id = "ks99"><Image class = "animal" id = "ka99"></Image></Image></Image></Panel>
@@ -2325,8 +2325,8 @@
     <Panel><Image class = "hex" id = "k102"><Image class = "structure" id = "ks102"><Image class = "animal" id = "ka102"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k103"><Image class = "structure" id = "ks103"><Image class = "animal" id = "ka103"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k104"><Image class = "structure" id = "ks104"><Image class = "animal" id = "ka104"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k106"><Image class = "structure" id = "ks105"><Image class = "animal" id = "ka106"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k105"><Image class = "structure" id = "ks106"><Image class = "animal" id = "ka105"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k105"><Image class = "structure" id = "ks105"><Image class = "animal" id = "ka106"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k106"><Image class = "structure" id = "ks106"><Image class = "animal" id = "ka105"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k107"><Image class = "structure" id = "ks107"><Image class = "animal" id = "ka107"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k108"><Image class = "structure" id = "ks108"><Image class = "animal" id = "ka108"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k109"><Image class = "structure" id = "ks109"><Image class = "animal" id = "ka109"></Image></Image></Image></Panel>
@@ -2336,8 +2336,8 @@
     <Panel><Image class = "hex" id = "k112"><Image class = "structure" id = "ks112"><Image class = "animal" id = "ka112"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k113"><Image class = "structure" id = "ks113"><Image class = "animal" id = "ka113"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k114"><Image class = "structure" id = "ks114"><Image class = "animal" id = "ka114"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k116"><Image class = "structure" id = "ks115"><Image class = "animal" id = "ka116"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k115"><Image class = "structure" id = "ks116"><Image class = "animal" id = "ka115"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k115"><Image class = "structure" id = "ks115"><Image class = "animal" id = "ka116"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k116"><Image class = "structure" id = "ks116"><Image class = "animal" id = "ka115"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k117"><Image class = "structure" id = "ks117"><Image class = "animal" id = "ka117"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k118"><Image class = "structure" id = "ks118"><Image class = "animal" id = "ka118"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k119"><Image class = "structure" id = "ks119"><Image class = "animal" id = "ka119"></Image></Image></Image></Panel>
@@ -2347,8 +2347,8 @@
     <Panel><Image class = "hex" id = "k122"><Image class = "structure" id = "ks122"><Image class = "animal" id = "ka122"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k123"><Image class = "structure" id = "ks123"><Image class = "animal" id = "ka123"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k124"><Image class = "structure" id = "ks124"><Image class = "animal" id = "ka124"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k126"><Image class = "structure" id = "ks125"><Image class = "animal" id = "ka126"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "k125"><Image class = "structure" id = "ks126"><Image class = "animal" id = "ka125"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k125"><Image class = "structure" id = "ks125"><Image class = "animal" id = "ka126"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "k126"><Image class = "structure" id = "ks126"><Image class = "animal" id = "ka125"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k127"><Image class = "structure" id = "ks127"><Image class = "animal" id = "ka127"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k128"><Image class = "structure" id = "ks128"><Image class = "animal" id = "ka128"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "k129"><Image class = "structure" id = "ks129"><Image class = "animal" id = "ka129"></Image></Image></Image></Panel>
@@ -2359,8 +2359,8 @@
     <Panel><Image class = "hex" id = "l12"><Image class = "structure" id = "ls12"><Image class = "animal" id = "la12"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l13"><Image class = "structure" id = "ls13"><Image class = "animal" id = "la13"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l14"><Image class = "structure" id = "ls14"><Image class = "animal" id = "la14"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l16"><Image class = "structure" id = "ls15"><Image class = "animal" id = "la16"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l15"><Image class = "structure" id = "ls16"><Image class = "animal" id = "la15"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l15"><Image class = "structure" id = "ls15"><Image class = "animal" id = "la16"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l16"><Image class = "structure" id = "ls16"><Image class = "animal" id = "la15"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l17"><Image class = "structure" id = "ls17"><Image class = "animal" id = "la17"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l18"><Image class = "structure" id = "ls18"><Image class = "animal" id = "la18"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l19"><Image class = "structure" id = "ls19"><Image class = "animal" id = "la19"></Image></Image></Image></Panel>
@@ -2370,8 +2370,8 @@
     <Panel><Image class = "hex" id = "l22"><Image class = "structure" id = "ls22"><Image class = "animal" id = "la22"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l23"><Image class = "structure" id = "ls23"><Image class = "animal" id = "la23"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l24"><Image class = "structure" id = "ls24"><Image class = "animal" id = "la24"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l26"><Image class = "structure" id = "ls25"><Image class = "animal" id = "la26"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l25"><Image class = "structure" id = "ls26"><Image class = "animal" id = "la25"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l25"><Image class = "structure" id = "ls25"><Image class = "animal" id = "la26"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l26"><Image class = "structure" id = "ls26"><Image class = "animal" id = "la25"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l27"><Image class = "structure" id = "ls27"><Image class = "animal" id = "la27"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l28"><Image class = "structure" id = "ls28"><Image class = "animal" id = "la28"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l29"><Image class = "structure" id = "ls29"><Image class = "animal" id = "la29"></Image></Image></Image></Panel>
@@ -2381,8 +2381,8 @@
     <Panel><Image class = "hex" id = "l32"><Image class = "structure" id = "ls32"><Image class = "animal" id = "la32"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l33"><Image class = "structure" id = "ls33"><Image class = "animal" id = "la33"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l34"><Image class = "structure" id = "ls34"><Image class = "animal" id = "la34"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l36"><Image class = "structure" id = "ls35"><Image class = "animal" id = "la36"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l35"><Image class = "structure" id = "ls36"><Image class = "animal" id = "la35"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l35"><Image class = "structure" id = "ls35"><Image class = "animal" id = "la36"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l36"><Image class = "structure" id = "ls36"><Image class = "animal" id = "la35"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l37"><Image class = "structure" id = "ls37"><Image class = "animal" id = "la37"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l38"><Image class = "structure" id = "ls38"><Image class = "animal" id = "la38"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l39"><Image class = "structure" id = "ls39"><Image class = "animal" id = "la39"></Image></Image></Image></Panel>
@@ -2392,8 +2392,8 @@
     <Panel><Image class = "hex" id = "l42"><Image class = "structure" id = "ls42"><Image class = "animal" id = "la42"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l43"><Image class = "structure" id = "ls43"><Image class = "animal" id = "la43"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l44"><Image class = "structure" id = "ls44"><Image class = "animal" id = "la44"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l46"><Image class = "structure" id = "ls45"><Image class = "animal" id = "la46"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l45"><Image class = "structure" id = "ls46"><Image class = "animal" id = "la45"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l45"><Image class = "structure" id = "ls45"><Image class = "animal" id = "la46"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l46"><Image class = "structure" id = "ls46"><Image class = "animal" id = "la45"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l47"><Image class = "structure" id = "ls47"><Image class = "animal" id = "la47"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l48"><Image class = "structure" id = "ls48"><Image class = "animal" id = "la48"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l49"><Image class = "structure" id = "ls49"><Image class = "animal" id = "la49"></Image></Image></Image></Panel>
@@ -2403,8 +2403,8 @@
     <Panel><Image class = "hex" id = "l52"><Image class = "structure" id = "ls52"><Image class = "animal" id = "la52"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l53"><Image class = "structure" id = "ls53"><Image class = "animal" id = "la53"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l54"><Image class = "structure" id = "ls54"><Image class = "animal" id = "la54"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l56"><Image class = "structure" id = "ls55"><Image class = "animal" id = "la56"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l55"><Image class = "structure" id = "ls56"><Image class = "animal" id = "la55"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l55"><Image class = "structure" id = "ls55"><Image class = "animal" id = "la56"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l56"><Image class = "structure" id = "ls56"><Image class = "animal" id = "la55"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l57"><Image class = "structure" id = "ls57"><Image class = "animal" id = "la57"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l58"><Image class = "structure" id = "ls58"><Image class = "animal" id = "la58"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l59"><Image class = "structure" id = "ls59"><Image class = "animal" id = "la59"></Image></Image></Image></Panel>
@@ -2414,8 +2414,8 @@
     <Panel><Image class = "hex" id = "l62"><Image class = "structure" id = "ls62"><Image class = "animal" id = "la62"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l63"><Image class = "structure" id = "ls63"><Image class = "animal" id = "la63"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l64"><Image class = "structure" id = "ls64"><Image class = "animal" id = "la64"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l66"><Image class = "structure" id = "ls65"><Image class = "animal" id = "la66"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l65"><Image class = "structure" id = "ls66"><Image class = "animal" id = "la65"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l65"><Image class = "structure" id = "ls65"><Image class = "animal" id = "la66"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l66"><Image class = "structure" id = "ls66"><Image class = "animal" id = "la65"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l67"><Image class = "structure" id = "ls67"><Image class = "animal" id = "la67"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l68"><Image class = "structure" id = "ls68"><Image class = "animal" id = "la68"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l69"><Image class = "structure" id = "ls69"><Image class = "animal" id = "la69"></Image></Image></Image></Panel>
@@ -2425,8 +2425,8 @@
     <Panel><Image class = "hex" id = "l72"><Image class = "structure" id = "ls72"><Image class = "animal" id = "la72"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l73"><Image class = "structure" id = "ls73"><Image class = "animal" id = "la73"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l74"><Image class = "structure" id = "ls74"><Image class = "animal" id = "la74"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l76"><Image class = "structure" id = "ls75"><Image class = "animal" id = "la76"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l75"><Image class = "structure" id = "ls76"><Image class = "animal" id = "la75"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l75"><Image class = "structure" id = "ls75"><Image class = "animal" id = "la76"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l76"><Image class = "structure" id = "ls76"><Image class = "animal" id = "la75"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l77"><Image class = "structure" id = "ls77"><Image class = "animal" id = "la77"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l78"><Image class = "structure" id = "ls78"><Image class = "animal" id = "la78"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l79"><Image class = "structure" id = "ls79"><Image class = "animal" id = "la79"></Image></Image></Image></Panel>
@@ -2436,8 +2436,8 @@
     <Panel><Image class = "hex" id = "l82"><Image class = "structure" id = "ls82"><Image class = "animal" id = "la82"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l83"><Image class = "structure" id = "ls83"><Image class = "animal" id = "la83"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l84"><Image class = "structure" id = "ls84"><Image class = "animal" id = "la84"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l86"><Image class = "structure" id = "ls85"><Image class = "animal" id = "la86"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l85"><Image class = "structure" id = "ls86"><Image class = "animal" id = "la85"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l85"><Image class = "structure" id = "ls85"><Image class = "animal" id = "la86"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l86"><Image class = "structure" id = "ls86"><Image class = "animal" id = "la85"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l87"><Image class = "structure" id = "ls87"><Image class = "animal" id = "la87"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l88"><Image class = "structure" id = "ls88"><Image class = "animal" id = "la88"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l89"><Image class = "structure" id = "ls89"><Image class = "animal" id = "la89"></Image></Image></Image></Panel>
@@ -2447,8 +2447,8 @@
     <Panel><Image class = "hex" id = "l92"><Image class = "structure" id = "ls92"><Image class = "animal" id = "la92"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l93"><Image class = "structure" id = "ls93"><Image class = "animal" id = "la93"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l94"><Image class = "structure" id = "ls94"><Image class = "animal" id = "la94"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l96"><Image class = "structure" id = "ls95"><Image class = "animal" id = "la96"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l95"><Image class = "structure" id = "ls96"><Image class = "animal" id = "la95"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l95"><Image class = "structure" id = "ls95"><Image class = "animal" id = "la96"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l96"><Image class = "structure" id = "ls96"><Image class = "animal" id = "la95"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l97"><Image class = "structure" id = "ls97"><Image class = "animal" id = "la97"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l98"><Image class = "structure" id = "ls98"><Image class = "animal" id = "la98"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l99"><Image class = "structure" id = "ls99"><Image class = "animal" id = "la99"></Image></Image></Image></Panel>
@@ -2458,8 +2458,8 @@
     <Panel><Image class = "hex" id = "l102"><Image class = "structure" id = "ls102"><Image class = "animal" id = "la102"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l103"><Image class = "structure" id = "ls103"><Image class = "animal" id = "la103"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l104"><Image class = "structure" id = "ls104"><Image class = "animal" id = "la104"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l106"><Image class = "structure" id = "ls105"><Image class = "animal" id = "la106"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l105"><Image class = "structure" id = "ls106"><Image class = "animal" id = "la105"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l105"><Image class = "structure" id = "ls105"><Image class = "animal" id = "la106"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l106"><Image class = "structure" id = "ls106"><Image class = "animal" id = "la105"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l107"><Image class = "structure" id = "ls107"><Image class = "animal" id = "la107"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l108"><Image class = "structure" id = "ls108"><Image class = "animal" id = "la108"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l109"><Image class = "structure" id = "ls109"><Image class = "animal" id = "la109"></Image></Image></Image></Panel>
@@ -2469,8 +2469,8 @@
     <Panel><Image class = "hex" id = "l112"><Image class = "structure" id = "ls112"><Image class = "animal" id = "la112"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l113"><Image class = "structure" id = "ls113"><Image class = "animal" id = "la113"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l114"><Image class = "structure" id = "ls114"><Image class = "animal" id = "la114"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l116"><Image class = "structure" id = "ls115"><Image class = "animal" id = "la116"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l115"><Image class = "structure" id = "ls116"><Image class = "animal" id = "la115"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l115"><Image class = "structure" id = "ls115"><Image class = "animal" id = "la116"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l116"><Image class = "structure" id = "ls116"><Image class = "animal" id = "la115"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l117"><Image class = "structure" id = "ls117"><Image class = "animal" id = "la117"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l118"><Image class = "structure" id = "ls118"><Image class = "animal" id = "la118"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l119"><Image class = "structure" id = "ls119"><Image class = "animal" id = "la119"></Image></Image></Image></Panel>
@@ -2480,8 +2480,8 @@
     <Panel><Image class = "hex" id = "l122"><Image class = "structure" id = "ls122"><Image class = "animal" id = "la122"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l123"><Image class = "structure" id = "ls123"><Image class = "animal" id = "la123"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l124"><Image class = "structure" id = "ls124"><Image class = "animal" id = "la124"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l126"><Image class = "structure" id = "ls125"><Image class = "animal" id = "la126"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "l125"><Image class = "structure" id = "ls126"><Image class = "animal" id = "la125"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l125"><Image class = "structure" id = "ls125"><Image class = "animal" id = "la126"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "l126"><Image class = "structure" id = "ls126"><Image class = "animal" id = "la125"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l127"><Image class = "structure" id = "ls127"><Image class = "animal" id = "la127"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l128"><Image class = "structure" id = "ls128"><Image class = "animal" id = "la128"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "l129"><Image class = "structure" id = "ls129"><Image class = "animal" id = "la129"></Image></Image></Image></Panel>
@@ -2492,8 +2492,8 @@
     <Panel><Image class = "hex" id = "y12"><Image class = "structure" id = "ys12"><Image class = "animal" id = "ya12"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y13"><Image class = "structure" id = "ys13"><Image class = "animal" id = "ya13"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y14"><Image class = "structure" id = "ys14"><Image class = "animal" id = "ya14"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y16"><Image class = "structure" id = "ys15"><Image class = "animal" id = "ya16"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y15"><Image class = "structure" id = "ys16"><Image class = "animal" id = "ya15"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y15"><Image class = "structure" id = "ys15"><Image class = "animal" id = "ya16"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y16"><Image class = "structure" id = "ys16"><Image class = "animal" id = "ya15"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y17"><Image class = "structure" id = "ys17"><Image class = "animal" id = "ya17"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y18"><Image class = "structure" id = "ys18"><Image class = "animal" id = "ya18"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y19"><Image class = "structure" id = "ys19"><Image class = "animal" id = "ya19"></Image></Image></Image></Panel>
@@ -2503,8 +2503,8 @@
     <Panel><Image class = "hex" id = "y22"><Image class = "structure" id = "ys22"><Image class = "animal" id = "ya22"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y23"><Image class = "structure" id = "ys23"><Image class = "animal" id = "ya23"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y24"><Image class = "structure" id = "ys24"><Image class = "animal" id = "ya24"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y26"><Image class = "structure" id = "ys25"><Image class = "animal" id = "ya26"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y25"><Image class = "structure" id = "ys26"><Image class = "animal" id = "ya25"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y25"><Image class = "structure" id = "ys25"><Image class = "animal" id = "ya26"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y26"><Image class = "structure" id = "ys26"><Image class = "animal" id = "ya25"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y27"><Image class = "structure" id = "ys27"><Image class = "animal" id = "ya27"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y28"><Image class = "structure" id = "ys28"><Image class = "animal" id = "ya28"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y29"><Image class = "structure" id = "ys29"><Image class = "animal" id = "ya29"></Image></Image></Image></Panel>
@@ -2514,8 +2514,8 @@
     <Panel><Image class = "hex" id = "y32"><Image class = "structure" id = "ys32"><Image class = "animal" id = "ya32"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y33"><Image class = "structure" id = "ys33"><Image class = "animal" id = "ya33"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y34"><Image class = "structure" id = "ys34"><Image class = "animal" id = "ya34"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y36"><Image class = "structure" id = "ys35"><Image class = "animal" id = "ya36"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y35"><Image class = "structure" id = "ys36"><Image class = "animal" id = "ya35"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y35"><Image class = "structure" id = "ys35"><Image class = "animal" id = "ya36"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y36"><Image class = "structure" id = "ys36"><Image class = "animal" id = "ya35"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y37"><Image class = "structure" id = "ys37"><Image class = "animal" id = "ya37"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y38"><Image class = "structure" id = "ys38"><Image class = "animal" id = "ya38"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y39"><Image class = "structure" id = "ys39"><Image class = "animal" id = "ya39"></Image></Image></Image></Panel>
@@ -2525,8 +2525,8 @@
     <Panel><Image class = "hex" id = "y42"><Image class = "structure" id = "ys42"><Image class = "animal" id = "ya42"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y43"><Image class = "structure" id = "ys43"><Image class = "animal" id = "ya43"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y44"><Image class = "structure" id = "ys44"><Image class = "animal" id = "ya44"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y46"><Image class = "structure" id = "ys45"><Image class = "animal" id = "ya46"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y45"><Image class = "structure" id = "ys46"><Image class = "animal" id = "ya45"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y45"><Image class = "structure" id = "ys45"><Image class = "animal" id = "ya46"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y46"><Image class = "structure" id = "ys46"><Image class = "animal" id = "ya45"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y47"><Image class = "structure" id = "ys47"><Image class = "animal" id = "ya47"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y48"><Image class = "structure" id = "ys48"><Image class = "animal" id = "ya48"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y49"><Image class = "structure" id = "ys49"><Image class = "animal" id = "ya49"></Image></Image></Image></Panel>
@@ -2536,8 +2536,8 @@
     <Panel><Image class = "hex" id = "y52"><Image class = "structure" id = "ys52"><Image class = "animal" id = "ya52"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y53"><Image class = "structure" id = "ys53"><Image class = "animal" id = "ya53"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y54"><Image class = "structure" id = "ys54"><Image class = "animal" id = "ya54"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y56"><Image class = "structure" id = "ys55"><Image class = "animal" id = "ya56"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y55"><Image class = "structure" id = "ys56"><Image class = "animal" id = "ya55"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y55"><Image class = "structure" id = "ys55"><Image class = "animal" id = "ya56"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y56"><Image class = "structure" id = "ys56"><Image class = "animal" id = "ya55"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y57"><Image class = "structure" id = "ys57"><Image class = "animal" id = "ya57"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y58"><Image class = "structure" id = "ys58"><Image class = "animal" id = "ya58"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y59"><Image class = "structure" id = "ys59"><Image class = "animal" id = "ya59"></Image></Image></Image></Panel>
@@ -2547,8 +2547,8 @@
     <Panel><Image class = "hex" id = "y62"><Image class = "structure" id = "ys62"><Image class = "animal" id = "ya62"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y63"><Image class = "structure" id = "ys63"><Image class = "animal" id = "ya63"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y64"><Image class = "structure" id = "ys64"><Image class = "animal" id = "ya64"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y66"><Image class = "structure" id = "ys65"><Image class = "animal" id = "ya66"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y65"><Image class = "structure" id = "ys66"><Image class = "animal" id = "ya65"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y65"><Image class = "structure" id = "ys65"><Image class = "animal" id = "ya66"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y66"><Image class = "structure" id = "ys66"><Image class = "animal" id = "ya65"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y67"><Image class = "structure" id = "ys67"><Image class = "animal" id = "ya67"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y68"><Image class = "structure" id = "ys68"><Image class = "animal" id = "ya68"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y69"><Image class = "structure" id = "ys69"><Image class = "animal" id = "ya69"></Image></Image></Image></Panel>
@@ -2558,8 +2558,8 @@
     <Panel><Image class = "hex" id = "y72"><Image class = "structure" id = "ys72"><Image class = "animal" id = "ya72"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y73"><Image class = "structure" id = "ys73"><Image class = "animal" id = "ya73"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y74"><Image class = "structure" id = "ys74"><Image class = "animal" id = "ya74"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y76"><Image class = "structure" id = "ys75"><Image class = "animal" id = "ya76"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y75"><Image class = "structure" id = "ys76"><Image class = "animal" id = "ya75"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y75"><Image class = "structure" id = "ys75"><Image class = "animal" id = "ya76"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y76"><Image class = "structure" id = "ys76"><Image class = "animal" id = "ya75"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y77"><Image class = "structure" id = "ys77"><Image class = "animal" id = "ya77"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y78"><Image class = "structure" id = "ys78"><Image class = "animal" id = "ya78"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y79"><Image class = "structure" id = "ys79"><Image class = "animal" id = "ya79"></Image></Image></Image></Panel>
@@ -2569,8 +2569,8 @@
     <Panel><Image class = "hex" id = "y82"><Image class = "structure" id = "ys82"><Image class = "animal" id = "ya82"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y83"><Image class = "structure" id = "ys83"><Image class = "animal" id = "ya83"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y84"><Image class = "structure" id = "ys84"><Image class = "animal" id = "ya84"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y86"><Image class = "structure" id = "ys85"><Image class = "animal" id = "ya86"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y85"><Image class = "structure" id = "ys86"><Image class = "animal" id = "ya85"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y85"><Image class = "structure" id = "ys85"><Image class = "animal" id = "ya86"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y86"><Image class = "structure" id = "ys86"><Image class = "animal" id = "ya85"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y87"><Image class = "structure" id = "ys87"><Image class = "animal" id = "ya87"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y88"><Image class = "structure" id = "ys88"><Image class = "animal" id = "ya88"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y89"><Image class = "structure" id = "ys89"><Image class = "animal" id = "ya89"></Image></Image></Image></Panel>
@@ -2580,8 +2580,8 @@
     <Panel><Image class = "hex" id = "y92"><Image class = "structure" id = "ys92"><Image class = "animal" id = "ya92"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y93"><Image class = "structure" id = "ys93"><Image class = "animal" id = "ya93"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y94"><Image class = "structure" id = "ys94"><Image class = "animal" id = "ya94"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y96"><Image class = "structure" id = "ys95"><Image class = "animal" id = "ya96"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y95"><Image class = "structure" id = "ys96"><Image class = "animal" id = "ya95"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y95"><Image class = "structure" id = "ys95"><Image class = "animal" id = "ya96"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y96"><Image class = "structure" id = "ys96"><Image class = "animal" id = "ya95"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y97"><Image class = "structure" id = "ys97"><Image class = "animal" id = "ya97"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y98"><Image class = "structure" id = "ys98"><Image class = "animal" id = "ya98"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y99"><Image class = "structure" id = "ys99"><Image class = "animal" id = "ya99"></Image></Image></Image></Panel>
@@ -2591,8 +2591,8 @@
     <Panel><Image class = "hex" id = "y102"><Image class = "structure" id = "ys102"><Image class = "animal" id = "ya102"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y103"><Image class = "structure" id = "ys103"><Image class = "animal" id = "ya103"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y104"><Image class = "structure" id = "ys104"><Image class = "animal" id = "ya104"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y106"><Image class = "structure" id = "ys105"><Image class = "animal" id = "ya106"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y105"><Image class = "structure" id = "ys106"><Image class = "animal" id = "ya105"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y105"><Image class = "structure" id = "ys105"><Image class = "animal" id = "ya106"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y106"><Image class = "structure" id = "ys106"><Image class = "animal" id = "ya105"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y107"><Image class = "structure" id = "ys107"><Image class = "animal" id = "ya107"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y108"><Image class = "structure" id = "ys108"><Image class = "animal" id = "ya108"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y109"><Image class = "structure" id = "ys109"><Image class = "animal" id = "ya109"></Image></Image></Image></Panel>
@@ -2602,8 +2602,8 @@
     <Panel><Image class = "hex" id = "y112"><Image class = "structure" id = "ys112"><Image class = "animal" id = "ya112"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y113"><Image class = "structure" id = "ys113"><Image class = "animal" id = "ya113"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y114"><Image class = "structure" id = "ys114"><Image class = "animal" id = "ya114"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y116"><Image class = "structure" id = "ys115"><Image class = "animal" id = "ya116"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y115"><Image class = "structure" id = "ys116"><Image class = "animal" id = "ya115"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y115"><Image class = "structure" id = "ys115"><Image class = "animal" id = "ya116"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y116"><Image class = "structure" id = "ys116"><Image class = "animal" id = "ya115"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y117"><Image class = "structure" id = "ys117"><Image class = "animal" id = "ya117"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y118"><Image class = "structure" id = "ys118"><Image class = "animal" id = "ya118"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y119"><Image class = "structure" id = "ys119"><Image class = "animal" id = "ya119"></Image></Image></Image></Panel>
@@ -2613,8 +2613,8 @@
     <Panel><Image class = "hex" id = "y122"><Image class = "structure" id = "ys122"><Image class = "animal" id = "ya122"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y123"><Image class = "structure" id = "ys123"><Image class = "animal" id = "ya123"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y124"><Image class = "structure" id = "ys124"><Image class = "animal" id = "ya124"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y126"><Image class = "structure" id = "ys125"><Image class = "animal" id = "ya126"></Image></Image></Image></Panel>
-    <Panel><Image class = "hex" id = "y125"><Image class = "structure" id = "ys126"><Image class = "animal" id = "ya125"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y125"><Image class = "structure" id = "ys125"><Image class = "animal" id = "ya126"></Image></Image></Image></Panel>
+    <Panel><Image class = "hex" id = "y126"><Image class = "structure" id = "ys126"><Image class = "animal" id = "ya125"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y127"><Image class = "structure" id = "ys127"><Image class = "animal" id = "ya127"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y128"><Image class = "structure" id = "ys128"><Image class = "animal" id = "ya128"></Image></Image></Image></Panel>
     <Panel><Image class = "hex" id = "y129"><Image class = "structure" id = "ys129"><Image class = "animal" id = "ya129"></Image></Image></Image></Panel>
