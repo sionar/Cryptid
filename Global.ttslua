@@ -6,7 +6,7 @@ Scripted by Sionar
 
 ------------------Constants
 MOD_NAME = 'Cryptid'
-VERSION = '1.8.2'
+VERSION = '1.8.3'
 DEBUG = true
 START_MESSAGE = '[FF4040]Cryptid[-]\nVersion [00FF00]' .. VERSION..'[-]\nScripted by [49D5FD]Sionar[-]\n'
 COLORS = {'Red', 'Teal', 'Purple', 'Brown', 'Pink',}
@@ -301,6 +301,12 @@ function startGame()
     local distances = {}
 
     seatedPlayers = getSeatedPlayers()
+
+    if #seatedPlayers < 2 then
+        broadcastToAll('You need two players seated to start the game.', {1,0,0})
+        return
+    end
+
     if #seatedPlayers == 2 then
         setTwoPlayerMode()
     end
